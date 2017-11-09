@@ -14,7 +14,7 @@ html, body {
 body {
     font-family: $font-family-regular;    
 }
-.harbour {
+.harbour-template {
 
     &.container {
         width: 100%;
@@ -124,7 +124,7 @@ body {
             margin-top: -10px;
             transition: width .3s ease-out;
             animation-name: h1-underline;
-            animation-delay: .1s;
+            animation-delay: .5s;
             animation-duration: .7s;
             animation-iteration-count: 1;
             animation-timing-function: ease-out;
