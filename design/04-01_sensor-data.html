@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Havneskærm os2display templates</title>
+    <link href="./css/04-01_sensor-data.css" rel="stylesheet">
+    <style>
+        /* Slide variables */
+        :root {
+            --background-color: #3661D8; /* aak-blue: #3661D8; */
+            --background-image: none;
+            --background-position: center;
+            --background-blur: blur(5px);
+            --slide-duration: 30s;            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="template_05-01" class="harbour container" style="transform: scale(1.0); transform-origin: 0% 0% 0px;">
+        <div class="item progress">
+            <span class="progress-bar" style="animation-duration: var(--slide-duration);"></span>
+        </div>
+        <div class="item image" style="background-color: var(--background-color); background-image: var(--background-image); background-position: var(--background-position); filter: var(--background-blur);">
+        </div>
+        <div class="item fade"></div>
+        <div class="item time">
+            <p>14:18</p> <!-- TODO: Dynamic time of day -->
+        </div>
+        <div class="item textbox box1">
+            <h2>Temperatur</h2>
+            <div class="data">
+                <div class="data-type">
+                    <span>C°</span>
+                </div>
+                <div class="data-amount">
+                    <span class="counter" data-count="9">0</span>° <!-- TODO: Dynamic amount -->
+                </div>
+            </div>
+        </div>
+        <div class="item textbox box2">
+            <h2>Dagslys</h2>
+            <div class="data">
+                <div class="data-type">
+                    <span>LUX</span>
+                </div>
+                <div class="data-amount">
+                    <span class="counter" data-count="154">0</span> <!-- TODO: Dynamic amount -->
+                </div>
+            </div>
+        </div>
+        <div class="item textbox box3">
+            <h2>Lydniveau</h2>
+            <div class="data">
+                <div class="data-type">
+                    <span>dB</span>
+                </div>
+                <div class="data-amount">
+                    <span class="counter" data-count="47">0</span> <!-- TODO: Dynamic amount -->
+                </div>
+            </div>
+        </div>
+        <div class="item textbox box4">
+            <h2>Lydniveau</h2>
+            <div class="data">
+                <div class="data-type">
+                    <span>%</span>
+                </div>
+                <div class="data-amount">
+                    <span class="counter" data-count="72">0</span> <!-- TODO: Dynamic amount -->
+                </div>
+            </div>
+        </div>
+        <div class="item footer medium">
+            <p class="facttext"><strong>Aktuelle data fra havnepladsen - Målinger leveret af Smart Aarhus</strong></p>
+            <img class="logo light" src="./img/AAK_01_venstrejusteret_sh.svg" alt="Aarhus kommune">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $('.counter').each(function() {
+            var $this = $(this),
+            countTo = $this.attr('data-count');
+            countDuration = $this.attr('data-duration');
+            $({ countNum: $this.text()}).animate({
+                countNum: countTo
+                
+            },
+            {
+                duration: ((countTo/100)*1000)+250,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                }
+            });   
+        });
+    </script>
+</body>
+</html>

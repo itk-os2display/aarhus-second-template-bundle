@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Havneskærm os2display templates</title>
+    <link href="./css/05-01_sensor-data-enkelt.css" rel="stylesheet">
+    <style>
+        /* Slide variables */
+        :root {
+            --background-image: url('./img/dokk1-bibliotek.jpg');
+            --background-position: center;
+            --slide-duration: 30s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="template_05-01" class="harbour container" style="transform: scale(1.0); transform-origin: 0% 0% 0px;">
+        <div class="item progress">
+            <span class="progress-bar" style="animation-duration: var(--slide-duration);"></span>
+        </div>
+        <div class="item image" style="background-image: var(--background-image); background-position: var(--background-position);">
+        </div>
+        <div class="item fade"></div>
+        <div class="item time">
+            <p>14:18</p> <!-- TODO: Dynamic time of day -->
+        </div>
+        <div class="item textbox">
+            <h1>Lydniveau</h1>
+            <div class="data">
+                <div class="data-type">
+                    <span>dB</span>
+                </div>
+                <div class="data-amount">
+                    <span class="counter" data-count="47">0</span> <!-- TODO: Dynamic amount -->
+                </div>
+                <div class="data-location">
+                    <p>Niveau målt ved havnepladsen kl. 12.53</p> <!-- TODO: Dynamic timestamp -->
+                </div>
+            </div>
+            <p>Leveret af</p>
+            <img src="./img/smart-aarhus-logo.png" alt="Smart Aarhus">
+        </div>
+        <div class="item footer small">
+            <img class="logo light" src="./img/AAK_01_venstrejusteret_sh.svg" alt="Aarhus kommune">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $('.counter').each(function() {
+            var $this = $(this),
+            countTo = $this.attr('data-count');
+            $({ countNum: $this.text()}).animate({
+                countNum: countTo
+            },
+            {
+                duration: 900,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                }
+            });   
+        });
+    </script>
+</body>
+</html>

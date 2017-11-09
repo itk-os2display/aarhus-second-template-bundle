@@ -1,0 +1,97 @@
+@import "_main-styles";
+
+// template 05-01_sensor-data-enkelt
+#template_05-01 {
+    .image {
+        position: fixed;
+        top: -5%;
+        left: -5%;
+        height: 85%;
+        width: 110%;
+        background-size: cover;
+        background-position-y: bottom;
+        opacity: 0;
+        animation-name: box-reveal;
+        animation-duration: 0.7s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        z-index: 2;
+        filter: blur(0px);
+    }
+    .textbox {
+        position: fixed;
+        width: 43%;
+        height: 26%;
+        padding: 2%;
+        background: $color-light-grey;
+        box-shadow: $shadow-box;
+        z-index: 50;
+        &.box1 {
+            top: 10%;
+            left: 2%;
+        }
+        &.box2 {
+            top: 10%;
+            left: 51%;
+        }
+        &.box3 {
+            top: 46%;
+            left: 2%;
+        }
+        &.box4 {
+            top: 46%;
+            left: 51%;
+        }
+        h1 {
+            color: $color-grey;
+            margin: 0 0 20px 0;
+        }
+        .data {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+            .data-type {
+                color: $color-pink;
+                font-family: $font-family-black;
+                font-size: 35px;
+                line-height: 35px;
+                flex-basis: 30%;
+                // justify-content: flex-end;
+                span {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .data-amount {
+                color: $color-grey;
+                font-family: $font-family-black;
+                font-size: 100px;
+                line-height: 100px;
+                flex-basis: 70%;
+                // justify-content: flex-end;
+                text-align: right;
+                span {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .data-location {
+                width: 100%;
+            }
+        }
+        p {
+            font-family: $font-family-regular;
+            font-size: $font-size-p;
+            color: $color-grey;
+            margin: 0 0 10px 0;
+        }
+    }
+    .facttext {
+        margin: 40px 30px;
+        text-align: center;
+    }
+}
