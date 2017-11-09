@@ -19,17 +19,17 @@
   40% {
     opacity: 1;
     width: 100%;
-    margin-top: 15px;
-    height: 6px; }
+    margin-top: 0.938em;
+    height: 0.375em; }
   70% {
     opacity: 1;
     width: 100%;
-    margin-top: 10px;
-    height: 4px; }
+    margin-top: 0.625em;
+    height: 0.2em; }
   100% {
     opacity: 1;
-    width: 80px;
-    margin-top: 10px; } }
+    width: 5em;
+    margin-top: 0.625em; } }
 
 html, body {
   margin: 0;
@@ -38,7 +38,8 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px; }
 
 .harbour-template.container {
   width: 100%;
@@ -47,14 +48,14 @@ body {
   .harbour-template.container .item.progress {
     position: fixed;
     width: 100%;
-    height: 3px;
+    height: 0.188em;
     background-color: rgba(245, 245, 245, 0.8);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     z-index: 100; }
     .harbour-template.container .item.progress .progress-bar {
       display: block;
       width: 0%;
-      height: 3px;
+      height: 0.188em;
       background-color: #EE0043;
       transition: width .3s ease-out;
       animation-name: progress-bar;
@@ -78,7 +79,7 @@ body {
     z-index: 100; }
     .harbour-template.container .item.time p {
       font-family: "Arial Black", Arial, Helvetica, sans-serif;
-      font-size: 20px;
+      font-size: 1.125em;
       color: #fff;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
       margin: 0;
@@ -99,27 +100,28 @@ body {
       height: 25%; }
     .harbour-template.container .item.footer .logo {
       position: fixed;
-      left: 20px;
-      bottom: 20px; }
+      left: 2%;
+      bottom: 3%; }
 
 .harbour-template h1 {
   position: relative;
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-size: 1.875em;
+  line-height: 1.125em;
   color: #333;
-  margin: 0 0 20px 0;
+  margin: 0 0 1em 0;
   text-transform: uppercase;
   display: inline-block;
-  padding-bottom: 10px; }
+  padding-bottom: 0.625em; }
   .harbour-template h1:after {
     opacity: 0;
     content: "";
     display: block;
     position: absolute;
-    height: 4px;
+    height: 0.20em;
     background-color: #EE0043;
     width: 100%;
-    margin-top: -10px;
+    margin-top: -0.625em;
     transition: width .3s ease-out;
     animation-name: h1-underline;
     animation-delay: .5s;
@@ -131,21 +133,20 @@ body {
 .harbour-template h2 {
   position: relative;
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 1.25em;
   color: #333;
-  margin: 0 0 20px 0;
+  margin: 0 0 1em 0;
   text-transform: uppercase;
-  display: inline-block;
-  padding-bottom: 10px; }
+  display: inline-block; }
   .harbour-template h2:after {
     opacity: 1;
     content: "";
     display: block;
     position: absolute;
-    height: 4px;
+    height: 0.20em;
     background-color: #EE0043;
-    width: 60px;
-    margin-top: 5px; }
+    width: 3.75em;
+    margin-top: 0.313em; }
 
 .harbour-template_08-01 .image {
   position: fixed;
@@ -171,10 +172,9 @@ body {
   height: 30%;
   padding: 2%; }
   .harbour-template_08-01 .textbox h1 {
-    color: #333;
-    margin: 0 0 20px 0; }
+    color: #333; }
   .harbour-template_08-01 .textbox p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 1.125em;
     color: #333;
-    margin: 0 0 10px 0; }
+    margin: 0 0 0.625em 0; }

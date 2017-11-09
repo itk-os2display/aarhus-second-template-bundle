@@ -45,7 +45,6 @@
         }
         h1 {
             color: $color-grey;
-            margin: 0 0 20px 0;
         }
         .data {
             display: flex;
@@ -53,14 +52,13 @@
             flex-wrap: wrap;
             align-items: baseline;
             justify-content: flex-start;
-            margin-bottom: 30px;
+            margin-bottom: 1.875em;
             .data-type {
                 color: $color-pink;
                 font-family: $font-family-black;
-                font-size: 35px;
-                line-height: 35px;
+                font-size: 2.188em;
+                line-height: 1em;
                 flex-basis: 30%;
-                // justify-content: flex-end;
                 span {
                     margin: 0;
                     padding: 0;
@@ -69,10 +67,9 @@
             .data-amount {
                 color: $color-grey;
                 font-family: $font-family-black;
-                font-size: 100px;
-                line-height: 100px;
+                font-size: 6.250em;
+                line-height: 1em;
                 flex-basis: 70%;
-                // justify-content: flex-end;
                 text-align: right;
                 span {
                     margin: 0;
@@ -87,11 +84,11 @@
             font-family: $font-family-regular;
             font-size: $font-size-p;
             color: $color-grey;
-            margin: 0 0 10px 0;
+            margin: 0 0 0.625em 0;
         }
     }
     .facttext {
-        margin: 40px 30px;
+        margin: 2.5em 1.875em;
         text-align: center;
     }
 }

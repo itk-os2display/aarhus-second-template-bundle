@@ -9,9 +9,11 @@ $color-shadow:      rgba(0,0,0,.26);
 // Fonts
 $font-family-regular: Arial, Helvetica, sans-serif;
 $font-family-black: "Arial Black", Arial, Helvetica, sans-serif;
-$font-size-h1: 30px;
-$font-size-h2: 20px;
-$font-size-p: 18px;
+$font-base: 16px;
+$font-size-h1: 1.875em;
+$font-size-h2: 1.25em;
+$font-size-p: 1.125em;
+$font-line-height-h1: 1.125em;
 
 // Shadow
 $shadow-box: 0 4px 16px $color-shadow;
