@@ -167,12 +167,12 @@ body {
             margin-top: 0.313em;
         } */ }
 
-.harbour-template_05-01 .image {
+.harbour-template_03-01 .image {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 45%;
+  top: -5%;
+  left: -5%;
+  height: 85%;
+  width: 110%;
   background-size: cover;
   background-position-y: bottom;
   opacity: 0;
@@ -181,50 +181,81 @@ body {
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  z-index: 2; }
+  z-index: 2;
+  filter: blur(0px); }
 
-.harbour-template_05-01 .textbox {
+.harbour-template_03-01 .title {
   position: fixed;
-  top: 0%;
-  left: 45%;
-  width: 51%;
-  height: 100%;
+  top: 10%;
+  left: 2%;
+  z-index: 50; }
+  .harbour-template_03-01 .title h1 {
+    color: #fff;
+    font-size: 2.188em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); }
+
+.harbour-template_03-01 .textbox {
+  position: fixed;
+  width: 27%;
+  height: 30%;
   padding: 2%;
   background: #f5f5f5;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.26);
-  z-index: 50; }
-  .harbour-template_05-01 .textbox h1 {
+  z-index: 50;
+  top: 43%;
+  opacity: 0;
+  animation-name: box-reveal;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; }
+  .harbour-template_03-01 .textbox.box1 {
+    left: 2%; }
+  .harbour-template_03-01 .textbox.box2 {
+    left: 35%;
+    animation-delay: .2s; }
+  .harbour-template_03-01 .textbox.box3 {
+    left: 68%;
+    animation-delay: .4s; }
+  .harbour-template_03-01 .textbox h1 {
     color: #333; }
-  .harbour-template_05-01 .textbox .data {
+  .harbour-template_03-01 .textbox .data {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: flex-start;
     margin-bottom: 1.875em; }
-    .harbour-template_05-01 .textbox .data .data-type {
+    .harbour-template_03-01 .textbox .data .data-type {
       color: #EE0043;
       font-family: "Arial Black", Arial, Helvetica, sans-serif;
-      font-size: 2.813em;
+      font-size: 1.25em;
       line-height: 1em;
-      flex-basis: 20%; }
-      .harbour-template_05-01 .textbox .data .data-type span {
+      flex-basis: 30%; }
+      .harbour-template_03-01 .textbox .data .data-type span {
         margin: 0;
         padding: 0; }
-    .harbour-template_05-01 .textbox .data .data-amount {
+    .harbour-template_03-01 .textbox .data .data-amount {
       color: #333;
       font-family: "Arial Black", Arial, Helvetica, sans-serif;
-      font-size: 12.5em;
+      font-size: 5em;
       line-height: 1em;
-      flex-basis: 80%;
+      flex-basis: 70%;
       text-align: right; }
-      .harbour-template_05-01 .textbox .data .data-amount span {
+      .harbour-template_03-01 .textbox .data .data-amount span {
         margin: 0;
         padding: 0; }
-    .harbour-template_05-01 .textbox .data .data-location {
+    .harbour-template_03-01 .textbox .data .data-location {
       width: 100%; }
-  .harbour-template_05-01 .textbox p {
+  .harbour-template_03-01 .textbox p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.125em;
     color: #333;
     margin: 0 0 0.625em 0; }
+
+.harbour-template_03-01 .facttext {
+  margin: 2.5em 1.875em;
+  text-align: left; }
+  .harbour-template_03-01 .facttext .def {
+    font-family: "Arial Black", Arial, Helvetica, sans-serif;
+    color: #EE0043; }

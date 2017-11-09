@@ -148,6 +148,25 @@ body {
     width: 3.75em;
     margin-top: 0.313em; }
 
+.harbour-template h3 {
+  position: relative;
+  font-family: "Arial Black", Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  color: #333;
+  margin: 0 0 1em 0;
+  text-transform: uppercase;
+  display: inline-block;
+  /* &:after {
+            opacity: 1;
+            content: "";
+            display: block;
+            position: absolute;
+            height: 0.20em;
+            background-color: $color-pink;
+            width: 3.75em;
+            margin-top: 0.313em;
+        } */ }
+
 .harbour-template_05-01 .image {
   position: fixed;
   top: -5%;

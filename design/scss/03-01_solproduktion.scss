@@ -1,0 +1,111 @@
+@import "_main-styles";
+
+// template 03-01_solproduktion
+.harbour-template_03-01 {
+    .image {
+        position: fixed;
+        top: -5%;
+        left: -5%;
+        height: 85%;
+        width: 110%;
+        background-size: cover;
+        background-position-y: bottom;
+        opacity: 0;
+        animation-name: box-reveal;
+        animation-duration: 0.7s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        z-index: 2;
+        filter: blur(0px);
+    }
+    .title {
+        position: fixed;
+        top: 10%;
+        left: 2%;
+        z-index: 50;
+        h1 {
+            color: $color-white;
+            font-size: 2.188em;
+            text-shadow: $shadow-text;
+        }
+    }
+    .textbox {
+        position: fixed;
+        width: 27%;
+        height: 30%;
+        padding: 2%;
+        background: $color-light-grey;
+        box-shadow: $shadow-box;
+        z-index: 50;
+        top: 43%;
+        opacity: 0;
+        animation-name: box-reveal;
+        animation-duration: 0.7s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        &.box1 {
+            left: 2%;
+        }
+        &.box2 {
+            left: 35%;
+            animation-delay: .2s;
+        }
+        &.box3 {
+            left: 68%;
+            animation-delay: .4s;
+        }
+        h1 {
+            color: $color-grey;
+        }
+        .data {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: flex-start;
+            margin-bottom: 1.875em;
+            .data-type {
+                color: $color-pink;
+                font-family: $font-family-black;
+                font-size: 1.25em;
+                line-height: 1em;
+                flex-basis: 30%;
+                span {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .data-amount {
+                color: $color-grey;
+                font-family: $font-family-black;
+                font-size: 5em;
+                line-height: 1em;
+                flex-basis: 70%;
+                text-align: right;
+                span {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+            .data-location {
+                width: 100%;
+            }
+        }
+        p {
+            font-family: $font-family-regular;
+            font-size: $font-size-p;
+            color: $color-grey;
+            margin: 0 0 0.625em 0;
+        }
+    }
+    .facttext {
+        margin: 2.5em 1.875em;
+        text-align: left;
+        .def {
+            font-family: $font-family-black;
+            color: $color-pink;
+        }
+    }
+}

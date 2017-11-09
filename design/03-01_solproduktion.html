@@ -6,21 +6,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Havneskærm os2display templates</title>
-    <link href="./css/04-01_sensor-data.css" rel="stylesheet">
+    <link href="./css/03-01_solproduktion.css" rel="stylesheet">
     <style>
         /* Slide variables */
         :root {
-            --background-color: #3661D8; /* aak-blue: #3661D8; */
-            --background-image: none;
-            --background-position: center;
-            --background-blur: blur(5px);
+            --background-color: #f5f5f5; /* aak-blue: #3661D8; */
+            --background-image: url('./img/andreas-gucklhorn-285602.jpg');
+            --background-position: top;
+            --background-blur: blur(0px);
             --slide-duration: 30s;            
         }
     </style>
 </head>
 
 <body>
-    <div class="harbour-template harbour-template_05-01 container" style="transform: scale(1.0); transform-origin: 0% 0% 0px;">
+    <div class="harbour-template harbour-template_03-01 container" style="transform: scale(1.0); transform-origin: 0% 0% 0px;">
         <div class="item progress">
             <span class="progress-bar" style="animation-duration: var(--slide-duration);"></span>
         </div>
@@ -30,52 +30,44 @@
         <div class="item time">
             <p>14:18</p> <!-- TODO: Dynamic time of day -->
         </div>
+        <div class="item title">
+            <h1>Aarhus solcelleres<br>energi produktion</h1>
+        </div>
         <div class="item textbox box1">
-            <h2>Temperatur</h2>
+            <h3>Lige nu</h3>
             <div class="data">
                 <div class="data-type">
-                    <span>C°</span>
+                    <span>KW</span>
                 </div>
                 <div class="data-amount">
-                    <span class="counter" data-count="9">0</span>° <!-- TODO: Dynamic amount -->
+                    <span class="counter" data-count="36">0</span> <!-- TODO: Dynamic amount -->
                 </div>
             </div>
         </div>
         <div class="item textbox box2">
-            <h2>Dagslys</h2>
+            <h3>I dag</h3>
             <div class="data">
                 <div class="data-type">
-                    <span>LUX</span>
+                    <span>KWh</span>
                 </div>
                 <div class="data-amount">
-                    <span class="counter" data-count="154">0</span> <!-- TODO: Dynamic amount -->
+                    <span class="counter" data-count="276">0</span> <!-- TODO: Dynamic amount -->
                 </div>
             </div>
         </div>
         <div class="item textbox box3">
-            <h2>Lydniveau</h2>
+            <h3>I går</h3>
             <div class="data">
                 <div class="data-type">
-                    <span>dB</span>
+                    <span>KWh</span>
                 </div>
                 <div class="data-amount">
-                    <span class="counter" data-count="47">0</span> <!-- TODO: Dynamic amount -->
-                </div>
-            </div>
-        </div>
-        <div class="item textbox box4">
-            <h2>Lydniveau</h2>
-            <div class="data">
-                <div class="data-type">
-                    <span>%</span>
-                </div>
-                <div class="data-amount">
-                    <span class="counter" data-count="72">0</span> <!-- TODO: Dynamic amount -->
+                    <span class="counter" data-count="871">0</span> <!-- TODO: Dynamic amount -->
                 </div>
             </div>
         </div>
         <div class="item footer medium">
-            <p class="facttext"><strong>Aktuelle data fra havnepladsen - Målinger leveret af Smart Aarhus</strong></p>
+            <p class="facttext"><span class="def">Fakta: </span><strong>Den samlede årlige produktion vil kunne holde midtbyens julebelysning tændt i 150 dage.</strong></p>
             <img class="logo light" src="./img/AAK_01_venstrejusteret_sh.svg" alt="Aarhus kommune">
         </div>
     </div>
@@ -84,11 +76,26 @@
         $('.counter').each(function() {
             var $this = $(this),
             countTo = $this.attr('data-count');
+            countDuration = function() {
+                calcCount = ((countTo/100)*1000)
+                if ( calcCount < 1000 ) {
+                    console.log(countTo + "#1" + calcCount);
+                    return calcCount;
+                }
+                else if (calcCount > 1000 || calcCount < 2000) {
+                    console.log(countTo + "#2" + calcCount/3);
+                    return calcCount/2;
+                }
+                else {
+                    console.log(countTo + "#3" + calcCount/6);
+                    return calcCount/3;
+                }
+            }
             $({ countNum: $this.text()}).animate({
                 countNum: countTo
             },
             {
-                duration: ((countTo/100)*1000)+250,
+                duration: countDuration(),
                 easing:'linear',
                 step: function() {
                     $this.text(Math.floor(this.countNum));

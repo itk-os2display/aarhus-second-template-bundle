@@ -152,4 +152,23 @@ body {
             margin-top: 0.313em;
         }
     }
+    h3{
+        position: relative;
+        font-family: $font-family-black;
+        font-size: $font-size-h2;
+        color: $color-grey;
+        margin: 0 0 1em 0;
+        text-transform: uppercase;
+        display: inline-block;
+        /* &:after {
+            opacity: 1;
+            content: "";
+            display: block;
+            position: absolute;
+            height: 0.20em;
+            background-color: $color-pink;
+            width: 3.75em;
+            margin-top: 0.313em;
+        } */
+    }
 }
