@@ -9,8 +9,7 @@
   0% {
     width: 0; }
   100% {
-    width: 100%;
-    transform: translateY(0px); } }
+    width: 100%; } }
 
 @keyframes h1-underline {
   0% {
@@ -30,6 +29,20 @@
     opacity: 1;
     width: 5em;
     margin-top: 0.625em; } }
+
+@keyframes text-hide {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    display: none; } }
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
 
 html, body {
   margin: 0;
@@ -57,12 +70,11 @@ body {
       width: 0%;
       height: 0.188em;
       background-color: #EE0043;
-      transition: width .3s ease-out;
       animation-name: progress-bar;
       animation-duration: 30s;
       animation-delay: 0.2s;
       animation-iteration-count: 1;
-      animation-timing-function: ease-out;
+      animation-timing-function: linear;
       animation-fill-mode: forwards; }
   .harbour-template.container .item.fade {
     position: fixed;

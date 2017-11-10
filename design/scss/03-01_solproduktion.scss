@@ -103,9 +103,26 @@
     .facttext {
         margin: 2.5em 1.875em;
         text-align: left;
+        position: absolute;
         .def {
             font-family: $font-family-black;
             color: $color-pink;
+        }
+        $text-animation-duration: .7s;
+        $text-visible-duration: 9.3s;
+        &.two, &.tree {
+            opacity: 0;
+            transform: translateY(10px);
+            
+        } 
+        &.one {
+            animation: text-hide $text-animation-duration $text-visible-duration 1 ease-out forwards;
+        }
+        &.two {
+            animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration 1 ease-out forwards, text-hide $text-animation-duration $text-visible-duration * 2 1 ease-out forwards;
+        }
+        &.tree {
+            animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration * 2 1 ease-out forwards;
         }
     }
 }

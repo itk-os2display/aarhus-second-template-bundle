@@ -67,7 +67,9 @@
             </div>
         </div>
         <div class="item footer medium">
-            <p class="facttext"><span class="def">Fakta: </span><strong>Den samlede årlige produktion vil kunne holde midtbyens julebelysning tændt i 150 dage.</strong></p>
+            <p class="facttext one"><span class="def">Fakta: </span><strong>Den samlede årlige produktion vil kunne holde midtbyens julebelysning tændt i 150 dage.</strong></p>
+            <p class="facttext two"><span class="def">Fakta: </span><strong>I 2016 var kommunes samlede antal m2 solpaneler på 3402</strong></p>
+            <p class="facttext tree"><span class="def">Fakta: </span><strong>Ved fuld udnyttelse af kommunens solpaneler vil den daglige produktion kunne drive Letbanen.</strong></p>
             <img class="logo light" src="./img/AAK_01_venstrejusteret_sh.svg" alt="Aarhus kommune">
         </div>
     </div>
@@ -78,17 +80,17 @@
             countTo = $this.attr('data-count');
             countDuration = function() {
                 calcCount = ((countTo/100)*1000)
-                if ( calcCount < 1000 ) {
+                if ( countTo < 250 ) {
                     console.log(countTo + "#1" + calcCount);
                     return calcCount;
                 }
-                else if (calcCount > 1000 || calcCount < 2000) {
+                else if ( countTo > 250 && countTo < 500) {
                     console.log(countTo + "#2" + calcCount/3);
-                    return calcCount/2;
+                    return calcCount/3;
                 }
                 else {
                     console.log(countTo + "#3" + calcCount/6);
-                    return calcCount/3;
+                    return calcCount/6;
                 }
             }
             $({ countNum: $this.text()}).animate({

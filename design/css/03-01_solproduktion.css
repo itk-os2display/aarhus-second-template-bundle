@@ -9,8 +9,7 @@
   0% {
     width: 0; }
   100% {
-    width: 100%;
-    transform: translateY(0px); } }
+    width: 100%; } }
 
 @keyframes h1-underline {
   0% {
@@ -30,6 +29,20 @@
     opacity: 1;
     width: 5em;
     margin-top: 0.625em; } }
+
+@keyframes text-hide {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    display: none; } }
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: translateY(0px); } }
 
 html, body {
   margin: 0;
@@ -57,12 +70,11 @@ body {
       width: 0%;
       height: 0.188em;
       background-color: #EE0043;
-      transition: width .3s ease-out;
       animation-name: progress-bar;
       animation-duration: 30s;
       animation-delay: 0.2s;
       animation-iteration-count: 1;
-      animation-timing-function: ease-out;
+      animation-timing-function: linear;
       animation-fill-mode: forwards; }
   .harbour-template.container .item.fade {
     position: fixed;
@@ -255,7 +267,17 @@ body {
 
 .harbour-template_03-01 .facttext {
   margin: 2.5em 1.875em;
-  text-align: left; }
+  text-align: left;
+  position: absolute; }
   .harbour-template_03-01 .facttext .def {
     font-family: "Arial Black", Arial, Helvetica, sans-serif;
     color: #EE0043; }
+  .harbour-template_03-01 .facttext.two, .harbour-template_03-01 .facttext.tree {
+    opacity: 0;
+    transform: translateY(10px); }
+  .harbour-template_03-01 .facttext.one {
+    animation: text-hide 0.7s 9.3s 1 ease-out forwards; }
+  .harbour-template_03-01 .facttext.two {
+    animation: text-reveal 0.7s 10s 1 ease-out forwards, text-hide 0.7s 18.6s 1 ease-out forwards; }
+  .harbour-template_03-01 .facttext.tree {
+    animation: text-reveal 0.7s 19.3s 1 ease-out forwards; }
