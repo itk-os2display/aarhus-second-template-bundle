@@ -15,6 +15,13 @@ body {
     font-family: $font-family-regular; 
     font-size: $font-base;   
 }
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
 .harbour-template {
 
     &.container {
