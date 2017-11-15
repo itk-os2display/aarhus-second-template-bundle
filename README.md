@@ -1,4 +1,4 @@
-# havneskaerm-template-bundle
+# aarhus-second-template-bundle
 
 ## Design
 View invision prototype design here: https://projects.invisionapp.com/share/G3EB0NU49#/screens

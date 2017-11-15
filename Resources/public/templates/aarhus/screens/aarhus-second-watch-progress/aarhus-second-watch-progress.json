@@ -1,0 +1,12 @@
+{
+  "id": "aarhus-second-watch-progress",
+  "type": "screen",
+  "name": "Aarhus: Fuld skærm",
+  "icon": "aarhus-second-watch-progress.png",
+  "paths": {
+    "live": "aarhus-second-watch-progress-live.html",
+    "edit": "aarhus-second-watch-progress-edit.html",
+    "css": "aarhus-second-watch-progress.css"
+  },
+  "orientation": "landscape"
+}

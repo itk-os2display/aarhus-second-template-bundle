@@ -1,6 +1,6 @@
 <?php
 
-namespace Itk\HavneskaermTemplateBundle\DependencyInjection;
+namespace Itk\AarhusSecondTemplateBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Os2Display\CoreBundle\DependencyInjection\Os2DisplayBaseExtension;
@@ -10,7 +10,7 @@ use Os2Display\CoreBundle\DependencyInjection\Os2DisplayBaseExtension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class ItkHavneskaermTemplateExtension extends Os2DisplayBaseExtension
+class ItkAarhuSecondTemplateExtension extends Os2DisplayBaseExtension
 {
     /**
      * {@inheritdoc}
