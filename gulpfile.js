@@ -33,7 +33,8 @@ var templates = {
       'aarhus-second-watch-progress'
     ],
     'slides': [
-      'aarhus-second-image-text'
+      'aarhus-second-image-text',
+      'aarhus-second-image-text-right'
     ]
   }
 };
