@@ -1,17 +1,17 @@
 {
-  "id": "aarhus-second-sensor-db",
+  "id": "aarhus-second-sensor-single",
   "theme": "aarhus-second",
   "tags": [
     "Aarhus"
   ],
   "type": "slide",
-  "name": "Aarhus: Sensor db",
-  "icon": "aarhus-second-sensor-db.png",
+  "name": "Aarhus: Sensor single",
+  "icon": "aarhus-second-sensor-single.png",
   "paths": {
-    "live": "aarhus-second-sensor-db.html",
-    "edit": "aarhus-second-sensor-db-edit.html",
-    "preview": "aarhus-second-sensor-db-edit.html",
-    "css": "aarhus-second-sensor-db.css",
+    "live": "aarhus-second-sensor-single.html",
+    "edit": "aarhus-second-sensor-single-edit.html",
+    "preview": "aarhus-second-sensor-single-edit.html",
+    "css": "aarhus-second-sensor-single.css",
     "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
   },
   "orientation": "landscape",

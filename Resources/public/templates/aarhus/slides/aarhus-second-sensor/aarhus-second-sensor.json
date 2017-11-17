@@ -1,0 +1,39 @@
+{
+  "id": "aarhus-second-sensor",
+  "theme": "aarhus-second",
+  "tags": [
+    "Aarhus"
+  ],
+  "type": "slide",
+  "name": "Aarhus: Sensorer",
+  "icon": "aarhus-second-sensor.png",
+  "paths": {
+    "live": "aarhus-second-sensor.html",
+    "edit": "aarhus-second-sensor-edit.html",
+    "preview": "aarhus-second-sensor-edit.html",
+    "css": "aarhus-second-sensor.css",
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "itk-aarhus-data",
+  "media_type": "image",
+  "script_id": "itk-aarhus-second-sensor",
+  "ideal_dimensions": {
+    "width": "900",
+    "height": "540"
+  },
+  "empty_options": {
+    "fontsize": 16,
+    "text": "<p>Aktuelt på havnepladsen - Målinger leveret af Smart Aarhus</p>"
+  },
+  "tools": [
+    {
+      "name": "Billede",
+      "id": "background-editor"
+    },
+    {
+      "name": "Tekster",
+      "id": "quill-text"
+    }
+  ]
+}

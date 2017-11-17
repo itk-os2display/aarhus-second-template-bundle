@@ -12,7 +12,7 @@ var gutil = require('gulp-util');
 /* Helper functions */
 
 // Handling errors
-var onError = function (err) {  
+var onError = function (err) {
   gutil.log;
   console.log(err);
 };
@@ -39,7 +39,7 @@ gulp.task('scss', function(){
 });
 
 // Watch task for easy development
-gulp.task('watch', [`default`], function(){
+gulp.task('watch', ['default'], function(){
   gulp.watch('scss/**/*.scss', ['scss']);
 })
 
