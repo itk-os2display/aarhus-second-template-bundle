@@ -1,16 +1,9 @@
-@import "aarhus-second";
+@import "_main-styles";
 
 // template 05-01_sensor-data-enkelt
-.aarhus-second_05-01 {
-    .item.footer {
-        z-index: 2;
-        .logo {
-            bottom: 25%;
-        }
-    }
-
+.harbour-template_05-01 {
     .image {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         height: 100%;
@@ -26,15 +19,15 @@
         z-index: 2;
     }
     .textbox {
-        position: absolute;
-        top: 0;
+        position: fixed;
+        top: 0%;
         left: 45%;
-        width: 55%;
+        width: 51%;
         height: 100%;
-        padding: 4%;
+        padding: 2%;
         background: $color-light-grey;
         box-shadow: $shadow-box;
-        z-index: 3;
+        z-index: 50;
         h1 {
             color: $color-grey;
         }

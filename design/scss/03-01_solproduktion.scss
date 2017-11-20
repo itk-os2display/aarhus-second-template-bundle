@@ -1,7 +1,7 @@
 @import "_main-styles";
 
 // template 03-01_solproduktion
-.aarhus-second_03-01 {
+.harbour-template_03-01 {
     .image {
         position: fixed;
         top: -5%;
@@ -113,8 +113,8 @@
         &.two, &.tree {
             opacity: 0;
             transform: translateY(10px);
-
-        }
+            
+        } 
         &.one {
             animation: text-hide $text-animation-duration $text-visible-duration 1 ease-out forwards;
         }

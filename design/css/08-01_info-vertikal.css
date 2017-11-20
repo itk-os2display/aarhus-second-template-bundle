@@ -59,18 +59,18 @@ body {
 .js-loading *:after {
   animation-play-state: paused !important; }
 
-.aarhus-second.container {
+.harbour-template.container {
   width: 100%;
   height: 100%;
   background-color: #f5f5f5; }
-  .aarhus-second.container .item.progress {
+  .harbour-template.container .item.progress {
     position: fixed;
     width: 100%;
     height: 0.188em;
     background-color: rgba(245, 245, 245, 0.8);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     z-index: 100; }
-    .aarhus-second.container .item.progress .progress-bar {
+    .harbour-template.container .item.progress .progress-bar {
       display: block;
       width: 0%;
       height: 0.188em;
@@ -81,7 +81,7 @@ body {
       animation-iteration-count: 1;
       animation-timing-function: linear;
       animation-fill-mode: forwards; }
-  .aarhus-second.container .item.fade {
+  .harbour-template.container .item.fade {
     position: fixed;
     top: 0;
     left: 0;
@@ -89,38 +89,38 @@ body {
     height: 25%;
     background: linear-gradient(to bottom, rgba(51, 51, 51, 0.55) 0%, rgba(51, 51, 51, 0) 100%);
     z-index: 25; }
-  .aarhus-second.container .item.time {
+  .harbour-template.container .item.time {
     position: absolute;
     top: 2%;
     left: 2%;
     z-index: 100; }
-    .aarhus-second.container .item.time p {
+    .harbour-template.container .item.time p {
       font-family: "Arial Black", Arial, Helvetica, sans-serif;
       font-size: 1.125em;
       color: #fff;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
       margin: 0;
       padding: 0; }
-    .aarhus-second.container .item.time.dark p {
+    .harbour-template.container .item.time.dark p {
       color: #333;
       text-shadow: none; }
-  .aarhus-second.container .item.footer {
+  .harbour-template.container .item.footer {
     height: auto;
     width: 100%;
     position: fixed;
     bottom: 0;
     background: #f5f5f5;
     z-index: 3; }
-    .aarhus-second.container .item.footer.small {
+    .harbour-template.container .item.footer.small {
       height: 12%; }
-    .aarhus-second.container .item.footer.medium {
+    .harbour-template.container .item.footer.medium {
       height: 25%; }
-    .aarhus-second.container .item.footer .logo {
+    .harbour-template.container .item.footer .logo {
       position: fixed;
       left: 2%;
       bottom: 3%; }
 
-.aarhus-second h1 {
+.harbour-template h1 {
   position: relative;
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.875em;
@@ -130,7 +130,7 @@ body {
   text-transform: uppercase;
   display: inline-block;
   padding-bottom: 0.625em; }
-  .aarhus-second h1:after {
+  .harbour-template h1:after {
     opacity: 0;
     content: "";
     display: block;
@@ -147,7 +147,7 @@ body {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards; }
 
-.aarhus-second h2 {
+.harbour-template h2 {
   position: relative;
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.25em;
@@ -155,7 +155,7 @@ body {
   margin: 0 0 1em 0;
   text-transform: uppercase;
   display: inline-block; }
-  .aarhus-second h2:after {
+  .harbour-template h2:after {
     opacity: 1;
     content: "";
     display: block;
@@ -165,7 +165,7 @@ body {
     width: 3.75em;
     margin-top: 0.313em; }
 
-.aarhus-second h3 {
+.harbour-template h3 {
   position: relative;
   font-family: "Arial Black", Arial, Helvetica, sans-serif;
   font-size: 1.25em;
@@ -184,7 +184,7 @@ body {
             margin-top: 0.313em;
         } */ }
 
-.aarhus-second_08-01 .image {
+.harbour-template_08-01 .image {
   position: fixed;
   right: 0;
   width: 42%;
@@ -200,16 +200,16 @@ body {
   animation-fill-mode: forwards;
   z-index: 50; }
 
-.aarhus-second_08-01 .textbox {
+.harbour-template_08-01 .textbox {
   position: fixed;
   top: 8%;
   left: 0;
   width: 48%;
   height: 30%;
   padding: 2%; }
-  .aarhus-second_08-01 .textbox h1 {
+  .harbour-template_08-01 .textbox h1 {
     color: #333; }
-  .aarhus-second_08-01 .textbox p {
+  .harbour-template_08-01 .textbox p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.125em;
     color: #333;

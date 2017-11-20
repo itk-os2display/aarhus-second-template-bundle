@@ -35,7 +35,8 @@ var templates = {
     'slides': [
       'aarhus-second-image-text',
       'aarhus-second-image-text-right',
-      'aarhus-second-sensor'
+      'aarhus-second-sensor',
+      'aarhus-second-sensor-single'
     ]
   }
 };
