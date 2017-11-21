@@ -5,26 +5,27 @@
     "Aarhus"
   ],
   "type": "slide",
-  "name": "Aarhus: Sensor single",
+  "name": "Aarhus: Sensor enkelt",
   "icon": "aarhus-second-sensor-single.png",
   "paths": {
     "live": "aarhus-second-sensor-single.html",
     "edit": "aarhus-second-sensor-single-edit.html",
     "preview": "aarhus-second-sensor-single-edit.html",
     "css": "aarhus-second-sensor-single.css",
-    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor.js"
   },
   "orientation": "landscape",
-  "slide_type": "base",
+  "slide_type": "itk-aarhus-data",
   "media_type": "image",
-  "script_id": "base",
+  "script_id": "itk-aarhus-second-sensor",
   "ideal_dimensions": {
     "width": "900",
     "height": "540"
   },
   "empty_options": {
     "fontsize": 16,
-    "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>"
+    "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>",
+    "data_function": ""
   },
   "tools": [
     {
@@ -32,8 +33,8 @@
       "id": "background-editor"
     },
     {
-      "name": "Tekster",
-      "id": "quill-text"
+      "name": "Datakilde",
+      "id": "itk-data-source-picker"
     }
   ]
 }

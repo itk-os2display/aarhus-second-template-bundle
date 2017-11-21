@@ -20,7 +20,8 @@
   "script_id": "itk-aarhus-second-sensor",
   "ideal_dimensions": {
     "width": "900",
-    "height": "540"
+    "height": "540",
+    "data_function": ""
   },
   "empty_options": {
     "fontsize": 16,
@@ -34,6 +35,10 @@
     {
       "name": "Tekster",
       "id": "quill-text"
+    },
+    {
+      "name": "Datakilde",
+      "id": "itk-data-source-picker"
     }
   ]
 }
