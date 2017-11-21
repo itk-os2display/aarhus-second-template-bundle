@@ -1,0 +1,102 @@
+@import "../../sass/aarhus-second";
+
+.aarhus-second-sensor-single {
+  .item.footer {
+    z-index: 1;
+
+    .logo {
+      bottom: 25%;
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 45%;
+    background-size: cover;
+    background-position-y: bottom;
+    opacity: 0;
+    animation-name: box-reveal;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    z-index: 1;
+  }
+
+  .textbox {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    height: 100%;
+    width: 55%;
+    background: $color-light-grey;
+    box-shadow: $shadow-box;
+    z-index: 2;
+
+    .item {
+      width: 92%;
+      height: 93%;
+      margin: 4%;
+    }
+
+    h1 {
+      color: $color-grey;
+      margin: 0;
+    }
+
+    .data {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: flex-start;
+      margin-bottom: 1.875em;
+
+      .data-type {
+        color: $color-pink;
+        font-family: $font-family-black;
+        font-size: 2.813em;
+        line-height: 1em;
+        flex-basis: 20%;
+        margin-bottom: 1em;
+
+        span {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .data-amount {
+        color: $color-grey;
+        font-family: $font-family-black;
+        font-size: 11em;
+        line-height: 1em;
+        flex-basis: 80%;
+        text-align: right;
+
+        span {
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .data-location {
+        width: 100%;
+      }
+    }
+
+    .data-by {
+      width: 25%;
+    }
+
+    p {
+      font-family: $font-family-regular;
+      font-size: $font-size-p;
+      color: $color-grey;
+      margin: 0 0 0.625em 0;
+    }
+  }
+}

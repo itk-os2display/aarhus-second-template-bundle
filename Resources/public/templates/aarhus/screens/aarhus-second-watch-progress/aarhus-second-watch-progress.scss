@@ -1,0 +1,35 @@
+@import '../../../../../../design/scss/_variables.scss';
+
+.aarhus-second-watch-progress {
+  .watch {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 5;
+
+    font-family: $font-family-black;
+    font-size: $font-size-p;
+    color: $color-white;
+    text-shadow: $shadow-text;
+    margin: 0;
+    padding: 0;
+  }
+
+  & .progress {
+    display: block;
+    height: 0.188em;
+    background-color: rgba(245,245,245,0.8);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.26);
+    z-index: 999;
+    position: relative;
+
+    .progress-box {
+      display: none;
+    }
+
+    .progress-bar {
+      height: 0.188em;
+      background-color: $color-pink;
+    }
+  }
+}

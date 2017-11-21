@@ -1,0 +1,65 @@
+// Box reveal animation
+@keyframes box-reveal {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*
+@keyframes progress-bar {
+    0% {
+        width: 0;
+
+    }
+    100% {
+        width: 100%;
+    }
+}
+*/
+@keyframes h1-underline {
+    0% {
+        opacity: 0;
+        width: 100%;
+    }
+    40% {
+        opacity: 1;
+        width: 100%;
+        margin-top: 0.938em;
+        height: 0.375em;
+    }
+    70% {
+        opacity: 1;
+        width: 100%;
+        margin-top: 0.625em;
+        height: 0.2em;
+    }
+    100% {
+        opacity: 1;
+        width: 5em;
+        margin-top: 0.625em;
+    }
+}
+@keyframes text-hide {
+    0% {
+        opacity: 1;
+
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes text-reveal {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

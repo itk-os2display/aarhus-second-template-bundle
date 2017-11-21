@@ -1,0 +1,39 @@
+{
+  "id": "aarhus-second-image-text",
+  "theme": "aarhus-second",
+  "tags": [
+    "Aarhus"
+  ],
+  "type": "slide",
+  "name": "Aarhus: Billede og tekst",
+  "icon": "aarhus-second-image-text.png",
+  "paths": {
+    "live": "aarhus-second-image-text.html",
+    "edit": "aarhus-second-image-text-edit.html",
+    "preview": "aarhus-second-image-text-edit.html",
+    "css": "aarhus-second-image-text.css",
+    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "900",
+    "height": "540"
+  },
+  "empty_options": {
+    "fontsize": 16,
+    "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>"
+  },
+  "tools": [
+    {
+      "name": "Billede",
+      "id": "background-editor"
+    },
+    {
+      "name": "Tekster",
+      "id": "quill-text"
+    }
+  ]
+}
