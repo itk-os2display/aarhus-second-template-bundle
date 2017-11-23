@@ -1,10 +1,11 @@
-<div class="aarhus-second aarhus-second-image-text-right aarhus-second--container">
+<div class="aarhus-second aarhus-second-image-text-right aarhus-second--container" data-ng-style="{'font-size': theStyle.fontsize}">
   <div class="item image" data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
   </div>
   <div class="item fade"></div>
-  <div class="item textbox" ng-bind-html="ikSlide.options.text">
+  <div class="item textbox">
+    <div class="textbox-content" ng-bind-html="ikSlide.options.text"></div>
   </div>
   <div class="item footer small">
-    <img class="logo" data-ng-src="{{ikSlide.path + '/img/AAK_01_venstrejusteret_sh.svg'}}" alt="Aarhus kommune">
+    <img class="logo" data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}" alt="Aarhus kommune">
   </div>
 </div>

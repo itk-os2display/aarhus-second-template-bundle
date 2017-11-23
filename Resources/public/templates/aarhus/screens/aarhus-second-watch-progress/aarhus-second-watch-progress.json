@@ -1,7 +1,7 @@
 {
   "id": "aarhus-second-watch-progress",
   "type": "screen",
-  "name": "Aarhus: Fuld skærm",
+  "name": "Aarhus: Fuld skærm med ur",
   "icon": "aarhus-second-watch-progress.png",
   "paths": {
     "live": "aarhus-second-watch-progress-live.html",
