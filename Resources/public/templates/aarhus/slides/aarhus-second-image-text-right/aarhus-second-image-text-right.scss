@@ -30,13 +30,17 @@
     left: 45%;
     width: 55%;
     height: 100%;
-    padding: 4%;
     background: $color-light-grey;
     box-shadow: $shadow-box;
     z-index: 3;
     h1 {
       color: $color-grey;
     }
+
+    .textbox-content {
+      padding: 4%;
+    }
+
     .data {
       display: flex;
       flex-direction: row;
