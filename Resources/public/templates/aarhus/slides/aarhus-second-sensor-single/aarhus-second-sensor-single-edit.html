@@ -1,25 +1,34 @@
-<div class="aarhus-second aarhus-second-sensor-single aarhus-second--container" data-ng-style="{'width': theStyle.width, 'height': theStyle.height, 'font-size': theStyle.fontsize}">
-  <div class="item image" data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
-  </div>
-  <div class="textbox">
-    <div class="item">
-      <h1>SENSORNAVN</h1>
-      <div class="data">
-        <div class="data-type">
-          <span>?</span>
-        </div>
-        <div class="data-amount">
-          <span class="counter">55</span>
-        </div>
-        <div class="data-location">
-          <p>Niveau målt ved STED kl. 12:00</p>
-        </div>
-      </div>
-      <p>Leveret af</p>
-      <img src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/smart-aarhus-logo.png" alt="Smart Aarhus" class="data-by">
+<div class="aarhus-second aarhus-second-sensor-single"
+     data-ng-style="{'width': theStyle.width, 'height': theStyle.height, 'font-size': theStyle.fontsize}">
+  <div class="aarhus-second--container">
+    <div class="item image"
+         data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
+      <div class="item fade"></div>
     </div>
-  </div>
-  <div class="item footer small">
-    <img class="logo" data-ng-src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_sh.svg" alt="Aarhus kommune">
+    <div class="textbox">
+      <div class="item">
+        <h1>SENSORNAVN</h1>
+        <div class="data">
+          <div class="data-type">
+            <span>?</span>
+          </div>
+          <div class="data-amount">
+            <span class="counter">55</span>
+          </div>
+          <div class="data-location">
+            <p>Niveau målt ved STED kl. 12:00</p>
+          </div>
+        </div>
+        <p>Leveret af</p>
+        <img
+            src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/smart-aarhus-logo.png"
+            alt="Smart Aarhus" class="data-by">
+      </div>
+    </div>
+    <div class="item footer small">
+    </div>
+    <img class="aarhus-second--logo"
+         data-ng-src="bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-image-text/img/AAK_01_venstrejusteret_sh.svg"
+         alt="Aarhus kommune">
   </div>
 </div>

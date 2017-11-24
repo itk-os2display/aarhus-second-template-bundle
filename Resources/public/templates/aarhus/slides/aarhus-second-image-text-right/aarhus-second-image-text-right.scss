@@ -82,4 +82,21 @@
       margin: 0 0 0.625em 0;
     }
   }
+
+  .footer.small {
+    &.aarhus-second-image-text-right--footer {
+      display: flex;
+      align-items: center;
+    }
+
+    .aarhus-second-image-text-right--footer-content {
+      height: 45%;
+      margin-left: 2%
+    }
+
+    .aarhus-second-image-text-right--logo {
+      height: 100%;
+      vertical-align: 0;
+    }
+  }
 }

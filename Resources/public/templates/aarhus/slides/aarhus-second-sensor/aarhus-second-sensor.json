@@ -39,6 +39,19 @@
     {
       "name": "Datakilde",
       "id": "itk-data-source-picker"
+    },
+    {
+      "name": "Farver",
+      "id": "itk-color-picker",
+      "config": {
+        "fields": [
+          {
+            "name": "Baggrundsfarve",
+            "field": "bgcolor",
+            "theme": "main"
+          }
+        ]
+      }
     }
   ]
 }

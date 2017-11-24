@@ -9,10 +9,6 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
     setup: function setupCalendarSlide(scope) {
       var slide = scope.ikSlide;
 
-      slide.counters = $('.slide-' + slide.uniqueId + ' .counter');
-
-      slide.counters.text("0");
-
       // Only show first image in array.
       if (slide.media_type === 'image' && slide.media.length > 0) {
         slide.currentImage = slide.media[0].image;
@@ -36,6 +32,8 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
      */
     run: function runCalendarSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-sensor slide: " + slide.title);
+
+      slide.counters = $('.slide-' + slide.uniqueId + ' .counter');
 
       slide.counters.text("0");
 

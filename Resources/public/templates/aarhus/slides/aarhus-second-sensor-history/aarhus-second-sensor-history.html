@@ -1,47 +1,37 @@
-<div class="aarhus-second aarhus-second-sensor-history aarhus-second--container" data-ng-style="{'font-size': theStyle.fontsize}">
-  <div class="item image" data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
-  </div>
-  <div class="item fade"></div>
-  <div class="item title">
-    <h1>Aarhus solcelleres<br>energi produktion</h1>
-  </div>
-  <div class="item textbox box1">
-    <h3>Lige nu</h3>
-    <div class="data">
-      <div class="data-type">
-        <span>KW</span>
-      </div>
-      <div class="data-amount">
-        <span class="counter" data-count="36">0</span> <!-- TODO: Dynamic amount -->
+<div class="aarhus-second aarhus-second-sensor-history"
+     data-ng-style="{'font-size': theStyle.fontsize}">
+  <div class="aarhus-second--container live">
+    <div class="item image"
+         data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
+      <div class="item fade"></div>
+    </div>
+    <div class="item title">
+      <h1>Aarhus solcelleres<br>energi produktion</h1>
+    </div>
+    <div class="item textbox box{{ $index + 1 }}"
+         data-ng-repeat="production in ikSlide.external_data">
+      <h3>{{ production.name }}</h3>
+      <div class="data">
+        <div class="data-type">
+          <span>{{ production.unit }}</span>
+        </div>
+        <div class="data-amount">
+          <span class="counter" data-count="{{production.value}}">0</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="item textbox box2">
-    <h3>I dag</h3>
-    <div class="data">
-      <div class="data-type">
-        <span>KWh</span>
-      </div>
-      <div class="data-amount">
-        <span class="counter" data-count="276">0</span> <!-- TODO: Dynamic amount -->
-      </div>
+    <div class="item footer medium">
+      <p class="facttext one"><span class="def">Fakta: </span><strong>Den
+        samlede årlige produktion vil kunne holde midtbyens julebelysning tændt
+        i 150 dage.</strong></p>
+      <p class="facttext two"><span class="def">Fakta: </span><strong>I 2016 var
+        kommunes samlede antal m2 solpaneler på 3402</strong></p>
+      <p class="facttext tree"><span class="def">Fakta: </span><strong>Ved fuld
+        udnyttelse af kommunens solpaneler vil den daglige produktion kunne
+        drive Letbanen.</strong></p>
     </div>
-  </div>
-  <div class="item textbox box3">
-    <h3>I går</h3>
-    <div class="data">
-      <div class="data-type">
-        <span>KWh</span>
-      </div>
-      <div class="data-amount">
-        <span class="counter" data-count="871">0</span> <!-- TODO: Dynamic amount -->
-      </div>
-    </div>
-  </div>
-  <div class="item footer medium">
-    <p class="facttext one"><span class="def">Fakta: </span><strong>Den samlede årlige produktion vil kunne holde midtbyens julebelysning tændt i 150 dage.</strong></p>
-    <p class="facttext two"><span class="def">Fakta: </span><strong>I 2016 var kommunes samlede antal m2 solpaneler på 3402</strong></p>
-    <p class="facttext tree"><span class="def">Fakta: </span><strong>Ved fuld udnyttelse af kommunens solpaneler vil den daglige produktion kunne drive Letbanen.</strong></p>
-    <img class="logo light" data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}" alt="Aarhus kommune">
+    <img class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}"
+         alt="Aarhus kommune">
   </div>
 </div>
