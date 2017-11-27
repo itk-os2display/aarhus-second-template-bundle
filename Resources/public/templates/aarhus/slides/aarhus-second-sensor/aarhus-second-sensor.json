@@ -30,11 +30,15 @@
   "tools": [
     {
       "name": "Billede",
-      "id": "background-editor"
+      "id": "background-editor",
+      "template": "bundles/itktemplateextension/apps/templateExtensionModule/itk-background-editor.html"
     },
     {
       "name": "Tekster",
-      "id": "quill-text"
+      "id": "itk-rich-text",
+      "config": {
+        "fontsize_enabled": false
+      }
     },
     {
       "name": "Datakilde",
