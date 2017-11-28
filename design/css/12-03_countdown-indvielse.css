@@ -179,6 +179,10 @@ body {
   text-transform: uppercase;
   display: inline-block; }
 
+@font-face {
+  font-family: 'Arial Black';
+  src: url("../fonts/arial_black-webfont.woff2") format("woff2"), url("../fonts/arial_black-webfont.woff") format("woff"), url("../fonts/arial_black-webfont.ttf") format("truetype"); }
+
 .tpl-container {
   background-color: #262626; }
 
