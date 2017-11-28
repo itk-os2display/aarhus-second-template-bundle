@@ -52,7 +52,7 @@ gulp.task('browserSync', function() {
 
 // Default task when running gulp
 gulp.task('default', function (callback) {
-  runSequence(['clean','scss', 'browserSync'],
+  runSequence(['clean','scss'],
     callback
   )
 })

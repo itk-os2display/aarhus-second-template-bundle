@@ -1,0 +1,94 @@
+@import "_main-styles-tpl-prefix";
+
+// template 12-03_countdown-indvielse
+.tpl {
+    &-container {
+        background-color: #262626;
+    }
+    &-image {
+        position: absolute;
+        top: -5%;
+        left: -5%;
+        height: 85%;
+        width: 110%;
+        background-size: cover;
+        background-position-y: bottom;
+        opacity: 0;
+        animation-name: box-reveal;
+        animation-duration: 0.7s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        z-index: 2;
+        filter: blur(0px);
+    }
+    &-title {
+        position: absolute;
+        top: 10%;
+        left: 2%;
+        z-index: 50;
+        &-h1 {
+            color: $color-white;
+            font-size: 2.188em;
+            text-shadow: $shadow-text;
+        }
+    }
+    &-countdown {
+        position: absolute;
+        top: 30%;
+        left: 2%;
+        width: 72%;
+        height: 30%;
+        background: #1D1D1D;
+        padding: 2% 12%;
+        &-clock {
+            text-align: center;
+            &.flip-clock-wrapper {
+                
+                ul {
+                    li {
+                        a {
+                            div {
+                                &.inn {
+                                    background-color: $color-white;
+                                    text-shadow: none;
+                                    color: #262626;
+                                }
+                            }
+                        }
+                    }
+                }
+                .flip-clock-divider {
+                    // visibility: hidden;
+                    color: $color-pink;
+                    &.hours, &.minutes, &.seconds {
+                        .flip-clock-label {
+                            left: 1.1em;
+                        }
+                    }
+                    .flip-clock-label {
+                        top: auto;
+                        bottom: -1.5em;
+                        right: auto;
+                        left: .1em;
+                        color: $color-pink;
+                        text-align: left;
+                        font-size: 2em;
+                        
+                    }
+                    .flip-clock-dot {
+                        visibility: hidden;
+                    }
+                }
+            }
+             
+        }
+    }
+    &-facttext {
+        margin: 2.5em 1.875em;
+        text-align: center;
+        $text-animation-duration: .7s;
+        $text-visible-duration: 9.3s;
+    }
+}
+    

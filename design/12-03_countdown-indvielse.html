@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Havneskærm os2display templates</title>
+        <link href="./css/12-03_countdown-indvielse.css" rel="stylesheet"/>
+        <link href="./css/flipclock.css" rel="stylesheet"/>
+        <style>
+            /* Slide variables */
+            :root {
+                --background-color: #f5f5f5; /* aak-blue: #3661D8; */
+                --background-image: url('./img/andreas-gucklhorn-285602.jpg');
+                --background-position: top;
+                --background-blur: blur(0px);
+                --slide-duration: 30s;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- TODO: Husk prefix af alle klasser med tpl-  -->
+
+        <div class="harbour-template harbour-template_08-01 tpl-container" style="">
+            <div class="tpl-item tpl-progress">
+                <span class="tpl-progress-bar" style="animation-duration: var(--slide-duration);"></span>
+            </div>
+            <div class="item image" style="background-color: var(--background-color); background-image: var(--background-image); background-position: var(--background-position); filter: var(--background-blur);">
+                </div>
+            <div class="tpl-item tpl-fade"></div>
+            <div class="tpl-item tpl-time">
+                <p>14:18</p>
+            </div>
+            <div class="tpl-item tpl-title">
+                <h1 class="tpl-h1 tpl-title-h1">Indvielse af havneskærmen</h1>
+            </div>
+            <div class="tpl-countdown">
+                <div class="tpl-countdown-clock"></div>
+            </div>
+            <div class="tpl-item tpl-footer tpl-footer-medium">
+                <p class="tpl-facttext"><strong>Vær med til indvielsen af Havneskærmen, her på pladsen den 1. december kl. 17.30.</strong></p>
+                <img class="tpl-footer-logo" src="./img/AAK_01_venstrejusteret_sh.svg" alt="Aarhus kommune">
+            </div>
+        </div>
+        <script src="./js/loaded.js"></script>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./js/flipclock.min.js"></script>
+        <script>
+
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+                // Set some date in the future. Consider months starting from 0 and timezones
+				var futureDate  = new Date(2017,11,1,10,0,0);
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.tpl-countdown-clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+                    countdown: true,
+                    language:'da-dk'
+				});
+			});
+		
+        </script>
+    </body>
+</html>
