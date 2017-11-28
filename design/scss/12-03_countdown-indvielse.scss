@@ -45,7 +45,7 @@
         &-clock {
             text-align: center;
             &.flip-clock-wrapper {
-                
+
                 ul {
                     li {
                         a {
@@ -75,14 +75,14 @@
                         color: $color-pink;
                         text-align: left;
                         font-size: 2em;
-                        
+
                     }
                     .flip-clock-dot {
                         visibility: hidden;
                     }
                 }
             }
-             
+
         }
     }
     &-facttext {
@@ -92,4 +92,4 @@
         $text-visible-duration: 9.3s;
     }
 }
-    
+

@@ -2,26 +2,6 @@
 @import "_variables";
 @import "_animation";
 
-// Main styles
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: $font-family-regular;
-  font-size: $font-base;
-}
-
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important;
-}
-
 .tpl {
   &-container {
     width: 100%;
