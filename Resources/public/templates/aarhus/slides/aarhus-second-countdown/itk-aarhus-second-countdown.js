@@ -41,36 +41,56 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
 
       if (slide.clockInstantiated) {
         var currentDate = new Date();
-        var futureDate  = new Date(2017,11,1,10,0,0);
+        var futureDate  = new Date(slide.options.countdown * 1000);
         var diff = parseInt(futureDate.getTime() - currentDate.getTime()) / 1000;
 
         slide.clock.setTime(diff);
         slide.clock.start();
       }
 
-      var duration = slide.duration !== null ? slide.duration : 60;
-
       // Wait fadeTime before start to account for fade in.
       region.$timeout(function () {
-        if (!$.fn.FlipClock) {
+        if (!$.fn.FlipClock || !slide.options.countdown) {
           region.nextSlide();
           return;
         }
         else {
           if (!slide.clockInstantiated) {
             var currentDate = new Date();
-            var futureDate  = new Date(2017,11,1,10,0,0);
+            var futureDate  = new Date(slide.options.countdown * 1000);
             var diff = parseInt(futureDate.getTime() - currentDate.getTime()) / 1000;
 
             // Instantiate a countdown FlipClock
             slide.clock = slide.countdown.FlipClock(diff, {
               clockFace: 'DailyCounter',
               countdown: true,
-              language:'da-dk'
+              language:'da-dk',
+              callbacks: {
+                stop: function () {
+                  if (Math.ceil((new Date()).getTime() / 1000) >= slide.options.countdown) {
+                    region.$timeout(function() {
+                      slide.countdownFinished = true;
+                    });
+                  }
+                }
+              }
             });
 
             slide.clockInstantiated = true;
           }
+        }
+
+        var duration = slide.duration !== null ? slide.duration : 60;
+
+        // If within slide block period, do not continue to new slide, until
+        // reaching slide.options.countdown_takeover_to.
+        var now = (new Date()).getTime() / 1000;
+        if (slide.options.countdown_takeover_from !== null &&
+          slide.options.countdown_takeover_to !== null &&
+          now > slide.options.countdown_takeover_from &&
+          now < slide.options.countdown_takeover_to
+        ) {
+          duration = slide.options.countdown_takeover_to - now;
         }
 
         // Set the progress bar animation.

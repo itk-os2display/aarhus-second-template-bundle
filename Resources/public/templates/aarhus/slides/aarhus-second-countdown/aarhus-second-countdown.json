@@ -38,6 +38,10 @@
       "template": "bundles/itkaarhussecondtemplate/apps/toolsModule/itk-aarhus-second-texts.html"
     },
     {
+      "name": "Nedtælling",
+      "template": "bundles/itkaarhussecondtemplate/apps/toolsModule/itk-aarhus-second-countdown.html"
+    },
+    {
       "name": "Farver",
       "id": "itk-color-picker",
       "config": {
