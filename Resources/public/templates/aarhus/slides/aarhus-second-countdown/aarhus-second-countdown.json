@@ -1,0 +1,69 @@
+{
+  "id": "aarhus-second-countdown",
+  "theme": "aarhus-second",
+  "tags": [
+    "Aarhus"
+  ],
+  "type": "slide",
+  "name": "Aarhus: Nedtælling",
+  "icon": "aarhus-second-countdown.png",
+  "paths": {
+    "live": "aarhus-second-countdown.html",
+    "edit": "aarhus-second-countdown-edit.html",
+    "preview": "aarhus-second-countdown-edit.html",
+    "css": "aarhus-second-countdown.css",
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-countdown/itk-aarhus-second-countdown.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "base",
+  "media_type": "image",
+  "script_id": "itk-aarhus-second-countdown",
+  "ideal_dimensions": {
+    "width": "900",
+    "height": "540"
+  },
+  "empty_options": {
+    "fontsize": 16,
+    "headline": "Overskrift",
+    "text": "Eksempel tekst",
+    "color": "#fff",
+    "bgcolor": "#333"
+  },
+  "tools": [
+    {
+      "name": "Info",
+      "template": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-countdown/info.html"
+    },
+    {
+      "name": "Billede efter nedtælling",
+      "id": "background-editor",
+      "template": "bundles/itktemplateextension/apps/templateExtensionModule/itk-background-editor.html"
+    },
+    {
+      "name": "Tekster",
+      "template": "bundles/itkaarhussecondtemplate/apps/toolsModule/itk-aarhus-second-texts.html"
+    },
+    {
+      "name": "Nedtælling",
+      "template": "bundles/itkaarhussecondtemplate/apps/toolsModule/itk-aarhus-second-countdown.html"
+    },
+    {
+      "name": "Farver",
+      "id": "itk-color-picker",
+      "config": {
+        "fields": [
+          {
+            "name": "Baggrundsfarve",
+            "field": "bgcolor",
+            "theme": "main"
+          },
+          {
+            "name": "Tekstfarve",
+            "field": "color",
+            "theme": "text"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,10 @@
 @import '../../../../../../design/scss/_variables.scss';
 
 .aarhus-second-watch-progress {
+  @media only screen and (min-width: 1920px) {
+    font-size: 2em;
+  }
+
   .watch {
     position: absolute;
     top: 2%;
@@ -18,7 +22,7 @@
   & .progress {
     display: block;
     height: 0.188em;
-    background-color: rgba(245,245,245,0.8);
+    background-color: rgba(245,245,245,0.25);
     box-shadow: 0 2px 8px rgba(0,0,0,0.26);
     z-index: 999;
     position: relative;

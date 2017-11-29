@@ -1,0 +1,146 @@
+// Imports
+@import "_variables";
+@import "_animation";
+
+.tpl {
+  &-container {
+    width: 100%;
+    height: 100%;
+    background-color: $color-light-grey;
+    position: relative;
+  }
+  &-item {
+    &-fade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 25%;
+      background: linear-gradient(to bottom, rgba($color-grey, .55) 0%, rgba($color-grey, .0) 100%);
+      z-index: 1;
+    }
+  }
+  &-progress {
+    position: absolute;
+    width: 100%;
+    height: 0.188em;
+    background-color: rgba($color-light-grey, .80);
+    box-shadow: $shadow-box-small;
+    z-index: 100;
+    &-bar {
+      display: block;
+      width: 0%;
+      height: 0.188em;
+      background-color: $color-pink;
+      animation-name: progress-bar;
+      animation-duration: 30s;
+      animation-delay: 0.2s;
+      animation-iteration-count: 1;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+  }
+  &-time {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    z-index: 100;
+
+    p {
+      font-family: $font-family-black;
+      font-size: $font-size-p;
+      color: $color-white;
+      text-shadow: $shadow-text;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-dark {
+      p {
+        color: $color-grey;
+        text-shadow: none;
+      }
+    }
+  }
+
+  &-footer {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: $color-light-grey;
+    z-index: 2;
+    &-small {
+      height: 12%;
+    }
+
+    &-medium {
+      height: 25%;
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    bottom: 3.5%;
+    left: 2.5%;
+    height: 5%;
+    z-index: 3;
+  }
+
+  &-h1 {
+    position: relative;
+    font-family: $font-family-black;
+    font-size: $font-size-h1;
+    line-height: $font-line-height-h1;
+    color: $color-grey;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 0.625em;
+    &:after {
+      opacity: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      height: 0.20em;
+      background-color: $color-pink;
+      width: 100%;
+      margin-top: -0.625em;
+      transition: width .3s ease-out;
+      animation-name: h1-underline;
+      animation-delay: .5s;
+      animation-duration: .7s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+  &-h2 {
+    position: relative;
+    font-family: $font-family-black;
+    font-size: $font-size-h2;
+    color: $color-grey;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    display: inline-block;
+    &:after {
+      opacity: 1;
+      content: "";
+      display: block;
+      position: absolute;
+      height: 0.20em;
+      background-color: $color-pink;
+      width: 3.75em;
+      margin-top: 0.313em;
+    }
+  }
+  &-h3 {
+    position: relative;
+    font-family: $font-family-black;
+    font-size: $font-size-h2;
+    color: $color-grey;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}
