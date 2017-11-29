@@ -120,7 +120,9 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
         // Wait for slide duration, then show next slide.
         // + fadeTime to account for fade out.
         region.$timeout(function () {
-          slide.clock.stop();
+          if (slide.clock !== undefined) {
+            slide.clock.stop();
+          }
           region.nextSlide();
         }, duration * 1000 + region.fadeTime);
       }, region.fadeTime);

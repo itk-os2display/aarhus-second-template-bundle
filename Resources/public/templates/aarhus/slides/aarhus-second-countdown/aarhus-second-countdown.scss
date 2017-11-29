@@ -1,7 +1,9 @@
 @import "../../sass/_arial-black";
+@import "../../sass/_variables";
 
 .aarhus-second-countdown {
-  font-size: 16px;
+  font-family: $font-family-regular;
+  font-size: $font-base;
 
   @import "../../sass/_base-tpl";
   @import "flipclock.css";
@@ -17,15 +19,14 @@
     }
     &-image {
       position: absolute;
-      top: -5%;
-      left: -5%;
       height: 85%;
       width: 110%;
       background-size: cover;
-      background-position-y: bottom;
+      background-position-y: center;
       opacity: 0;
       animation-name: box-reveal;
-      animation-duration: 0.7s;
+      animation-duration: 1s;
+      animation-delay: 3s;
       animation-iteration-count: 1;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
@@ -47,6 +48,13 @@
       position: absolute;
       top: 30%;
       z-index: 2;
+
+      &.ng-hide {
+        visibility: hidden;
+        opacity: 0;
+        transition-delay: 1s;
+        transition: visibility 0s 2s, opacity 2s linear;
+      }
 
       &-clock {
         text-align: center;
@@ -80,7 +88,7 @@
               color: $color-pink;
               text-align: left;
               font-size: 2em;
-
+              margin-left: 0.25em;
             }
             .flip-clock-dot {
               visibility: hidden;

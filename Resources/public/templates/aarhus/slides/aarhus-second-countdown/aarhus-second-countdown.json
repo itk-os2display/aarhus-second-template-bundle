@@ -25,11 +25,17 @@
   "empty_options": {
     "fontsize": 16,
     "headline": "Overskrift",
-    "text": "Eksempel tekst"
+    "text": "Eksempel tekst",
+    "color": "#fff",
+    "bgcolor": "#333"
   },
   "tools": [
     {
-      "name": "Billede",
+      "name": "Info",
+      "template": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-countdown/info.html"
+    },
+    {
+      "name": "Billede efter nedtælling",
       "id": "background-editor",
       "template": "bundles/itktemplateextension/apps/templateExtensionModule/itk-background-editor.html"
     },
@@ -50,6 +56,11 @@
             "name": "Baggrundsfarve",
             "field": "bgcolor",
             "theme": "main"
+          },
+          {
+            "name": "Tekstfarve",
+            "field": "color",
+            "theme": "text"
           }
         ]
       }
