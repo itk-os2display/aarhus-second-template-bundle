@@ -9,6 +9,8 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
     setup: function setupCalendarSlide(scope) {
       var slide = scope.ikSlide;
 
+      slide.zoom = 1.0;
+
       if ($.fn.FlipClock === undefined) {
         $.getScript(slide.path + "/flipclock.min.js", function( data, textStatus, jqxhr ) {});
       }
@@ -39,10 +41,19 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
 
       slide.countdown = $('.slide-' + slide.uniqueId + ' .tpl-countdown-clock');
 
-      if (slide.clockInstantiated) {
+      if (Math.ceil((new Date()).getTime() / 1000) >= slide.options.countdown) {
+        slide.countdownFinished = true;
+      }
+
+      if (slide.clockInstantiated && !slide.countdownFinished) {
         var currentDate = new Date();
         var futureDate  = new Date(slide.options.countdown * 1000);
         var diff = parseInt(futureDate.getTime() - currentDate.getTime()) / 1000;
+
+        if (diff < 0) {
+          diff = 0;
+          slide.countdownFinished = true;
+        }
 
         slide.clock.setTime(diff);
         slide.clock.start();
@@ -55,10 +66,14 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
           return;
         }
         else {
-          if (!slide.clockInstantiated) {
+          if (!slide.clockInstantiated && !slide.countdownFinished) {
             var currentDate = new Date();
             var futureDate  = new Date(slide.options.countdown * 1000);
             var diff = parseInt(futureDate.getTime() - currentDate.getTime()) / 1000;
+
+            if (diff < 0) {
+              diff = 0;
+            }
 
             // Instantiate a countdown FlipClock
             slide.clock = slide.countdown.FlipClock(diff, {
@@ -75,6 +90,12 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
                 }
               }
             });
+
+            var page = $('.slide-' + slide.uniqueId);
+            var el = $('.slide-' + slide.uniqueId + ' .tpl-countdown');
+
+            // Calculate zoom factor.
+            slide.zoom = (page.width()) / el.width();
 
             slide.clockInstantiated = true;
           }

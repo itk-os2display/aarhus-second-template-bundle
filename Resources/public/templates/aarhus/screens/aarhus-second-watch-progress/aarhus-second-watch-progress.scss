@@ -1,6 +1,10 @@
 @import '../../../../../../design/scss/_variables.scss';
 
 .aarhus-second-watch-progress {
+  @media only screen and (min-width: 1920px) {
+    font-size: 2em;
+  }
+
   .watch {
     position: absolute;
     top: 2%;

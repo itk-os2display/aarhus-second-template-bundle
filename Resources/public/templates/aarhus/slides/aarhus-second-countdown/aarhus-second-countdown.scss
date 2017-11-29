@@ -9,6 +9,11 @@
   .tpl {
     &-container {
       background-color: #262626;
+      &.live {
+        @media only screen and (min-width: 1920px) {
+          font-size: 2em;
+        }
+      }
     }
     &-image {
       position: absolute;
@@ -41,10 +46,6 @@
     &-countdown {
       position: absolute;
       top: 30%;
-      left: 2%;
-      height: 30%;
-      background: #1D1D1D;
-      padding: 2% 12%;
       z-index: 2;
 
       &-clock {
