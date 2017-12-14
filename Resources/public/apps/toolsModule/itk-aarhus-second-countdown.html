@@ -17,13 +17,18 @@
           <div class="itk-template-extension--tool-section">
             <h2 class="itk-template-extension--tool-headline">Vælg tidspunkter</h2>
 
-            <label for="countdown">Tæld ned til</label>
+            <label for="countdown">Tæl ned til</label>
             <input id="countdown" type="text" data-ng-model="slide.options.countdown" datetime-picker="">
+
+            <div>
+              Nedenstående tidspunkter beskriver i hvilket interval sliden
+              undlader at gå videre til næste slide.
+            </div>
 
             <label for="countdown_takeover_from">Overtag kanal fra</label>
             <input id="countdown_takeover_from" type="text" data-ng-model="slide.options.countdown_takeover_from" datetime-picker="">
 
-            <label for="countdown_takeover_to">Overtag kanal to</label>
+            <label for="countdown_takeover_to">Overtag kanal indtil</label>
             <input id="countdown_takeover_to" type="text" data-ng-model="slide.options.countdown_takeover_to" datetime-picker="">
           </div>
 
