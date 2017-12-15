@@ -87,6 +87,14 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
                       slide.countdownFinished = true;
                     });
                   }
+                },
+                interval: function () {
+                    // Make sure the countdown does not go beneath 0.
+                    var time = this.factory.getTime().time;
+                    if (time <= 0) {
+                        this.factory.setTime(0);
+                        this.factory.stop();
+                    }
                 }
               }
             });

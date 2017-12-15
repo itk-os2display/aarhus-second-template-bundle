@@ -4,6 +4,7 @@
 .aarhus-second-countdown {
   font-family: $font-family-regular;
   font-size: $font-base;
+  text-align: left;
 
   @import "../../sass/_base-tpl";
   @import "flipclock.css";
@@ -37,6 +38,7 @@
       position: absolute;
       top: 10%;
       left: 2%;
+      right: 2%;
       z-index: 3;
       &-h1 {
         color: $color-white;
@@ -105,5 +107,9 @@
       $text-visible-duration: 9.3s;
       color: #333;
     }
+  }
+
+  &.preview .tpl-countdown-clock.flip-clock-wrapper .flip-clock-divider .flip-clock-label {
+    display: none;
   }
 }
