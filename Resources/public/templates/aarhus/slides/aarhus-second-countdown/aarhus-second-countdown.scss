@@ -108,4 +108,8 @@
       color: #333;
     }
   }
+
+  &.preview .tpl-countdown-clock.flip-clock-wrapper .flip-clock-divider .flip-clock-label {
+    display: none;
+  }
 }

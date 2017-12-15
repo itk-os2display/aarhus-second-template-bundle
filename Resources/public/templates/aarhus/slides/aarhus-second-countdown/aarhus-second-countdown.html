@@ -1,5 +1,16 @@
 <div class="aarhus-second-countdown"
      data-ng-style="{'font-size': theStyle.fontsize}">
+  <!-- Hack to alter ::after -->
+  <style type="text/css" data-ng-if="ikSlide.options.theme_color">
+    .slide-{{ikSlide.uniqueId}} .aarhus-second-countdown .tpl-countdown-clock.flip-clock-wrapper .flip-clock-divider .flip-clock-label {
+      color: {{ ikSlide.options.theme_color }}
+    }
+
+    .slide-{{ikSlide.uniqueId}} .aarhus-second-countdown .tpl-h1:after {
+      background-color: {{ ikSlide.options.theme_color }}
+    }
+  </style>
+
   <div class="tpl-container live" data-ng-style="{'background-color': ikSlide.options.bgcolor}">
     <div class="tpl-item tpl-image" data-ng-show="ikSlide.countdownFinished"
          data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')'}">
@@ -8,7 +19,7 @@
     <div class="tpl-item tpl-title" data-ng-style="{'color': ikSlide.options.color}">
       <h1 class="tpl-h1 tpl-title-h1">{{ikSlide.options.headline}}</h1>
     </div>
-    <div class="tpl-countdown" data-ng-hide="ikSlide.countdownFinished">
+    <div class="tpl-countdown" data-ng-hide="ikSlide.countdownFinished" data-ng-style="{'color': ikSlide.options.theme_color}">
       <div class="tpl-countdown-clock" data-ng-style="{'zoom': ikSlide.zoom, '-moz-transform': 'scale(' + ikSlide.zoom + ')'}"></div>
     </div>
     <div class="tpl-item tpl-footer tpl-footer-medium">

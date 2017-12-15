@@ -10,7 +10,7 @@
   "paths": {
     "live": "aarhus-second-countdown.html",
     "edit": "aarhus-second-countdown-edit.html",
-    "preview": "aarhus-second-countdown-edit.html",
+    "preview": "aarhus-second-countdown-preview.html",
     "css": "aarhus-second-countdown.css",
     "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-countdown/itk-aarhus-second-countdown.js"
   },
@@ -27,7 +27,8 @@
     "headline": "Overskrift",
     "text": "Eksempel tekst",
     "color": "#fff",
-    "bgcolor": "#333"
+    "bgcolor": "#333",
+    "theme_color": "#EE0043"
   },
   "tools": [
     {
@@ -61,6 +62,11 @@
             "name": "Tekstfarve",
             "field": "color",
             "theme": "text"
+          },
+          {
+            "name": "Temafarve",
+            "field": "theme_color",
+            "theme": "main"
           }
         ]
       }
