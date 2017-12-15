@@ -17,13 +17,15 @@
     </div>
     <div class="tpl-item tpl-fade"></div>
     <div class="tpl-item tpl-title" data-ng-style="{'color': ikSlide.options.color}">
-      <h1 class="tpl-h1 tpl-title-h1">{{ikSlide.options.headline}}</h1>
+      <h1 class="tpl-h1 tpl-title-h1" data-ng-if="!ikSlide.countdownFinished && ikSlide.options.headline">{{ikSlide.options.headline}}</h1>
+      <h1 class="tpl-h1 tpl-title-h1" data-ng-if="ikSlide.countdownFinished && ikSlide.options.headline2">{{ikSlide.options.headline2}}</h1>
     </div>
     <div class="tpl-countdown" data-ng-hide="ikSlide.countdownFinished" data-ng-style="{'color': ikSlide.options.theme_color}">
       <div class="tpl-countdown-clock" data-ng-style="{'zoom': ikSlide.zoom, '-moz-transform': 'scale(' + ikSlide.zoom + ')'}"></div>
     </div>
     <div class="tpl-item tpl-footer tpl-footer-medium">
-      <p class="tpl-facttext"><strong>{{ikSlide.options.text}}</strong></p>
+      <p class="tpl-facttext" data-ng-if="!ikSlide.countdownFinished && ikSlide.options.text"><strong>{{ikSlide.options.text}}</strong></p>
+      <p class="tpl-facttext" data-ng-if="ikSlide.countdownFinished && ikSlide.options.text2"><strong>{{ikSlide.options.text2}}</strong></p>
     </div>
   </div>
   <img class="tpl-logo"

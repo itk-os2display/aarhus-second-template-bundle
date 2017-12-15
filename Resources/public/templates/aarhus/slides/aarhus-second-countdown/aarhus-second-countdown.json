@@ -26,6 +26,8 @@
     "fontsize": 16,
     "headline": "Overskrift",
     "text": "Eksempel tekst",
+    "headline2": "",
+    "text2": "",
     "color": "#fff",
     "bgcolor": "#333",
     "theme_color": "#EE0043"

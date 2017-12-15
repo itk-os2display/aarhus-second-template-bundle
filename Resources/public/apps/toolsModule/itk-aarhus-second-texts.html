@@ -15,7 +15,7 @@
           <h2 class="edit-menu--background-header">Tekster</h2>
 
           <div class="itk-template-extension--tool-section">
-            <h2 class="itk-template-extension--tool-headline">Tilføj tekster</h2>
+            <h2 class="itk-template-extension--tool-headline">Vælg tekster <u>før</u> nedtælling er færdig</h2>
 
             <label for="headline">Overskrift</label>
             <input id="headline" type="text" data-ng-model="slide.options.headline">
@@ -23,8 +23,17 @@
             <input id="text" type="text" data-ng-model="slide.options.text">
           </div>
 
+          <div class="itk-template-extension--tool-section">
+            <h2 class="itk-template-extension--tool-headline">Vælg tekster <u>efter</u> nedtælling er færdig</h2>
+
+            <label for="headline2">Overskrift</label>
+            <input id="headline2" type="text" data-ng-model="slide.options.headline2">
+            <label for="text2">Tekst</label>
+            <input id="text2" type="text" data-ng-model="slide.options.text2">
+          </div>
+
           <div class="itk-template-extension--button" data-ng-click="close()">
-            Afslut
+            Luk
           </div>
         </div>
       </div>
