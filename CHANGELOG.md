@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.0.4
+
+* Added max duration to counter.
+
 ## 1.0.3
 
 * Fixed several issues with countdown template.

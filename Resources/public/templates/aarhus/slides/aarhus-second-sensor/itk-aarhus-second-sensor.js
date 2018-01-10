@@ -39,6 +39,8 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
 
       var duration = slide.duration !== null ? slide.duration : 15;
 
+      var maxDuration = Math.min(2500, duration / 2 * 1000);
+
       // Wait fadeTime before start to account for fade in.
       region.$timeout(function () {
         slide.counters.each(function() {
@@ -49,7 +51,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
               countNum: countTo
             },
             {
-              duration: ((countTo/100)*1000)+250,
+              duration: Math.min((countTo * 10) + 250, maxDuration),
               easing: 'linear',
               step: function() {
                 $this.text(Math.floor(this.countNum));
