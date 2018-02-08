@@ -7,15 +7,19 @@
     </div>
     <div class="aarhus-second-sensor--content">
       <div class="box-container">
-        <div class="textbox" data-ng-repeat="field in ikSlide.external_data">
+        <div class="textbox" data-ng-repeat="field in ikSlide.external_data | limitTo: 4">
           <div class="item">
             <h2>{{field.name}}</h2>
             <div class="data">
               <div class="data-type">
-                <span>{{field.unit}}</span>
+                <div class="data-type-icon">
+                  <i class="{{field.icon_classes}}" data-fa-transform="rotate-{{ field.icon_rotate }}"></i>
+                </div>
+                <div class="data-type-unit">{{field.unit}}</div>
               </div>
               <div class="data-amount">
-                <span class="counter" data-count="{{field.value}}"></span>{{field.value_suffix}}
+                <span class="counter" data-count="{{field.value}}" data-ng-if="field.count_up"></span>{{field.value_suffix}}
+                <span data-ng-if="!field.count_up">{{field.value}}</span>{{field.value_suffix}}
               </div>
             </div>
           </div>
