@@ -59,6 +59,16 @@
             "name": "Temafarve",
             "field": "themecolor",
             "theme": "main"
+          },
+          {
+            "name": "Overskriftsfarve",
+            "field": "headingcolor",
+            "theme": "text"
+          },
+          {
+            "name": "Faktatekstfarve",
+            "field": "factcolor",
+            "theme": "main"
           }
         ]
       }
