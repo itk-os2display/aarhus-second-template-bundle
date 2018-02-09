@@ -1,7 +1,8 @@
 # itk-os2display/aarhus-second-template-bundle
 
-## In develop
+## 1.1.0
 
+* Added sensor-history template.
 * Updated npm packages.
 
 ## 1.0.4
