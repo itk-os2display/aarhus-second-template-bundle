@@ -1,8 +1,8 @@
-<div class="aarhus-second-countdown preview"
+<div class="aarhus-second-countdown preview slide-{{ikSlide.id}}"
      data-ng-style="{'width': theStyle.width, 'height': theStyle.height, 'font-size': theStyle.fontsize}">
   <!-- Hack to alter ::after -->
   <style type="text/css" data-ng-if="ikSlide.options.theme_color">
-    .aarhus-second-countdown .tpl-h1:after {
+    .slide-{{ikSlide.id}} .aarhus-second-countdown .tpl-h1:after {
       background-color: {{ ikSlide.options.theme_color }}
     }
   </style>

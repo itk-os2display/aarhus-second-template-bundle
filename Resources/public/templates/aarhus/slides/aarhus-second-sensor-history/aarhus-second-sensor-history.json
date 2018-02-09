@@ -1,0 +1,77 @@
+{
+  "id": "aarhus-second-sensor-history",
+  "theme": "aarhus-second",
+  "tags": [
+    "Aarhus"
+  ],
+  "type": "slide",
+  "name": "Aarhus: Sensor historisk udvikling",
+  "icon": "aarhus-second-sensor-history.png",
+  "paths": {
+    "live": "aarhus-second-sensor-history.html",
+    "edit": "aarhus-second-sensor-history-edit.html",
+    "preview": "aarhus-second-sensor-history-edit.html",
+    "css": "aarhus-second-sensor-history.css",
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor-history/aarhus-second-sensor-history.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "itk-aarhus-data",
+  "media_type": "image",
+  "script_id": "itk-aarhus-second-sensor-history",
+  "ideal_dimensions": {
+    "width": "900",
+    "height": "540"
+  },
+  "empty_options": {
+    "fontsize": 16,
+    "facts": [],
+    "text": "<h1>Aarhus solcellers<br>energi produktion</h1>",
+    "data_function": ""
+  },
+  "tools": [
+    {
+      "name": "Billede",
+      "id": "background-editor"
+    },
+    {
+      "name": "Tekst",
+      "id": "itk-rich-text"
+    },
+    {
+      "name": "Faktatekster",
+      "id": "itk-text-array"
+    },
+    {
+      "name": "Datakilde",
+      "id": "itk-data-source-picker"
+    },
+    {
+      "name": "Farver",
+      "id": "itk-color-picker",
+      "config": {
+        "fields": [
+          {
+            "name": "Baggrundsfarve",
+            "field": "bgcolor",
+            "theme": "main"
+          },
+          {
+            "name": "Temafarve",
+            "field": "themecolor",
+            "theme": "main"
+          },
+          {
+            "name": "Overskriftsfarve",
+            "field": "headingcolor",
+            "theme": "text"
+          },
+          {
+            "name": "Fakta/enhedsfarve",
+            "field": "factcolor",
+            "theme": "main"
+          }
+        ]
+      }
+    }
+  ]
+}

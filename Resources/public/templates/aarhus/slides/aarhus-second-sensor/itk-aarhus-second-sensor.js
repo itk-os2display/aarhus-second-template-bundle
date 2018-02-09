@@ -9,6 +9,13 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
     setup: function setupCalendarSlide(scope) {
       var slide = scope.ikSlide;
 
+      // Load font-awesome icons.
+      if (!window.FONT_AWESOME) {
+        window.FONT_AWESOME = true;
+        $.getScript(slide.path + "/../../../assets/fontawesome.js", function( data, textStatus, jqxhr ) {});
+      }
+
+
       // Only show first image in array.
       if (slide.media_type === 'image' && slide.media.length > 0) {
         slide.currentImage = slide.media[0].image;
@@ -54,10 +61,8 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
               duration: Math.min((countTo * 10) + 250, maxDuration),
               easing: 'linear',
               step: function() {
-                $this.text(Math.floor(this.countNum));
-              },
-              complete: function() {
-                $this.text(this.countNum);
+                // Replace dash with minus character.
+                $this.text(Math.floor(this.countNum).toString().replace(/^-/, '−'));
               }
             });
         });
