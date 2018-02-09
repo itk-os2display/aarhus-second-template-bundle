@@ -1,0 +1,178 @@
+@import "../../sass/aarhus-second";
+
+.aarhus-second-sensor-history {
+  font-size: 16px;
+  position: relative;
+
+  .image {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    height: 85%;
+    width: 110%;
+    background-size: cover;
+    background-position-y: bottom;
+    opacity: 0;
+    animation-name: box-reveal;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    z-index: 2;
+    filter: blur(0px);
+  }
+  .title {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    z-index: 3;
+    color: $color-white;
+    h1 {
+      color: $color-white;
+      font-size: 2.188em;
+      text-shadow: $shadow-text;
+    }
+  }
+
+  .aarhus-second--container .footer.medium {
+    z-index: 2;
+  }
+
+  .textboxes {
+    position: absolute;
+    top: 40%;
+    height: 41%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .textbox {
+    background: $color-light-grey;
+    box-shadow: $shadow-box;
+    z-index: 3;
+    opacity: 0;
+    animation-name: box-reveal;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    padding: 1em;
+    flex-basis: 30.3333%;
+    margin: 1.33333%;
+
+    .item {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &.box1 {
+    }
+    &.box2 {
+      animation-delay: .2s;
+    }
+    &.box3 {
+      animation-delay: .4s;
+    }
+    h1 {
+      color: $color-grey;
+    }
+    .data {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      position: relative;
+      margin-top: 15%;
+      width: 100%;
+
+      .data-type {
+        color: $color-pink;
+        font-family: $font-family-black;
+        font-size: 1.25em;
+        flex-basis: 30%;
+        span {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .data-amount {
+        color: $color-grey;
+        font-family: $font-family-black;
+        font-size: 4.5em;
+        flex-basis: 70%;
+        text-align: right;
+        span {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .data-location {
+        width: 100%;
+      }
+    }
+    p {
+      font-family: $font-family-regular;
+      font-size: $font-size-p;
+      color: $color-grey;
+      margin: 0 0 0.625em 0;
+    }
+  }
+  .facttext {
+    margin: 2.5em 1.875em;
+    text-align: left;
+    position: absolute;
+    color: $color-black;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+
+    $text-animation-duration: .7s;
+    $text-visible-duration: 9.3s;
+
+    &.ng-animate {
+      transition: all ease $text-animation-duration;
+      position: absolute;
+    }
+
+    &.ng-enter {
+      transition: all ease $text-animation-duration $text-animation-duration;
+      top: 20px;
+      opacity: 0;
+    }
+
+    &.ng-leave,
+    &.ng-enter.ng-enter-active {
+      top: 0;
+      opacity: 1;
+    }
+
+    &.ng-leave.ng-leave-active {
+      top: 20px;
+      opacity: 0;
+    }
+
+    .def {
+      font-family: $font-family-black;
+      color: $color-pink;
+    }
+    &.two, &.tree {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    &.one {
+      animation: text-hide $text-animation-duration $text-visible-duration 1 ease-out forwards;
+    }
+    &.two {
+      animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration 1 ease-out forwards, text-hide $text-animation-duration $text-visible-duration * 2 1 ease-out forwards;
+    }
+    &.tree {
+      animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration * 2 1 ease-out forwards;
+    }
+  }
+}

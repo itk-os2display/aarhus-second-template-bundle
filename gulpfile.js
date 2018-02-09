@@ -37,7 +37,8 @@ var templates = {
       'aarhus-second-image-text-right',
       'aarhus-second-sensor',
       'aarhus-second-sensor-single',
-      'aarhus-second-countdown'
+      'aarhus-second-countdown',
+      'aarhus-second-sensor-history'
     ]
   }
 };
