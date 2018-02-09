@@ -66,7 +66,7 @@
             "theme": "text"
           },
           {
-            "name": "Faktatekstfarve",
+            "name": "Fakta/enhedsfarve",
             "field": "factcolor",
             "theme": "main"
           }

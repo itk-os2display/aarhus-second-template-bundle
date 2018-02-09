@@ -43,16 +43,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
         run: function runBaseSlide (slide, region) {
             region.itkLog.info('Running itk-aarhus-second-sensor-history facts slide: ' + slide.title);
 
-            var duration = slide.duration !== null ? slide.duration : 15;
             var runningFactTimeout = null;
-
-            function skipAnimations () {
-                region.$animate.enabled(false);
-
-                region.$timeout(function () {
-                    region.$animate.enabled(true);
-                });
-            }
 
             /**
              * Go to next rss news.
@@ -66,17 +57,44 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
 
             factTimeout();
 
+            slide.counters = $('.slide-' + slide.uniqueId + ' .counter');
+
+            slide.counters.text("0");
+
+            var duration = slide.duration !== null ? slide.duration : 15;
+
+            var maxDuration = Math.min(2500, duration / 2 * 1000);
+
             // Wait fadeTime before start to account for fade in.
             region.$timeout(function () {
+                slide.counters.each(function() {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+
+                    $({ countNum: $this.text()}).animate({
+                            countNum: countTo
+                        },
+                        {
+                            duration: Math.min((countTo * 10) + 250, maxDuration),
+                            easing: 'linear',
+                            step: function() {
+                                // Replace dash with minus character.
+                                $this.text(Math.floor(this.countNum).toString().replace(/^-/, '−'));
+                            }
+                        });
+                });
+
                 // Set the progress bar animation.
                 region.progressBar.start(duration);
 
                 // Wait for slide duration, then show next slide.
                 // + fadeTime to account for fade out.
                 region.$timeout(function () {
+                    // Remove fact timeout if it exists.
                     if (runningFactTimeout !== null) {
                         region.$timeout.cancel(runningFactTimeout);
                     }
+
                     region.nextSlide();
                 }, duration * 1000 + region.fadeTime);
             }, region.fadeTime);
