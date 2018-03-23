@@ -1,0 +1,35 @@
+// Imports
+@import "../../sass/_variables";
+@import "../../sass/_arial-black";
+
+.aarhus-second-data {
+  font-family: $font-family-regular;
+  font-size: $font-base;
+  position: relative;
+  padding: .5em 4em;
+  text-align: left;
+
+  .tpl-container {
+    position: absolute;
+    font-size: 2em;
+
+    h1 {
+      font-family: $font-family-black;
+    }
+
+    table {
+      font-size: 1em;
+      text-align: left;
+    }
+
+    td, th {
+      padding-right: 2em;
+      padding-bottom: .5em;
+    }
+
+    .tpl-column-title {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+}
