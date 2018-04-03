@@ -16,15 +16,19 @@
     </div>
     <div class="textboxes">
       <div class="textbox box{{ $index + 1 }}"
-           data-ng-repeat="production in ikSlide.external_data track by $index">
+           data-ng-repeat="production in ikSlide.external_data | limitTo: 3 track by $index">
         <div class="item">
           <h3>{{ production.name }}</h3>
           <div class="data">
+            <div class="data-type-icon" style="color: purple">
+              <i class="{{production.icon_classes}}" data-fa-transform="rotate-{{ production.icon_rotate }}"></i>
+            </div>
             <div class="data-type" data-ng-style="{'color': ikSlide.options.factcolor}">
               <span>{{ production.unit }}</span>
             </div>
             <div class="data-amount">
-              <span class="counter" data-count="{{production.value}}">0</span>
+              <span class="counter" data-count="{{production.value}}" data-ng-if="production.count_up">0</span>
+              <span data-ng-if="!production.count_up">{{production.value}}</span>
             </div>
           </div>
         </div>
