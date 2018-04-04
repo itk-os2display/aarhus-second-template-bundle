@@ -20,10 +20,10 @@
         <div class="item">
           <h3>{{ production.name }}</h3>
           <div class="data">
-            <div class="data-type-icon" data-ng-style="{'color': ikSlide.options.factcolor}">
-              <i class="{{production.icon_classes}}" data-fa-transform="rotate-{{ production.icon_rotate }}"></i>
-            </div>
             <div class="data-type" data-ng-style="{'color': ikSlide.options.factcolor}">
+              <div class="data-type-icon" data-ng-style="{'color': ikSlide.options.factcolor}">
+                <i class="{{production.icon_classes}}" data-fa-transform="rotate-{{ production.icon_rotate }}"></i>
+              </div>
               <span class="data-type-unit" data-ng-bind-html="production.unit"></span>
             </div>
             <div class="data-amount">
