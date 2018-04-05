@@ -13,6 +13,12 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
         setup: function setupBaseSlide (scope) {
             var slide = scope.ikSlide;
 
+            // Load font-awesome icons.
+            if (!window.FONT_AWESOME) {
+                window.FONT_AWESOME = true;
+                $.getScript(slide.path + "/../../../assets/fontawesome.js", function( data, textStatus, jqxhr ) {});
+            }
+
             // Only show first image in array.
             if (slide.media_type === 'image' && slide.media.length > 0) {
                 slide.currentImage = slide.media[0].image;
