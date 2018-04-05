@@ -81,29 +81,35 @@
       color: $color-grey;
     }
     .data {
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
       position: relative;
-      margin-top: 15%;
       width: 100%;
 
       .data-type {
         color: $color-pink;
-        font-family: $font-family-black;
-        font-size: 1.25em;
-        flex-basis: 30%;
-        span {
-          margin: 0;
-          padding: 0;
-        }
+        float: left;
+        margin-top: .5em;
+        .data-type-icon {
+            font-size: 2.2em;
+            line-height: 1em;
+            margin-bottom: .25em;
+            display: inline-block;
+            }
+            .data-type-unit {
+                font-family: $font-family-black;
+                font-size: 1.5em;
+                line-height: 1em;
+                margin: 0;
+                padding: 0;
+            }
       }
       .data-amount {
         color: $color-grey;
         font-family: $font-family-black;
         font-size: 4.5em;
+        line-height: 1;
         flex-basis: 70%;
-        text-align: right;
+        text-align: left;
+        clear: both;
         span {
           margin: 0;
           padding: 0;
