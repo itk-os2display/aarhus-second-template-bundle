@@ -63,21 +63,20 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
 
             factTimeout();
 
-            slide.counters = $('.slide-' + slide.uniqueId + ' .js-counter');
-
-            slide.counters.text("0");
-
+            var slideElement = angular.element('.slide-' + slide.uniqueId);
             var duration = slide.duration !== null ? slide.duration : 15;
-
             var maxDuration = Math.min(2500, duration / 2 * 1000);
+
+            slide.counters = $(slideElement).find('.js-counter');
+            slide.counters.text('0');
 
             // Wait fadeTime before start to account for fade in.
             region.$timeout(function () {
-                slide.counters.each(function() {
-                    var $this = $(this),
-                        countTo = $this.attr('data-count');
+                angular.forEach(slide.counters, function(element) {
+                    element = $(element);
+                    var countTo = element.attr('data-count');
 
-                    $({ countNum: $this.text()}).animate({
+                    $({ countNum: element.text()}).animate({
                             countNum: countTo
                         },
                         {
@@ -85,10 +84,10 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
                             easing: 'linear',
                             step: function() {
                                 // Replace dash with minus character.
-                                $this.text(Math.floor(this.countNum).toString().replace(/^-/, '−'));
+                                element.text(Math.ceil(this.countNum).toString().replace(/^-/, '−'));
                             }
                         });
-                });
+                }, region.fadeTime);
 
                 // Set the progress bar animation.
                 region.progressBar.start(duration);
