@@ -33,9 +33,7 @@
               {{ikSlide.external_data[0].timestamp | date: 'HH:mm'}}</p>
           </div>
         </div>
-        <p>Leveret af</p>
-        <img src="{{ikSlide.path + '../../assets/smart-aarhus-logo.png'}}"
-             alt="Smart Aarhus" class="data-by">
+        <div data-ng-bind-html="ikSlide.options.text"></div>
       </div>
     </div>
     <div class="item footer small">
