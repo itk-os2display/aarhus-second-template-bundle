@@ -51,9 +51,10 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-items: baseline;
+      align-items: flex-end;
       justify-content: flex-start;
       margin-bottom: 1.875em;
+      margin-top: 1em;
 
       .data-type {
         color: $color-pink;
@@ -61,7 +62,10 @@
         font-size: 2.813em;
         line-height: 1em;
         flex-basis: 20%;
-        margin-bottom: 1em;
+
+        &-icon {
+          margin-bottom: .35em;
+        }
 
         span {
           margin: 0;
@@ -85,6 +89,7 @@
 
       .data-location {
         width: 100%;
+        margin-top: 1em;
       }
     }
 

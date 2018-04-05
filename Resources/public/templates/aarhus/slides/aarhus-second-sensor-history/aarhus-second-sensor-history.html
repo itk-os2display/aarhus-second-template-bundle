@@ -6,6 +6,11 @@
     background-color: {{ ikSlide.options.themecolor }}
     }
   </style>
+  <style type="text/css" data-ng-if="ikSlide.options.factcolor">
+    .slide-{{ikSlide.uniqueId}} .aarhus-second-sensor-history h2:after {
+    background-color: {{ ikSlide.options.factcolor }}
+    }
+  </style>
 
   <div class="aarhus-second--container">
     <div class="item image"
@@ -18,7 +23,7 @@
       <div class="textbox box{{ $index + 1 }}"
            data-ng-repeat="production in ikSlide.external_data | limitTo: 3 track by $index">
         <div class="item">
-          <h3>{{ production.name }}</h3>
+          <h2>{{ production.name }}</h2>
           <div class="data">
             <div class="data-type" data-ng-style="{'color': ikSlide.options.factcolor}">
               <div class="data-type-icon" data-ng-style="{'color': ikSlide.options.factcolor}">
