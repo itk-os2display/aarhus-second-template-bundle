@@ -32,8 +32,8 @@
               <span class="data-type-unit" data-ng-bind-html="production.unit"></span>
             </div>
             <div class="data-amount">
-              <span class="counter" data-count="{{production.value}}" data-ng-if="production.count_up">0</span>
-              <span data-ng-if="!production.count_up">{{production.value}}</span>
+              <span class="counter js-counter" data-count="{{production.value}}" data-ng-if="production.count_up">0</span>
+              <span class="counter" data-ng-if="!production.count_up">{{production.value}}</span>
             </div>
           </div>
         </div>

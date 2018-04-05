@@ -57,7 +57,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
 
             factTimeout();
 
-            slide.counters = $('.slide-' + slide.uniqueId + ' .counter');
+            slide.counters = $('.slide-' + slide.uniqueId + ' .js-counter');
 
             slide.counters.text("0");
 

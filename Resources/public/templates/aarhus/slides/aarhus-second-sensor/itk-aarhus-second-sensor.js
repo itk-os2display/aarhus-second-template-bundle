@@ -40,7 +40,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
     run: function runCalendarSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-sensor slide: " + slide.title);
 
-      slide.counters = $('.slide-' + slide.uniqueId + ' .counter');
+      slide.counters = $('.slide-' + slide.uniqueId + ' .js-counter');
 
       slide.counters.text("0");
 
@@ -65,7 +65,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
                 $this.text(Math.floor(this.countNum).toString().replace(/^-/, '−'));
               }
             });
-        });
+        }, region.fadeTime);
 
         // Set the progress bar animation.
         region.progressBar.start(duration);

@@ -25,8 +25,8 @@
                 <div class="data-type-unit" data-ng-style="{'color': ikSlide.options.themecolor}" data-ng-bind-html="field.unit"></div>
               </div>
               <div class="data-amount">
-                <span class="counter" data-count="{{field.value}}" data-ng-if="field.count_up"></span>
-                <span data-ng-if="!field.count_up">{{field.value}}</span>
+                <span class="counter js-counter" data-count="{{field.value}}" data-ng-if="field.count_up"></span>
+                <span class="counter" data-ng-if="!field.count_up">{{field.value}}</span>
                 {{field.value_suffix}}
               </div>
             </div>
