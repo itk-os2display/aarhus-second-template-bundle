@@ -24,7 +24,7 @@
             <span class="data-type-unit" data-ng-bind-html="ikSlide.external_data[0].unit"></span>
           </div>
           <div class="data-amount">
-            <span class="counter" data-count="{{ikSlide.external_data[0].value}}" data-ng-if="ikSlide.external_data[0].count_up">0</span>
+            <span class="counter" data-count="{{ikSlide.external_data[0].value}}" data-ng-if="ikSlide.external_data[0].count_up" data-ng-class="{'tpl-counter-small': ikSlide.external_data[0].value > 999}">0</span>
             <span data-ng-if="!ikSlide.external_data[0].count_up">{{ikSlide.external_data[0].value}}</span>
           </div>
           <div class="data-location"
