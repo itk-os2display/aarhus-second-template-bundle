@@ -35,7 +35,10 @@
     },
     {
       "name": "Tekst",
-      "id": "itk-rich-text"
+      "id": "itk-rich-text",
+      "config": {
+        "fontsize_enabled": false
+      }
     },
     {
       "name": "Faktatekster",

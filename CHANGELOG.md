@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.1
+
+* Fixed issues with data templates.
+
 ## 1.1.0
 
 * Added sensor-history template.
