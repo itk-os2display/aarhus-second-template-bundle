@@ -45,6 +45,11 @@
             "name": "Baggrundsfarve",
             "field": "bgcolor",
             "theme": "main"
+          },
+          {
+            "name": "Temafarve",
+            "field": "themecolor",
+            "theme": "main"
           }
         ]
       }
