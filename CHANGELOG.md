@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.3
+
+* Added colour picker for remaining slides.
+
 ## 1.1.2
 
 * Upped font size.
