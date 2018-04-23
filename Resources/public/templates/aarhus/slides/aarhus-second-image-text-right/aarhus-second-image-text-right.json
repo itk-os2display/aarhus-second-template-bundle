@@ -24,7 +24,9 @@
   },
   "empty_options": {
     "fontsize": 16,
-    "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>"
+    "text": "",
+    "bgcolor": "#fff",
+    "themecolor": "#EE0043"
   },
   "tools": [
     {
@@ -44,6 +46,11 @@
           {
             "name": "Baggrundsfarve",
             "field": "bgcolor",
+            "theme": "main"
+          },
+          {
+            "name": "Temafarve",
+            "field": "themecolor",
             "theme": "main"
           }
         ]
