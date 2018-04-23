@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.2
+
+* Upped font size.
+
 ## 1.1.1
 
 * Fixed issues with data templates.
