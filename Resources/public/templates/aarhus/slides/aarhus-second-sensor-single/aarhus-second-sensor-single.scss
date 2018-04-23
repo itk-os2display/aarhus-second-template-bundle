@@ -57,12 +57,12 @@
       margin-top: 1em;
 
       .data-type {
-        color: $color-pink;       
-        flex-basis: 20%;
+        color: $color-pink;
+        flex-basis: 18%;
         .data-type-icon {
           font-size: 3.2em;
           line-height: 1em;
-          margin-bottom: .25em 
+          margin-bottom: .25em
         }
         .data-type-unit {
           font-family: $font-family-black;
@@ -76,13 +76,13 @@
       .data-amount {
         color: $color-grey;
         font-family: $font-family-black;
-        
-        
-        flex-basis: 80%;
+
+
+        flex-basis: 82%;
         text-align: right;
-        
+
         .counter {
-          font-size: 11em;
+          font-size: 10em;
           line-height: 1.2em;
           margin: 0;
           padding: 0;
@@ -96,6 +96,10 @@
       .data-location {
         width: 100%;
         margin-top: 1em;
+
+        p {
+          color: #666;
+        }
       }
     }
 
@@ -105,9 +109,9 @@
 
     p {
       font-family: $font-family-regular;
-      font-size: $font-size-p;
       color: $color-grey;
       margin: 0 0 0.625em 0;
+      font-size: 1.7em;
     }
   }
 }

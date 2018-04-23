@@ -32,8 +32,8 @@
             <p>Niveau målt ved {{ikSlide.external_data[0].location}} kl.
               {{ikSlide.external_data[0].timestamp | date: 'HH:mm'}}</p>
           </div>
+          <div class="text" data-ng-bind-html="ikSlide.options.text"></div>
         </div>
-        <div data-ng-bind-html="ikSlide.options.text"></div>
       </div>
     </div>
     <div class="item footer small">
