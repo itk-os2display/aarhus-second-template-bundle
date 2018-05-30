@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.5
+
+* Removed os2display requirements.
+
 ## 1.1.4
 
 * Fixed color for text slide.
