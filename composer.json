@@ -3,9 +3,6 @@
     "description": "Os2Display Aarhus templates",
     "type": "symfony-bundle",
     "require": {
-        "os2display/core-bundle": "dev-feature/campaign",
-        "os2display/default-template-bundle": "dev-feature/campaign",
-        "itk-os2display/template-extension-bundle": "dev-feature/campaign"
     },
     "autoload": {
         "psr-4": {

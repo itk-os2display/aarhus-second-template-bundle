@@ -10,7 +10,7 @@ use Os2Display\CoreBundle\DependencyInjection\Os2DisplayBaseExtension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class ItkAarhuSecondTemplateExtension extends Os2DisplayBaseExtension
+class ItkAarhusSecondTemplateExtension extends Os2DisplayBaseExtension
 {
     /**
      * {@inheritdoc}

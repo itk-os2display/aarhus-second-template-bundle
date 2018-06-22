@@ -38,6 +38,13 @@
       "id": "itk-data-source-picker"
     },
     {
+      "name": "Tekst",
+      "id": "itk-rich-text",
+      "config": {
+        "fontsize_enabled": false
+      }
+    },
+    {
       "name": "Farver",
       "id": "itk-color-picker",
       "config": {
@@ -45,6 +52,11 @@
           {
             "name": "Baggrundsfarve",
             "field": "bgcolor",
+            "theme": "main"
+          },
+          {
+            "name": "Temafarve",
+            "field": "themecolor",
             "theme": "main"
           }
         ]

@@ -1,5 +1,12 @@
 <div class="aarhus-second aarhus-second-sensor"
      data-ng-style="{'font-size': theStyle.fontsize}">
+  <!-- Hack to alter ::after -->
+  <style type="text/css" data-ng-if="ikSlide.options.themecolor">
+    .slide-{{ikSlide.uniqueId}} .aarhus-second-sensor h2:after {
+    background-color: {{ ikSlide.options.themecolor }}
+    }
+  </style>
+
   <div class="aarhus-second--container live">
     <div class="item image"
          data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
@@ -7,15 +14,20 @@
     </div>
     <div class="aarhus-second-sensor--content">
       <div class="box-container">
-        <div class="textbox" data-ng-repeat="field in ikSlide.external_data">
+        <div class="textbox" data-ng-repeat="field in ikSlide.external_data | limitTo: 4">
           <div class="item">
             <h2>{{field.name}}</h2>
             <div class="data">
               <div class="data-type">
-                <span>{{field.unit}}</span>
+                <div class="data-type-icon" data-ng-style="{'color': ikSlide.options.themecolor}">
+                  <i class="{{field.icon_classes}}" data-fa-transform="rotate-{{ field.icon_rotate }}"></i>
+                </div>
+                <div class="data-type-unit" data-ng-style="{'color': ikSlide.options.themecolor}" data-ng-bind-html="field.unit"></div>
               </div>
               <div class="data-amount">
-                <span class="counter" data-count="{{field.value}}"></span>{{field.value_suffix}}
+                <span class="counter js-counter" data-count="{{field.value}}" data-ng-if="field.count_up"></span>
+                <span class="counter" data-ng-if="!field.count_up">{{field.value}}</span>
+                {{field.value_suffix}}
               </div>
             </div>
           </div>

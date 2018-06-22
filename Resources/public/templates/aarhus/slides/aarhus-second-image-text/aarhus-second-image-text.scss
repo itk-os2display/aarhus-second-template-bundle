@@ -31,5 +31,8 @@
       color: $color-grey;
       margin: 0;
     }
+    h2:after {
+      display:none;
+    }
   }
 }

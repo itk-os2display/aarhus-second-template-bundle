@@ -1,7 +1,28 @@
 # itk-os2display/aarhus-second-template-bundle
 
-## In develop
+## 1.1.5
 
+* Removed os2display requirements.
+
+## 1.1.4
+
+* Fixed color for text slide.
+
+## 1.1.3
+
+* Added colour picker for remaining slides.
+
+## 1.1.2
+
+* Upped font size.
+
+## 1.1.1
+
+* Fixed issues with data templates.
+
+## 1.1.0
+
+* Added sensor-history template.
 * Updated npm packages.
 
 ## 1.0.4

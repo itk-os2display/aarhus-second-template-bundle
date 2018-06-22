@@ -9,6 +9,12 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
     setup: function setupCalendarSlide(scope) {
       var slide = scope.ikSlide;
 
+      // Load font-awesome icons.
+      if (!window.FONT_AWESOME) {
+        window.FONT_AWESOME = true;
+        $.getScript(slide.path + "/../../../assets/fontawesome.js", function( data, textStatus, jqxhr ) {});
+      }
+
       // Only show first image in array.
       if (slide.media_type === 'image' && slide.media.length > 0) {
         slide.currentImage = slide.media[0].image;
@@ -33,34 +39,31 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
     run: function runCalendarSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-sensor slide: " + slide.title);
 
-      slide.counters = $('.slide-' + slide.uniqueId + ' .counter');
-
-      slide.counters.text("0");
-
+      var slideElement = angular.element('.slide-' + slide.uniqueId);
       var duration = slide.duration !== null ? slide.duration : 15;
-
       var maxDuration = Math.min(2500, duration / 2 * 1000);
+
+      slide.counters = $(slideElement).find('.js-counter');
+      slide.counters.text('0');
 
       // Wait fadeTime before start to account for fade in.
       region.$timeout(function () {
-        slide.counters.each(function() {
-          var $this = $(this),
-            countTo = $this.attr('data-count');
+        angular.forEach(slide.counters, function(element) {
+          element = $(element);
+          var countTo = element.attr('data-count');
 
-          $({ countNum: $this.text()}).animate({
+          $({ countNum: element.text()}).animate({
               countNum: countTo
             },
             {
               duration: Math.min((countTo * 10) + 250, maxDuration),
               easing: 'linear',
               step: function() {
-                $this.text(Math.floor(this.countNum));
-              },
-              complete: function() {
-                $this.text(this.countNum);
+                // Replace dash with minus character.
+                  element.text(Math.ceil(this.countNum).toString().replace(/^-/, '−'));
               }
             });
-        });
+        }, region.fadeTime);
 
         // Set the progress bar animation.
         region.progressBar.start(duration);
