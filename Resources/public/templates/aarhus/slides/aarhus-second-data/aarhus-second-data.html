@@ -1,0 +1,29 @@
+<div class="aarhus-second-data"
+     data-ng-style="{
+      'width': theStyle.width,
+      'height': theStyle.height,
+      'font-size': theStyle.fontsize,
+      'background-color': ikSlide.options.bgcolor,
+      'color': ikSlide.options.color}">
+  <div class="tpl-container">
+    <div class="tpl-headline" ng-bind-html="ikSlide.options.text"></div>
+    <div class="tpl-data">
+      <table data-ng-if="ikSlide.external_data.length > 0">
+        <thead data-ng-if="ikSlide.external_data[0].type === 'header'">
+        <tr class="tpl-header-tr">
+          <th data-ng-repeat="column in ikSlide.external_data[0].columns"><span class="tpl-column-title">{{column.title}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="element in ikSlide.external_data"
+            data-ng-if="$index !== 0">
+          <td data-ng-repeat="column in ikSlide.external_data[0].columns">
+            {{ element[column.field] }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div data-ng-if="ikSlide.external_data.length === 0">Empty</div>
+    </div>
+  </div>
+</div>
