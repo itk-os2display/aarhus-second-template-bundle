@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.6
+
+* Added data template.
+
 ## 1.1.5
 
 * Removed os2display requirements.
