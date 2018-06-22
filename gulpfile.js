@@ -38,6 +38,7 @@ var templates = {
       'aarhus-second-sensor',
       'aarhus-second-sensor-single',
       'aarhus-second-countdown',
+      'aarhus-second-data',
       'aarhus-second-sensor-history'
     ]
   }

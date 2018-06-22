@@ -1,0 +1,55 @@
+{
+  "id": "aarhus-second-data",
+  "type": "slide",
+  "name": "Aarhus: Data",
+  "icon": "aarhus-second-data.png",
+  "paths": {
+    "live": "aarhus-second-data.html",
+    "edit": "aarhus-second-data.html",
+    "preview": "aarhus-second-data.html",
+    "css": "aarhus-second-data.css",
+    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "fontsize": 16,
+    "color": "#000",
+    "bgcolor": "#ccc",
+    "text": ""
+  },
+  "tools": [
+    {
+      "name": "Farver",
+      "id": "itk-color-picker",
+      "config": {
+        "fields": [
+          {
+            "name": "Baggrundsfarve",
+            "field": "bgcolor",
+            "theme": "main"
+          },
+          {
+            "name": "Tekstfarve",
+            "field": "color",
+            "theme": "text"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tekst",
+      "id": "itk-rich-text"
+    },
+    {
+      "name": "Datakilde",
+      "id": "itk-data-source-picker"
+    }
+  ]
+}
