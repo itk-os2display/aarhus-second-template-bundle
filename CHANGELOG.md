@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.7
+
+* Fixed data template slide_type.
+
 ## 1.1.6
 
 * Added data template.
