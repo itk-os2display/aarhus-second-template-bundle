@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.1.9
+
+* Added background image to data template.
+
 ## 1.1.8
 
 * Fixed color issue with data template.
