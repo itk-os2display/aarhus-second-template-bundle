@@ -44,6 +44,11 @@
       }
     },
     {
+      "name": "Billede",
+      "id": "background-editor",
+      "template": "bundles/itktemplateextension/apps/templateExtensionModule/itk-background-editor.html"
+    },
+    {
       "name": "Tekst",
       "id": "itk-rich-text"
     },
