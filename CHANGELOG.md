@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.2.0
+
+* Changed paths to match new location of template-extension-bundle in os2display.
+
 ## 1.1.9
 
 * Added background image to data template.
