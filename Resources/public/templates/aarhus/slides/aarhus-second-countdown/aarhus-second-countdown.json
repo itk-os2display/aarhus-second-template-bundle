@@ -40,7 +40,7 @@
     {
       "name": "Billede efter nedtælling",
       "id": "background-editor",
-      "template": "bundles/itktemplateextension/apps/templateExtensionModule/itk-background-editor.html"
+      "template": "bundles/os2displaytemplateextension/apps/templateExtensionModule/itk-background-editor.html"
     },
     {
       "name": "Tekster",
