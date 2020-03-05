@@ -1,0 +1,31 @@
+{
+  "id": "aarhus-poster",
+  "type": "slide",
+  "name": "Aarhus - Plakat",
+  "icon": "aarhus-poster.png",
+  "paths": {
+    "live": "aarhus-poster.html",
+    "edit": "aarhus-poster.html",
+    "preview": "aarhus-poster.html",
+    "css": "aarhus-poster.css",
+    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "poster-base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "fontsize": "12",
+    "bgcolor": "rgb(255, 255, 255)"
+  },
+  "tools": [
+    {
+      "name": "Vælg arrangement",
+      "id": "poster-tool"
+    }
+  ]
+}
