@@ -1,4 +1,4 @@
-var gulp = require('gulp-help')(require('gulp'));
+var gulp = require('gulp');
 
 // Plugins.
 var jshint = require('gulp-jshint');
@@ -35,6 +35,7 @@ var templates = {
     'slides': [
       'aarhus-second-image-text',
       'aarhus-second-image-text-right',
+      'aarhus-second-poster',
       'aarhus-second-sensor',
       'aarhus-second-sensor-single',
       'aarhus-second-countdown',
@@ -47,7 +48,7 @@ var templates = {
 /**
  * Process SCSS using libsass
  */
-gulp.task('sass', 'Compile the sass for each templates into minified css files.', function () {
+gulp.task('sass', function (doneFn) {
   'use strict';
 
   var adminBuildDir = 'Resources/public/assets/build';
@@ -57,7 +58,7 @@ gulp.task('sass', 'Compile the sass for each templates into minified css files.'
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
-    .pipe(rename({extname: ".min.css"}))
+    .pipe(rename({extname: '.min.css'}))
     .pipe(gulp.dest(adminBuildDir));
 
   for (var organization in templates) {
@@ -68,17 +69,18 @@ gulp.task('sass', 'Compile the sass for each templates into minified css files.'
         var path = templatesPath + organization + '/' + templateType + '/' + folder + '/';
 
         gulp.src(path + folder + '.scss')
-        .pipe(sass({
-          outputStyle: 'compressed',
-          includePaths: [
-            '../../Os2Display/DefaultTemplateBundle/Resources/sass/compass-mixins/lib'
-          ]
-        }).on('error', sass.logError))
-        .pipe(gulp.dest(path));
+          .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: [
+              '../../Os2Display/DefaultTemplateBundle/Resources/sass/compass-mixins/lib'
+            ]
+          }).on('error', sass.logError))
+          .pipe(gulp.dest(path));
       }
     }
   }
 
+  doneFn();
 });
 
 // We only want to process our own non-processed JavaScript files.
@@ -90,7 +92,7 @@ var adminJsPath = (function () {
 
     // Breadth-first descend into data to find "files".
     buildFiles = function (data) {
-      if (typeof(data) === 'object') {
+      if (typeof (data) === 'object') {
         for (var p in data) {
           if (p === 'files') {
             jsFiles = jsFiles.concat(data[p]);
@@ -115,31 +117,33 @@ var adminJsPath = (function () {
 /**
  * Run Javascript through JSHint.
  */
-gulp.task('jshint', 'Runs JSHint on js', function () {
+gulp.task('jshint', function () {
   return gulp.src(adminJsPath)
-  .pipe(jshint())
-  .pipe(jshint.reporter(stylish));
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
 });
 
 /**
  * Build single app.js file.
  */
-gulp.task('js', 'Build all custom js files into one minified js file.', function () {
+gulp.task('js', function () {
     return gulp.src(adminJsPath)
-    .pipe(concat('itkaarhussecondtemplate.js'))
-    .pipe(ngAnnotate())
-    .pipe(uglify())
-    .pipe(rename({extname: ".min.js"}))
-    .pipe(header(banner, {pkg: pkg}))
-    .pipe(gulp.dest(adminBuildDir));
+      .pipe(concat('itkaarhussecondtemplate.js'))
+      .pipe(ngAnnotate())
+      .pipe(uglify())
+      .pipe(rename({extname: '.min.js'}))
+      .pipe(header(banner, {pkg: pkg}))
+      .pipe(gulp.dest(adminBuildDir));
   }
 );
 
 /**
  * Build single app.js file.
  */
-gulp.task('js-src', 'Report all source files for "js" task.', function () {
+gulp.task('js-src', function (doneFn) {
   adminJsPath.forEach(function (path) {
     process.stdout.write(path + '\n');
   });
+
+  doneFn();
 });
