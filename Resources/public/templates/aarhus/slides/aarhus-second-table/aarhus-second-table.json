@@ -1,0 +1,31 @@
+{
+  "id": "aarhus-second-table",
+  "type": "slide",
+  "name": "Aarhus - Table",
+  "icon": "aarhus-second-table.png",
+  "paths": {
+    "live": "aarhus-second-table.html",
+    "edit": "aarhus-second-table.html",
+    "preview": "aarhus-second-table.html",
+    "css": "aarhus-second-table.css",
+    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "table-base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "fontsize": "12",
+    "bgcolor": "rgb(255, 255, 255)"
+  },
+  "tools": [
+    {
+      "name": "Vælg arrangement",
+      "id": "table-tool"
+    }
+  ]
+}
