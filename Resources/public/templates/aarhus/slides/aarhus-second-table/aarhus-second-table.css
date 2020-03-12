@@ -81,3 +81,7 @@
     padding: calc(var(--sizer) * .75) var(--sizer);
     vertical-align: top;
 }
+.tpl-table-moreinfo {
+    margin-top: calc(var(--sizer) * 2);
+    font-size: calc(var(--sizer) * 2);
+}
