@@ -35,7 +35,6 @@ var templates = {
     'slides': [
       'aarhus-second-image-text',
       'aarhus-second-image-text-right',
-      'aarhus-second-poster',
       'aarhus-second-sensor',
       'aarhus-second-sensor-single',
       'aarhus-second-countdown',
