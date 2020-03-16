@@ -101,3 +101,13 @@
     display: block;
     margin-bottom: var(--sizer);
 }
+.aarhus-second-poster .fadeout {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .2s, opacity .2s ease-in;
+}
+.aarhus-second-poster .fadein {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .4s ease-out;
+}

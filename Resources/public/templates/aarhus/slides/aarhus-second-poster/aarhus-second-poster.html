@@ -3,7 +3,7 @@
         <div class="tpl-poster-date--day">{{ikSlide.options.data.startDate | date:'d'}}</div>
         <div class="tpl-poster-date--month">{{ikSlide.options.data.startDate | date:'MMM'}}</div>
     </div>
-    <div class="tpl-poster-image">
+    <div class="tpl-poster-image ng-animate-disabled" ng-class="{'fadeout': ikSlide.fadeout, 'fadein': ikSlide.fadeout === false}">
         <img src="{{ ikSlide.options.data.image }}" alt="Placehold image">
     </div>
     <div class="tpl-poster-title" ng-if="ikSlide.options.data.name">
