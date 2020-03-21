@@ -1,5 +1,5 @@
-.aakb-digital-contact {
-    --sizer: 1rem;
+.aarhus-second-contact {
+    --sizer: 1em;
     --padding: calc(var(--sizer) * 3);
     --color-primary: #ee0043;
     --color-gray-100: #f6f6f6;
@@ -23,14 +23,14 @@
     word-break: break-word;
     word-wrap: break-word;
 }
-.tpl-contact-title {
+.aarhus-second-contact .tpl-contact-title {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
     background-color: white;
     padding: var(--padding);
     align-self: start;
 }
-.tpl-contact-title h1{
+.aarhus-second-contact .tpl-contact-title h1{
     font-family: var(--font-family-primary);
     font-weight: 900;
     font-size: calc(var(--sizer) * 4);
@@ -39,7 +39,7 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-.tpl-contact-title h1:after {
+.aarhus-second-contact .tpl-contact-title h1:after {
     content: "";
     height: calc(var(--sizer) / 2);
     width: calc(var(--sizer) * 10);
@@ -47,7 +47,7 @@
     display: block;
     margin-top: calc(var(--sizer) * 2);
 }
-.tpl-contact-content {
+.aarhus-second-contact .tpl-contact-content {
     grid-column: 1 / 1;
     grid-row: 2 / 2;
     background-color: var(--color-gray-100);
@@ -58,27 +58,27 @@
     grid-template-columns: 33.333% 33.333% 33.333%;
     grid-template-rows: 50% 50%;
 }
-.tpl-contact-content--col {
+.aarhus-second-contact .tpl-contact-content--col {
     margin-bottom: calc(var(--sizer) * 2);
     overflow: hidden;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 100%;
 }
-.tpl-contact-content--col-image img{
+.aarhus-second-contact .tpl-contact-content--col-image img{
     object-fit: cover;
     object-position: center;
     width: 100%;
     height: auto;
 }
-.tpl-contact-content--col-info {
+.aarhus-second-contact .tpl-contact-content--col-info {
     padding-left: var(--sizer);
 }
-.tpl-contact-content--col-info h3 {
+.aarhus-second-contact .tpl-contact-content--col-info h3 {
     margin-block-start: 0;
     margin-block-end: var(--sizer);
 }
-.tpl-contact-content--col-info p {
+.aarhus-second-contact .tpl-contact-content--col-info p {
     margin-block-start: 0;
     margin-block-end: calc(var(--sizer) / 2);
 }

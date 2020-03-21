@@ -1,7 +1,7 @@
 {
   "id": "aarhus-second-contact",
   "type": "slide",
-  "name": "Aarhus - contact",
+  "name": "Aarhus - kontakter",
   "icon": "aarhus-second-contact.png",
   "paths": {
     "live": "aarhus-second-contact.html",
@@ -24,8 +24,8 @@
   },
   "tools": [
     {
-      "name": "Vælg arrangement",
-      "id": "contact-tool"
+      "name": "Vælg kontakter",
+      "id": "contact-picker"
     }
   ]
 }

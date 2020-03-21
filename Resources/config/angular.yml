@@ -5,5 +5,11 @@ assets:
     - bundles/itkaarhussecondtemplate/templates/aarhus/assets/fontawesome.js
 
 modules:
+  aarhusSecondTemplates:
+    files:
+      - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-picker.js
 
 apps:
+  ikApp:
+    dependencies:
+      - aarhusSecondTemplates

@@ -1,0 +1,71 @@
+<div class="edit-menu--background" role="banner">
+  <div class="edit-menu--background-inner">
+    <div class="edit-menu--toggle-icon" data-ng-click="close()">
+      <div class="svg-clickable">
+        <object data="bundles/os2displayadmin/images/svg/cancel.svg" type="image/svg+xml">
+          <!-- Fallback (ie8)-->
+          <img src="bundles/os2displayadmin/images/cancel.png"/>
+        </object>
+      </div>
+    </div>
+    <div class="edit-menu--background-page" data-ng-if="!step">
+      <div class="edit-menu--background-page-inner">
+        <h2 class="edit-menu--background-header">Kontakter</h2>
+
+        <button ng-click="addContact()">
+          tilføj kontakt
+        </button>
+
+        <div class="contact-picker--contact" data-ng-repeat="contact in slide.options.contacts">
+          <div class="itk-template-extension--section">
+            <p><input type="text" ng-model="contact.name" placeholder="Navn"></p>
+            <p><input type="text" ng-model="contact.title" placeholder="Titel"></p>
+            <p><input type="text" ng-model="contact.phone" placeholder="Telefonnr."></p>
+            <p><input type="text" ng-model="contact.email" placeholder="Email"></p>
+
+            <img class="itk-template-extension--media-picker-image"
+                 data-ng-src="{{slide.media[contact.imageId].urls.default_landscape}}"
+                 data-ng-if="slide.media[contact.imageId].media_type === 'image'">
+            <button class="itk-template-extension--button" data-ng-click="backgroundPicker(contact)">
+              {{ slide.media[contact.imageId] ? 'Skift' : 'Vælg' }}
+            </button>
+            <button class="itk-template-extension--button-remove"
+                    data-ng-if="slide.media[contact.imageId]"
+                    data-ng-click="removeMedia(contact.imageId)">
+              Fjern
+            </button>
+            <button ng-click="removeContact(contact)">
+              Fjern kontakt
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="edit-menu--background-page" data-ng-if="step">
+      <div class="edit-menu--background-image-back" data-ng-click="back()">
+        <div class="svg-clickable">
+          <object data="bundles/os2displayadmin/images/svg/back.svg" type="image/svg+xml">
+            <!-- Fallback (ie8)-->
+            <img src="bundles/os2displayadmin/images/back.png"/>
+          </object>
+        </div>
+        <h2 data-ng-click="back()">Tilbage</h2>
+      </div>
+      <div class="edit-menu--background-page-inner" data-ng-if="step === 'background-picker'">
+        <h3 class="edit-menu--background-header">Vælg medie</h3>
+        <div class="edit-menu--background-content">
+          <button class="edit-menu--background-button" data-ng-click="pickFromMedia()">Vælg fil fra medier</button>
+          <button class="edit-menu--background-button" data-ng-click="pickFromComputer()">Vælg fil fra computer</button>
+        </div>
+      </div>
+      <div class="edit-menu--background-page-inner" data-ng-if="step === 'pick-from-media'">
+        <ik-media-overview ik-media-type="selectedMediaType" ik-auto-search="false" ik-hide-filters="true" ik-selected-media="selectedMedia"></ik-media-overview>
+      </div>
+      <div class="edit-menu--background-page-inner" data-ng-if="step === 'pick-from-computer'">
+        <div class="edit-menu--background-content-alternate">
+          <ik-media-upload ik-upload-type="selectedMediaType"></ik-media-upload>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
