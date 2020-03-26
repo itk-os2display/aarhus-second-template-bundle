@@ -26,7 +26,23 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
           scope.slide.options.contacts = {};
         }
 
+        /**
+         * Get contact length.
+         *
+         * @return {number}
+         */
+        scope.contactLength = function () {
+          return Object.keys(scope.slide.options.contacts).length;
+        };
+
+        /**
+         * Add an empty contact.
+         */
         scope.addContact = function () {
+          if (scope.contactLength() >= 6) {
+            return;
+          }
+
           var id = Date.now();
           scope.slide.options.contacts[id] = {
             id: id,
@@ -37,10 +53,15 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
           };
         };
 
+        /**
+         * Remove a contact.
+         *
+         * @param contact
+         */
         scope.removeContact = function (contact) {
           delete scope.slide.options.contacts[contact.id];
 
-          // @TODO: Remove media from media list.
+          cleanupMediaList();
         };
 
         /**
@@ -51,7 +72,7 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
         scope.removeMedia = function(pickedIndex) {
           scope.slide.options[pickedIndex] = null;
 
-          // @TODO: Remove from media list.
+          cleanupMediaList();
         };
 
         /**
@@ -84,11 +105,49 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
           scope.step = 'pick-from-computer';
         };
 
+        /**
+         * Back from image selection.
+         */
         scope.back = function back() {
           scope.selectedMedia = [];
           scope.step = null;
           selectedContact = null;
         };
+
+        /**
+         * Cleanup slide.media list and update imageIds in contacts.
+         */
+        function cleanupMediaList() {
+          var mediaList = scope.slide.media;
+
+          // Map image ids to contact ids.
+          var imageIndexToContactId = Object.values(scope.slide.options.contacts).reduce(function (carry, el) {
+            if (el.imageId) {
+              carry[el.imageId] = el.id;
+            }
+            return carry;
+          }, {});
+
+          // Create new mediaList.
+          var newMediaList = [];
+          for (var oldIndex in mediaList) {
+            if (mediaList.hasOwnProperty(oldIndex)) {
+              var el = mediaList[oldIndex];
+
+              // Find element and update image id.
+              var contactId = imageIndexToContactId[oldIndex];
+
+              if (contactId) {
+                newMediaList.push(el);
+                var newIndex = newMediaList.indexOf(el);
+
+                scope.slide.options.contacts[contactId].imageId = newIndex;
+              }
+            }
+          }
+
+          scope.slide.media = newMediaList;
+        }
 
         /**
          * Add a media from scope.slide.media.

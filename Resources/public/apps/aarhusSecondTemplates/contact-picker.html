@@ -12,7 +12,7 @@
       <div class="edit-menu--background-page-inner">
         <h2 class="edit-menu--background-header">Kontakter</h2>
 
-        <button ng-click="addContact()">
+        <button ng-click="addContact()" data-ng-disabled="contactLength() >= 6">
           tilføj kontakt
         </button>
 
