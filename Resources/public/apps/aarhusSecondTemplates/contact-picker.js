@@ -7,7 +7,7 @@
  * ContactPicker tool.
  */
 angular.module('aarhusSecondTemplates').directive('contactPicker', [
-  'mediaFactory', 'busService', function (mediaFactory, busService) {
+  'mediaFactory', 'busService', '$timeout', function (mediaFactory, busService, $timeout) {
     return {
       restrict: 'E',
       replace: true,
@@ -139,9 +139,7 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
 
               if (contactId) {
                 newMediaList.push(el);
-                var newIndex = newMediaList.indexOf(el);
-
-                scope.slide.options.contacts[contactId].imageId = newIndex;
+                scope.slide.options.contacts[contactId].imageId = newMediaList.indexOf(el);
               }
             }
           }
@@ -191,12 +189,14 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
 
         // Register event listener for media upload success.
         scope.$on('mediaUpload.uploadSuccess', function (event, data) {
+          scope.step = null;
+
           mediaFactory.getMedia(data.id).then(
             function success(media) {
-              scope.slide.media.push(media);
-              selectedContact.imageId = scope.slide.media.indexOf(media);
-
-              scope.step = null;
+              $timeout(function () {
+                scope.slide.media.push(media);
+                selectedContact.imageId = scope.slide.media.indexOf(media);
+              });
             },
             function error(reason) {
               busService.$emit('log.error', {
