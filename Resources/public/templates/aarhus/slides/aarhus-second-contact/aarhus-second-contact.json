@@ -25,7 +25,7 @@
   "tools": [
     {
       "name": "Vælg kontakter",
-      "id": "contact-picker"
+      "id": "contact-tool"
     }
   ]
 }

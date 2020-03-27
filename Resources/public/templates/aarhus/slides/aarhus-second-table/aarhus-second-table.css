@@ -1,5 +1,5 @@
-.aakb-digital-table {
-    --sizer: 1rem;
+.aarhus-second-table {
+    --sizer: 1em;
     --padding: calc(var(--sizer) * 3);
     --color-primary: #ee0043;
     --color-gray-100: #f6f6f6;
@@ -17,20 +17,20 @@
     background-color: var(--color-gray-100);
     line-height: 1.25;
     grid-gap: 0;
-    text-align: left; /* Nessesary to overwrite admin styles */
+    text-align: left; /* Necessary to overwrite admin styles */
     hyphens: auto;
     overflow-wrap: break-word;
     word-break: break-word;
     word-wrap: break-word;
 }
-.tpl-table-title {
+.aarhus-second-table .tpl-table-title {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
     background-color: white;
     padding: var(--padding);
     align-self: start;
 }
-.tpl-table-title h1{
+.aarhus-second-table .tpl-table-title h1 {
     font-family: var(--font-family-primary);
     font-weight: 900;
     font-size: calc(var(--sizer) * 4);
@@ -39,7 +39,7 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-.tpl-table-title h1:after {
+.aarhus-second-table .tpl-table-title h1:after {
     content: "";
     height: calc(var(--sizer) / 2);
     width: calc(var(--sizer) * 10);
@@ -47,14 +47,14 @@
     display: block;
     margin-top: calc(var(--sizer) * 2);
 }
-.tpl-table-content {
+.aarhus-second-table .tpl-table-content {
     grid-column: 1 / 1;
     grid-row: 2 / 2;
     background-color: var(--color-gray-100);
     padding: var(--padding);
     align-self: start;
 }
-.tpl-table-content table {
+.aarhus-second-table .tpl-table-content table {
     color: var(--color-gray-900);
     font-size: calc(var(--sizer) * 2);
     vertical-align: top;
@@ -62,26 +62,25 @@
     border-collapse: collapse;
     border-spacing: 0;
 }
-.tpl-table-content table thead th{
+.aarhus-second-table .tpl-table-content table thead th {
     color: var(--color-primary);
     text-align: left;
 }
-.tpl-table-content table tbody th {
+.aarhus-second-table .tpl-table-content table tbody th {
     text-align: left;
 }
-.tpl-table-content table tbody th span {
-    display: block;
-    color: var(--color-primary);
-}
-.tpl-table-content table tbody tr:nth-child(odd){
+.aarhus-second-table .tpl-table-content table tbody tr:nth-child(odd) {
     background-color: white;
 }
-.tpl-table-content table th,
-.tpl-table-content table td{
+.aarhus-second-table .tpl-table-content table th,
+.aarhus-second-table .tpl-table-content table td {
     padding: calc(var(--sizer) * .75) var(--sizer);
     vertical-align: top;
 }
-.tpl-table-moreinfo {
+.aarhus-second-table .tpl-table-moreinfo {
     margin-top: calc(var(--sizer) * 2);
     font-size: calc(var(--sizer) * 2);
+}
+.aarhus-second-table .tpl-table-content--date {
+    color: var(--color-primary);
 }

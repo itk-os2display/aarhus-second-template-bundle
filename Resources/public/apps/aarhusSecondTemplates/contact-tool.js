@@ -6,7 +6,7 @@
 /**
  * ContactPicker tool.
  */
-angular.module('aarhusSecondTemplates').directive('contactPicker', [
+angular.module('aarhusSecondTemplates').directive('contactTool', [
   'mediaFactory', 'busService', '$timeout', function (mediaFactory, busService, $timeout) {
     return {
       restrict: 'E',
@@ -207,7 +207,7 @@ angular.module('aarhusSecondTemplates').directive('contactPicker', [
           );
         });
       },
-      templateUrl: '/bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-picker.html'
+      templateUrl: '/bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-tool.html'
     };
   }
 ]);

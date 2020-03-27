@@ -1,23 +1,25 @@
-<div class="aakb-digital-table" ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height }">
+<div class="aarhus-second-table" ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height }">
     <div class="tpl-table-title">
-        <h1>Menu uge 46</h1>
+        <h1>{{ ikSlide.options.table.title }}</h1>
     </div>
     <div class="tpl-table-content">
         <table class="tpl-table-content--table">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Hovedret</th>
-                    <th>Dessert</th>
-                    <th>Lun/Kold ret til aften</th>
+                    <th ng-repeat="header in ikSlide.options.table.headers track by $index">{{ header }}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="i in [1, 2, 3, 4]">
-                    <th>Mandag<span class="tpl-table-content--date">11.11</span></th>
-                    <td>Fyldt fisk, kartofler, persillesovs</td>
-                    <td>Hyldebærsuppe med tvepakker</td>
-                    <td>Små omeletter</td>
+                <tr ng-repeat="(rowIndex, row) in ikSlide.options.table.rows track by rowIndex">
+                    <td ng-repeat="(cellIndex, cell) in row track by cellIndex">
+                        <span ng-if="cell.type === 'date'">
+                            {{ cell.value * 1000 | date:'EEEE' }}
+                            <span class="tpl-table-content--date">{{ cell.value * 1000 | date:'d.M' }}</span>
+                        </span>
+                        <span ng-if="!cell.type">
+                            {{ cell }}
+                        </span>
+                    </td>
                 </tr>
             </tbody>
         </table>

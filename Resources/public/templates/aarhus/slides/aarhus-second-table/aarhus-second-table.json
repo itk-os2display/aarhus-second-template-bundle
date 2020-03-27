@@ -1,7 +1,7 @@
 {
   "id": "aarhus-second-table",
   "type": "slide",
-  "name": "Aarhus - Table",
+  "name": "Aarhus - Tabel",
   "icon": "aarhus-second-table.png",
   "paths": {
     "live": "aarhus-second-table.html",
@@ -24,7 +24,7 @@
   },
   "tools": [
     {
-      "name": "Vælg arrangement",
+      "name": "Redigér tabel",
       "id": "table-tool"
     }
   ]
