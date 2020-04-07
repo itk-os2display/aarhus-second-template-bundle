@@ -8,22 +8,29 @@
     --font-family-primary: "Arial Black", Arial, sans-serif;
     --font-family-secondary: Arial, sans-serif;
     --shadow: 0 calc(var(--sizer) / 3) var(--sizer) rgba(0,0,0,.16);
-    display: grid;
-    grid-template-columns: 10% 55% 35%;
-    grid-template-rows: 30% 40% 30%;
+
     font-family: var(--font-family-secondary);
     font-size: var(--sizer);
     color: var(--color-gray-900);
     background-color: var(--color-gray-100);
     line-height: 1.25;
-    grid-gap: 0;
+
     text-align: left; /* Necessary to overwrite admin styles */
     hyphens: auto;
     overflow-wrap: break-word;
     word-break: break-word;
     word-wrap: break-word;
+    position: relative;
 }
-.tpl-poster-date {
+.aarhus-second-poster .tpl-content {
+  display: grid;
+  grid-template-columns: 10% 55% 35%;
+  grid-template-rows: 30% 40% 30%;
+  grid-gap: 0;
+  height: 100%;
+}
+
+.aarhus-second-poster .tpl-poster-date {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
     z-index: 1;
@@ -31,61 +38,62 @@
     align-self: start;
     box-shadow: var(--shadow);
 }
-.tpl-poster-date--month,
-.tpl-poster-date--day {
+.aarhus-second-poster .tpl-poster-date--month,
+.aarhus-second-poster .tpl-poster-date--day {
     font-family: var(--font-family-primary);
     font-weight: 900;
     text-align: center;
 }
-.tpl-poster-date--day {
+.aarhus-second-poster .tpl-poster-date--day {
     color: var(--color-primary);
     font-size: calc(var(--sizer) * 6);
-    padding-top: calc(var(--sizer) * 2);
+    padding-top: var(--sizer);
 }
-.tpl-poster-date--month {
+.aarhus-second-poster .tpl-poster-date--month {
     font-size: calc(var(--sizer) * 3);
     text-transform: uppercase;
     padding-bottom: calc(var(--sizer) * 2);
 }
-.tpl-poster-image {
+.aarhus-second-poster .tpl-poster-image {
     grid-column: 1 / span 2;
     grid-row: 1 / span 3;
 }
-.tpl-poster-image img {
+.aarhus-second-poster .tpl-poster-image img {
     object-fit: cover;
     object-position: center;
     max-width: 100%;
     height: 100%;
     width: 100%;
 }
-.tpl-poster-title {
+.aarhus-second-poster .tpl-poster-title {
     grid-column: 3 / 3;
     grid-row: 1 / 1;
     background-color: var(--color-gray-100);
-    padding: var(--padding);
+    padding: calc(var(--padding) * 1.75);
     align-self: start;
 }
-.tpl-poster-title h1{
+.aarhus-second-poster .tpl-poster-title h1{
     font-family: var(--font-family-primary);
     font-weight: 900;
-    font-size: calc(var(--sizer) * 4);
+    font-size: calc(var(--sizer) * 5);
     text-transform: uppercase;
     word-wrap: break-word;
     margin-top: 0;
 }
-.tpl-poster-title h1:after {
+.aarhus-second-poster .tpl-poster-title h1:after {
     content: "";
-    height: calc(var(--sizer) / 2);
-    width: calc(var(--sizer) * 10);
+    height: calc(var(--sizer) / 4);
+    width: calc(var(--sizer) * 3);
     background-color: var(--color-primary);
     display: block;
-    margin-top: calc(var(--sizer) * 2);
+    margin-block-start: calc(var(--sizer) / 2);
+    margin-block-end: var(--sizer);
 }
-.tpl-poster-title p{
-    font-size: calc(var(--sizer) * 2);
+.aarhus-second-poster .tpl-poster-title p{
+    font-size: calc(var(--sizer) * 2.5);
     line-height: 1.5;
 }
-.tpl-poster-eventinfo {
+.aarhus-second-poster .tpl-poster-eventinfo {
     grid-column: 3 / 3;
     grid-row: 3 / 3;
     background-color: var(--color-gray-100);
@@ -93,7 +101,7 @@
     padding: var(--padding);
     font-size: calc(var(--sizer) * 1.75);
 }
-.tpl-poster-eventinfo:before {
+.aarhus-second-poster .tpl-poster-eventinfo:before {
     content: "";
     height: calc(var(--sizer) / 16);
     width: 100%;
@@ -110,4 +118,24 @@
     visibility: visible;
     opacity: 1;
     transition: opacity .4s ease-out;
+}
+
+.aarhus-second-poster .alert {
+  --alert-width: calc(var(--sizer) * 30);
+  --alert-height: calc(var(--sizer) * 5);
+  width: var(--alert-width);
+  height: var(--alert-height);
+  position: absolute;
+  left: calc(50% - calc(var(--alert-width) / 2));
+  top: calc(50% - calc(var(--alert-height) / 2));
+  z-index: 99;
+  padding: var(--sizer);
+  box-shadow: var(--shadow);
+}
+.aarhus-second-poster .alert.alert-info {
+  background-color: #cce9ff;
+  color: #00467b;
+  border: 1px solid #b1ddff;
+  border-radius: 2px;
+  font-size: calc(var(--sizer) * 2.5);
 }
