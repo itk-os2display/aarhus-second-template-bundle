@@ -1,11 +1,8 @@
 <div class="edit-menu--background" role="banner">
-  <div class="edit-menu--background-inner">
+  <div class="edit-menu--background-inner" style="overflow-y: auto;">
     <div class="edit-menu--toggle-icon" data-ng-click="close()">
       <div class="svg-clickable">
-        <object
-          data="bundles/os2displayadmin/images/svg/cancel.svg"
-          type="image/svg+xml"
-        >
+        <object data="bundles/os2displayadmin/images/svg/cancel.svg" type="image/svg+xml">
           <!-- Fallback (ie8)-->
           <img src="bundles/os2displayadmin/images/cancel.png" />
         </object>
@@ -23,165 +20,95 @@
         </div>
         <div class="row edit-menu--background-page-inner p-0">
           <div class="col">
-
-
-          <div
-            class="contact-picker--contact row"
-            data-ng-repeat="contact in slide.options.contacts"
-          >
-            <div class="itk-template-extension--section col">
-              <div class="row pb-3 mb-3">
-                <div class="col-12 text-left pb-3">
-                  <p class="d-inline mr-3 pb-0">Kontakt #{{ $index+1 }}</p>
-                  <button
-                    ng-click="removeContact(contact)"
-                    class="btn btn-sm btn-danger float-right"
-                  >
-                    <i class="fa fa-trash fa-fw d-inline"></i> Fjern kontakt
-                  </button>
-                </div>
-                <div class="col-md-3">
-                  <img
-                    class="itk-template-extension--media-picker-image"
-                    data-ng-src="{{slide.media[contact.imageId].urls.default_landscape}}"
-                    data-ng-if="slide.media[contact.imageId].media_type === 'image'"
-                  />
-                  <span
-                    ng-if="slide.media[contact.imageId].media_type !== 'image'"
-                    class="img-thumbnail d-block py-5 mb-1"
-                    >Intet billede valgt</span
-                  >
-                  <button
-                    class="btn btn-outline-primary btn-sm itk-template-extension--button"
-                    data-ng-click="backgroundPicker(contact)"
-                  >
-                    {{ slide.media[contact.imageId] ? 'Skift billede' :
-                    'Tilføj billede' }}
-                  </button>
-                  <button
-                    class="btn btn-outline-danger btn-sm itk-template-extension--button-remove"
-                    data-ng-if="slide.media[contact.imageId]"
-                    data-ng-click="removeMedia(contact.imageId)"
-                  >
-                    Fjern billede
-                  </button>
-                </div>
-                <div class="col-md-9">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p>
-                        <input
-                          type="text"
-                          ng-model="contact.name"
-                          placeholder="Navn"
-                        />
-                      </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p>
-                        <input
-                          type="text"
-                          ng-model="contact.title"
-                          placeholder="Titel"
-                        />
-                      </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p>
-                        <input
-                          type="text"
-                          ng-model="contact.phone"
-                          placeholder="Telefonnr."
-                        />
-                      </p>
-                    </div>
-                    <div class="col-md-6">
-                      <p>
-                        <input
-                          type="text"
-                          ng-model="contact.email"
-                          placeholder="Email"
-                        />
-                      </p>
+            <div class="contact-picker--contact row" data-ng-repeat="contact in slide.options.contacts">
+              <div class="itk-template-extension--section col">
+                <div class="row pb-3 mb-3">
+                  <div class="col-12 text-left pb-3">
+                    <p class="d-inline mr-3 pb-0">Kontakt #{{ $index+1 }}</p>
+                    <button ng-click="removeContact(contact)" class="btn btn-sm btn-danger float-right">
+                      <i class="fa fa-trash fa-fw d-inline"></i> Fjern kontakt
+                    </button>
+                  </div>
+                  <div class="col-md-3">
+                    <img class="itk-template-extension--media-picker-image" data-ng-src="{{slide.media[contact.imageId].urls.default_landscape}}" data-ng-if="slide.media[contact.imageId].media_type === 'image'" />
+                    <span ng-if="slide.media[contact.imageId].media_type !== 'image'" class="img-thumbnail d-block py-5 mb-1">Intet billede valgt</span>
+                    <button class="btn btn-outline-primary btn-sm itk-template-extension--button" data-ng-click="backgroundPicker(contact)">
+                      {{ slide.media[contact.imageId] ? 'Skift billede' :
+                      'Tilføj billede' }}
+                    </button>
+                    <button class="btn btn-outline-danger btn-sm itk-template-extension--button-remove" data-ng-if="slide.media[contact.imageId]" data-ng-click="removeMedia(contact.imageId)">
+                      Fjern billede
+                    </button>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p>
+                          <input type="text" ng-model="contact.name" placeholder="Navn" />
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          <input type="text" ng-model="contact.title" placeholder="Titel" />
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          <input type="text" ng-model="contact.phone" placeholder="Telefonnr." />
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p>
+                          <input type="text" ng-model="contact.email" placeholder="Email" />
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-12">
-                  <p class="border-bottom mt-3"></p>
+                  <div class="col-12">
+                    <p class="border-bottom mt-3"></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
-        <div class="edit-menu--background-page" data-ng-if="step">
-          <div
-            class="edit-menu--background-image-back"
-            data-ng-click="back()"
-          >
-            <div class="svg-clickable">
-              <object
-                data="bundles/os2displayadmin/images/svg/back.svg"
-                type="image/svg+xml"
-              >
-                <!-- Fallback (ie8)-->
-                <img src="bundles/os2displayadmin/images/back.png" />
-              </object>
-            </div>
-            <h2 data-ng-click="back()">Tilbage</h2>
-          </div>
-          <div
-            class="edit-menu--background-page-inner"
-            data-ng-if="step === 'background-picker'"
-          >
-            <h3 class="edit-menu--background-header">Vælg medie</h3>
-            <div class="edit-menu--background-content">
-              <button
-                class="edit-menu--background-button"
-                data-ng-click="pickFromMedia()"
-              >
-                Vælg fil fra medier
-              </button>
-              <button
-                class="edit-menu--background-button"
-                data-ng-click="pickFromComputer()"
-              >
-                Vælg fil fra computer
-              </button>
-            </div>
-          </div>
-          <div
-            class="edit-menu--background-page-inner"
-            data-ng-if="step === 'pick-from-media'"
-          >
-            <ik-media-overview
-              ik-media-type="selectedMediaType"
-              ik-auto-search="false"
-              ik-hide-filters="true"
-              ik-selected-media="selectedMedia"
-            ></ik-media-overview>
-          </div>
-          <div
-            class="edit-menu--background-page-inner"
-            data-ng-if="step === 'pick-from-computer'"
-          >
-            <div class="edit-menu--background-content-alternate">
-              <ik-media-upload
-                ik-upload-type="selectedMediaType"
-              ></ik-media-upload>
-            </div>
-          </div>
-        </div>
+
         <div class="row">
           <div class="col-12">
-            <button
-              ng-click="addContact()"
-              data-ng-disabled="contactLength() >= 6"
-              class="btn btn-primary"
-            >
+            <button ng-click="addContact()" data-ng-disabled="contactLength() >= 6" class="btn btn-primary">
               Tilføj kontakt
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="edit-menu--background-page" data-ng-if="step">
+      <div class="edit-menu--background-image-back" data-ng-click="back()">
+        <div class="svg-clickable">
+          <object data="bundles/os2displayadmin/images/svg/back.svg" type="image/svg+xml">
+            <!-- Fallback (ie8)-->
+            <img src="bundles/os2displayadmin/images/back.png" />
+          </object>
+        </div>
+        <h2 data-ng-click="back()">Tilbage</h2>
+      </div>
+      <div class="edit-menu--background-page-inner" data-ng-if="step === 'background-picker'">
+        <h3 class="edit-menu--background-header">Vælg medie</h3>
+        <div class="edit-menu--background-content">
+          <button class="edit-menu--background-button" data-ng-click="pickFromMedia()">
+            Vælg fil fra medier
+          </button>
+          <button class="edit-menu--background-button" data-ng-click="pickFromComputer()">
+            Vælg fil fra computer
+          </button>
+        </div>
+      </div>
+      <div class="edit-menu--background-page-inner" data-ng-if="step === 'pick-from-media'">
+        <ik-media-overview ik-media-type="selectedMediaType" ik-auto-search="false" ik-hide-filters="true" ik-selected-media="selectedMedia"></ik-media-overview>
+      </div>
+      <div class="edit-menu--background-page-inner" data-ng-if="step === 'pick-from-computer'">
+        <div class="edit-menu--background-content-alternate">
+          <ik-media-upload ik-upload-type="selectedMediaType"></ik-media-upload>
         </div>
       </div>
     </div>
