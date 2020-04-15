@@ -30,13 +30,13 @@
                     </button>
                   </div>
                   <div class="col-md-3">
-                    <img class="itk-template-extension--media-picker-image" data-ng-src="{{slide.media[contact.imageId].urls.default_landscape}}" data-ng-if="slide.media[contact.imageId].media_type === 'image'" />
+                    <img class="itk-template-extension--media-picker-image mb-1" data-ng-src="{{slide.media[contact.imageId].urls.default_landscape}}" data-ng-if="slide.media[contact.imageId].media_type === 'image'" />
                     <span ng-if="slide.media[contact.imageId].media_type !== 'image'" class="img-thumbnail d-block py-5 mb-1">Intet billede valgt</span>
-                    <button class="btn btn-outline-primary btn-sm itk-template-extension--button" data-ng-click="backgroundPicker(contact)">
+                    <button class="btn btn-outline-primary btn-sm itk-template-extension--button m-1" data-ng-click="backgroundPicker(contact)">
                       {{ slide.media[contact.imageId] ? 'Skift billede' :
                       'Tilføj billede' }}
                     </button>
-                    <button class="btn btn-outline-danger btn-sm itk-template-extension--button-remove" data-ng-if="slide.media[contact.imageId]" data-ng-click="removeMedia(contact.imageId)">
+                    <button class="btn btn-outline-danger btn-sm itk-template-extension--button-remove m-1" data-ng-if="slide.media[contact.imageId]" data-ng-click="removeMedia(contact.imageId)">
                       Fjern billede
                     </button>
                   </div>
@@ -73,7 +73,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-12">
             <button ng-click="addContact()" data-ng-disabled="contactLength() >= 6" class="btn btn-primary">
               Tilføj kontakt
