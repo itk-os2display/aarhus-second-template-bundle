@@ -35,7 +35,9 @@ angular.module('aarhusSecondTemplates').directive('tableTool', [
 
           scope.slide.options.table.headers.push(newHeader);
 
-          // @TODO: Add new column to existing rows.
+          for (var i = 0; i < scope.slide.options.table.rows.length; i++) {
+            scope.slide.options.table.rows[i].push(angular.copy(newHeader));
+          }
         };
 
         scope.removeColumn = function removeColumn(index) {
@@ -69,18 +71,12 @@ angular.module('aarhusSecondTemplates').directive('tableTool', [
           }
 
           scope.slide.options.table.rows.push(newRow);
-
-          console.log(scope.slide.options.table.rows);
         };
 
         scope.removeRow = function removeRow(index) {
-          console.log('removing row: ' + index);
-
           scope.slide.options.table.rows = scope.slide.options.table.rows.filter(function (el, elIndex) {
             return elIndex !== index;
           });
-
-          console.log(scope.slide.options.table.rows);
         };
       },
       templateUrl: '/bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/table-tool.html'
