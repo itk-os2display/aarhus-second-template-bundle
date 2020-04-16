@@ -20,12 +20,29 @@
   },
   "empty_options": {
     "fontsize": "12",
-    "bgcolor": "rgb(255, 255, 255)"
+    "bgcolor": "rgb(255, 255, 255)",
+    "text": ""
   },
   "tools": [
     {
       "name": "Redigér tabel",
       "id": "table-tool"
+    },
+    {
+      "name": "Redigér tekst",
+      "id": "itk-rich-text",
+      "config": {
+        "fontsize_enabled": false,
+        "tools": {
+          "italics": true,
+          "bold": true,
+          "h1": false,
+          "h2": false,
+          "list_bullet": true,
+          "list_ordered": true,
+          "clean": true
+        }
+      }
     }
   ]
 }

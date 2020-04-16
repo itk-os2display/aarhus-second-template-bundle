@@ -6,7 +6,7 @@
         <table class="tpl-table-content--table">
             <thead>
                 <tr>
-                    <th ng-repeat="header in ikSlide.options.table.headers track by $index">{{ header }}</th>
+                    <th ng-repeat="header in ikSlide.options.table.headers track by $index">{{ header.value }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,16 +16,14 @@
                             {{ cell.value * 1000 | date:'EEEE' }}
                             <span class="tpl-table-content--date">{{ cell.value * 1000 | date:'d.M' }}</span>
                         </span>
-                        <span ng-if="!cell.type">
-                            {{ cell }}
+                        <span ng-if="cell.type === 'text'">
+                            {{ cell.value }}
                         </span>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <div class="tpl-table-moreinfo">
-            <p>Åbningstider 8-14</p>
-            <p>Varmt mad 11-13</p>
+        <div class="tpl-table-moreinfo" ng-bind-html="ikSlide.options.text">
         </div>
     </div>
 </div>
