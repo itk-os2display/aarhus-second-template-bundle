@@ -33,7 +33,8 @@
                     <tr>
                       <th ng-repeat="(headerIndex, header) in slide.options.table.headers track by headerIndex" class="text-center">
                         <span>
-                          {{ header.type }}
+                          {{ header.type === 'text' ? 'Tekst' : '' }}
+                          {{ header.type === 'date' ? 'Dato' : '' }}
                         </span>
                         <button ng-click="removeColumn(headerIndex)" class="btn btn-danger btn-sm text-center mb-1"><i class="fa fa-trash-alt"></i><span class="sr-only">Fjern kolonne</span></button>
                         <input type="text" placeholder="Tilføj header tekst" ng-model="slide.options.table.headers[headerIndex].value">

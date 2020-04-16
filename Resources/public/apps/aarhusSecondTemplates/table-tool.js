@@ -53,6 +53,8 @@ angular.module('aarhusSecondTemplates').directive('tableTool', [
             row = row.filter(function (el, elIndex) {
               return elIndex !== index;
             });
+
+            scope.slide.options.table.rows[rowIndex] = row;
           }
         };
 
