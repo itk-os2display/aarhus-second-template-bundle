@@ -8,6 +8,7 @@ assets:
 modules:
   aarhusSecondTemplates:
     files:
+      - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/module.js
       - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-tool.js
       - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/table-tool.js
 
