@@ -3,6 +3,7 @@ assets:
     - bundles/itkaarhussecondtemplate/templates/aarhus/assets/fontawesome.js
   js_prod_assets:
     - bundles/itkaarhussecondtemplate/templates/aarhus/assets/fontawesome.js
+  js_prod:
     - bundles/itkaarhussecondtemplate/assets/build/itkaarhussecondtemplate.min.js
 
 modules:
