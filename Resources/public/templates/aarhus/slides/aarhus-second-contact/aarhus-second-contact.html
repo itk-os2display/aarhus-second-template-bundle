@@ -7,8 +7,12 @@
           <div class="tpl-contact-content--col" ng-repeat="contact in ikSlide.options.contacts">
               <div class="tpl-contact-content--col-image">
                   <img ng-src="{{ contact.imageId !== undefined && contact.imageId !== null && ikSlide.media[contact.imageId]
-                                  ? ikSlide.media[contact.imageId].urls.default_landscape
-                                  : '/bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-contact/fallback.png' }}"
+                                  ? (ikSlide.media[contact.imageId].image ? ikSlide.media[contact.imageId].image :
+                                      (ikSlide.media[contact.imageId].urls.default_landscape ?
+                                        ikSlide.media[contact.imageId].urls.default_landscape
+                                        : ikSlide.path ? ikSlide.path + '/fallback.png' : '/bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-contact/fallback.png'
+                                      )
+                                 ) : ikSlide.path ? ikSlide.path + '/fallback.png' : '/bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-contact/fallback.png' }}"
                       alt="Placehold image">
               </div>
               <div class="tpl-contact-content--col-info">
