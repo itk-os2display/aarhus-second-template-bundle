@@ -1,7 +1,7 @@
 {
   "id": "aarhus-second-contact",
   "type": "slide",
-  "name": "Aarhus - kontakter",
+  "name": "Aarhus: Kontakter",
   "icon": "aarhus-second-contact.png",
   "paths": {
     "live": "aarhus-second-contact.html",
