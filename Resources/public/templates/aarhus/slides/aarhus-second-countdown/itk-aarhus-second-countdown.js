@@ -39,6 +39,31 @@ if (!window.slideFunctions['itk-aarhus-second-countdown']) {
     run: function runCalendarSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-countdown slide: " + slide.title);
 
+      // Darkmode.
+      if (slide.options.darkmode) {
+        slide.darkmodeEnabled = false;
+
+        var darkmodeFrom = slide.options.darkmode_from;
+        var darkmodeTo = slide.options.darkmode_to;
+
+        var hourNow = (new Date()).getHours();
+
+        // Darkmode starts one day and ends the next.
+        if (darkmodeFrom > darkmodeTo) {
+          if (hourNow > darkmodeFrom) {
+            slide.darkmodeEnabled = true;
+          }
+          else if (hourNow < darkmodeTo) {
+            slide.darkmodeEnabled = true;
+          }
+        }
+        else {
+          if (hourNow >= darkmodeFrom && hourNow < darkmodeTo) {
+            slide.darkmodeEnabled = true;
+          }
+        }
+      }
+
       slide.countdown = $('.slide-' + slide.uniqueId + ' .tpl-countdown-clock');
 
       if (Math.ceil((new Date()).getTime() / 1000) >= slide.options.countdown) {
