@@ -124,3 +124,17 @@
     color: black;
   }
 }
+
+// @TODO: Styling for darkmode.
+.aarhus-second-sensor.darkmode {
+  .aarhus-second-sensor--content {
+    background-color: black;
+    color: white;
+  }
+
+  .item,
+  .facttext {
+    background-color: black;
+    color: white;
+  }
+}
