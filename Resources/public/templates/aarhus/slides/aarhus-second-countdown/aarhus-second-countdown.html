@@ -28,7 +28,10 @@
       <p class="tpl-facttext" data-ng-if="ikSlide.countdownFinished && ikSlide.options.text2"><strong>{{ikSlide.options.text2}}</strong></p>
     </div>
   </div>
-  <img class="tpl-logo"
-       data-ng-src="{{ ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}"
-       alt="Aarhus kommune">
+  <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_negative.svg'}}"
+         alt="Aarhus kommune">
+    <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}"
+         alt="Aarhus kommune">
 </div>

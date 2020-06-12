@@ -38,7 +38,10 @@
     </div>
     <div class="item footer small">
     </div>
-    <img class="aarhus-second--logo"
+    <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_negative.svg'}}"
+         alt="Aarhus kommune">
+    <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
          data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}"
          alt="Aarhus kommune">
   </div>

@@ -26,7 +26,10 @@
     "fontsize": 16,
     "facts": [],
     "text": "<h1>Aarhus solcellers<br>energi produktion</h1>",
-    "data_function": ""
+    "data_function": "",
+    "darkmode": false,
+    "darkmode_from": 19,
+    "darkmode_to": 6
   },
   "tools": [
     {
@@ -75,6 +78,10 @@
           }
         ]
       }
+    },
+    {
+      "name": "Darkmode",
+      "id": "darkmode"
     }
   ]
 }

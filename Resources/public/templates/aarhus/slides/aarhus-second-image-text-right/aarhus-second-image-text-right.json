@@ -26,7 +26,10 @@
     "fontsize": 16,
     "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>",
     "bgcolor": "#fff",
-    "themecolor": "#EE0043"
+    "themecolor": "#EE0043",
+    "darkmode": false,
+    "darkmode_from": 19,
+    "darkmode_to": 6
   },
   "tools": [
     {
@@ -55,6 +58,10 @@
           }
         ]
       }
+    },
+    {
+      "name": "Darkmode",
+      "id": "darkmode"
     }
   ]
 }
