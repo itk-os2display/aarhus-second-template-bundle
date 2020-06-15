@@ -25,7 +25,7 @@
   "empty_options": {
     "fontsize": 16,
     "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>",
-    "bgcolor": "#fff",
+    "bgcolor": null,
     "themecolor": "#EE0043",
     "darkmode": false,
     "darkmode_from": 19,
