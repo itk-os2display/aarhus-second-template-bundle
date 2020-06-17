@@ -24,7 +24,7 @@
   },
   "empty_options": {
     "fontsize": 16,
-    "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>",
+    "text": "<p>Eksempel <strong>tekst</strong></p>",
     "data_function": "",
     "darkmode": false,
     "darkmode_from": 19,
@@ -44,7 +44,16 @@
       "name": "Tekst",
       "id": "itk-rich-text",
       "config": {
-        "fontsize_enabled": false
+        "fontsize_enabled": false,
+        "tools": {
+          "italics": true,
+          "bold": true,
+          "h1": false,
+          "h2": false,
+          "list_bullet": true,
+          "list_ordered": true,
+          "clean": true
+        }
       }
     },
     {
