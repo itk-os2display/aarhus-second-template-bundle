@@ -1,5 +1,11 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.3.0
+
+* Added darkmode.
+
+## 1.2.0
+
 ## 1.1.9
 
 * Added background image to data template.
