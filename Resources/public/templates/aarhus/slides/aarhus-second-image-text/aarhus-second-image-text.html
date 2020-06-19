@@ -1,4 +1,6 @@
-<div class="aarhus-second aarhus-second-image-text" data-ng-style="{'font-size': theStyle.fontsize}">
+<div class="aarhus-second aarhus-second-image-text"
+     data-ng-class="{'darkmode': ikSlide.darkmodeEnabled}"
+     data-ng-style="{'font-size': theStyle.fontsize}">
   <!-- Hack to alter ::after -->
   <style type="text/css">
     .slide-{{ikSlide.uniqueId}} .aarhus-second-image-text h1:after {
@@ -13,6 +15,11 @@
     <div class="item textbox" ng-bind-html="ikSlide.options.text"></div>
     <div class="item footer medium">
     </div>
-    <img class="aarhus-second--logo" data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}" alt="Aarhus kommune">
+    <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_negative.svg'}}"
+         alt="Aarhus kommune">
+    <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}"
+         alt="Aarhus kommune">
   </div>
 </div>

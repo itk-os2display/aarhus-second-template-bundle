@@ -1,15 +1,13 @@
 # aarhus-second-template-bundle
 
-## Design
-View invision prototype design here: https://projects.invisionapp.com/share/G3EB0NU49#/screens
+## Build scss in resources folder
 
-## Static Html/Css
-Templates can be found in the /design folder
+Requires node version 10
 
-Steps before developing on the static templates:
+Install dependencies
 
-`cd design` - Enter the design folder
+`yarn install`
 
-`npm install` - Install dependencies from node
+Compile scss
 
-`gulp` - Generate css from scss
+`yarn gulp sass`

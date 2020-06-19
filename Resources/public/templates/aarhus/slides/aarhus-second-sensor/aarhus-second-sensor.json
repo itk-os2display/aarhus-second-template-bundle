@@ -25,7 +25,10 @@
   },
   "empty_options": {
     "fontsize": 16,
-    "text": "<p>Aktuelt på havnepladsen - Målinger leveret af Smart Aarhus</p>"
+    "text": "<p>Aktuelt på havnepladsen - Målinger leveret af Smart Aarhus</p>",
+    "darkmode": false,
+    "darkmode_from": 19,
+    "darkmode_to": 6
   },
   "tools": [
     {
@@ -61,6 +64,10 @@
           }
         ]
       }
+    },
+    {
+      "name": "Darkmode",
+      "id": "darkmode"
     }
   ]
 }

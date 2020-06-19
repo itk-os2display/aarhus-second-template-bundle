@@ -22,7 +22,10 @@
     "fontsize": 16,
     "color": "#000",
     "bgcolor": "#ccc",
-    "text": ""
+    "text": "",
+    "darkmode": false,
+    "darkmode_from": 19,
+    "darkmode_to": 6
   },
   "tools": [
     {
@@ -55,6 +58,10 @@
     {
       "name": "Datakilde",
       "id": "itk-data-source-picker"
+    },
+    {
+      "name": "Darkmode",
+      "id": "darkmode"
     }
   ]
 }
