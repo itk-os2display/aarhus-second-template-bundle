@@ -1,4 +1,5 @@
 <div class="aarhus-second aarhus-second-sensor-history"
+     data-ng-class="{'darkmode': ikSlide.darkmodeEnabled}"
      data-ng-style="{'width': theStyle.width, 'height': theStyle.height, 'font-size': theStyle.fontsize}">
   <!-- Hack to alter ::after -->
   <style type="text/css" data-ng-if="ikSlide.options.themecolor">
@@ -45,7 +46,10 @@
          data-ng-repeat="fact in ikSlide.options.texts track by $index"><span
           class="def" data-ng-style="{'color': ikSlide.options.factcolor}">Fakta: </span><strong>{{ fact.text }}</strong></p>
     </div>
-    <img class="aarhus-second--logo"
+    <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_negative.svg'}}"
+         alt="Aarhus kommune">
+    <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
          data-ng-src="{{ikSlide.path + '../../assets/AAK_01_venstrejusteret_sh.svg'}}"
          alt="Aarhus kommune">
   </div>

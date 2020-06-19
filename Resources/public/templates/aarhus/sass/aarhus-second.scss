@@ -24,74 +24,41 @@
     margin: 0;
     padding: 0;
   }
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-top: 0;
   }
+
   h1 {
     line-height: 1.2em;
     text-transform: uppercase;
     font-family: $font-family-black;
     font-weight: bold;
   }
+
   ul {
     list-style-type: disc;
     list-style-position: inside;
     margin: 0 0 0 1em;
     padding: 0;
   }
+
   ol {
     list-style-type: decimal;
     list-style-position: inside;
     margin: 0 0 0 1em;
     padding: 0;
   }
+
   ul ul, ol ul {
     list-style-type: circle;
     list-style-position: inside;
   }
+
   ol ol, ul ol {
     list-style-type: lower-latin;
     list-style-position: inside;
-  }
-
-  &--container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: $color-light-grey;
-
-    // Correct for full-hd 1920x1080 instead of 900x540.
-    &.live {
-      @media only screen and (min-width: 1920px) {
-        font-size: 2em;
-      }
-    }
-
-    .footer {
-      height: auto;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      background: $color-light-grey;
-      z-index: 1;
-      &.small {
-        height: 12%;
-      }
-
-      &.medium {
-        height: 25%;
-      }
-
-      .logo {
-        position: absolute;
-        max-width: 20%;
-        max-height: 50%;
-        height: auto;
-        bottom: 10%;
-        margin-left: 2%;
-      }
-    }
   }
 
   h1 {
@@ -122,6 +89,7 @@
       animation-fill-mode: forwards;
     }
   }
+
   h2 {
     position: relative;
     font-family: $font-family-black;
@@ -141,6 +109,7 @@
       margin-top: 0.313em;
     }
   }
+
   h3 {
     position: relative;
     font-family: $font-family-black;
@@ -149,16 +118,73 @@
     margin: 0 0 1em 0;
     text-transform: uppercase;
     display: inline-block;
-    /* &:after {
-        opacity: 1;
-        content: "";
-        display: block;
+  }
+
+  &--container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $color-light-grey;
+
+    // Correct for full-hd 1920x1080 instead of 900x540.
+    &.live {
+      @media only screen and (min-width: 1920px) {
+        font-size: 2em;
+      }
+    }
+
+    .title {
+      color: $color-white;
+      h1 {
+        color: $color-white;
+      }
+    }
+
+    .textbox {
+      background: $color-light-grey;
+
+      p {
+        color: $color-grey-900;
+      }
+
+      .data {
+        .data-type {
+          color: $color-pink;
+        }
+
+        .data-amount {
+          color: $color-grey-900;
+        }
+      }
+    }
+
+    .footer {
+      height: auto;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background: $color-light-grey;
+      z-index: 1;
+      &.small {
+        height: 12%;
+      }
+
+      &.medium {
+        height: 25%;
+      }
+
+      .logo {
         position: absolute;
-        height: 0.20em;
-        background-color: $color-pink;
-        width: 3.75em;
-        margin-top: 0.313em;
-    } */
+        max-width: 20%;
+        max-height: 50%;
+        height: auto;
+        bottom: 10%;
+        margin-left: 2%;
+      }
+      .facttext {
+        color: $color-grey-900;
+      }
+    }
   }
 
   &--logo {
@@ -167,5 +193,39 @@
     left: 2.5%;
     height: 5%;
     z-index: 2;
+  }
+
+  // shared styles for darkmode
+  &.darkmode {
+    h1,
+    h2,
+    h3 {
+      color: $color-white;
+    }
+
+    .aarhus-second--container {
+      background-color: $color-grey-900;
+
+      .textbox {
+        background: $color-grey-900;
+
+        p {
+          color: $color-white;
+        }
+        .data {
+          .data-amount {
+            color: $color-white;
+          }
+        }
+      }
+
+      .footer {
+        background-color: black;
+
+        .facttext {
+          color: $color-white;
+        }
+      }
+    }
   }
 }

@@ -32,7 +32,6 @@
     left: 45%;
     height: 100%;
     width: 55%;
-    background: $color-light-grey;
     box-shadow: $shadow-box;
     z-index: 2;
 
@@ -43,7 +42,6 @@
     }
 
     h1 {
-      color: $color-grey;
       margin: 0;
     }
 
@@ -57,13 +55,14 @@
       margin-top: 1em;
 
       .data-type {
-        color: $color-pink;
         flex-basis: 18%;
+
         .data-type-icon {
           font-size: 3.2em;
           line-height: 1em;
           margin-bottom: .25em
         }
+
         .data-type-unit {
           font-family: $font-family-black;
           font-size: 1.5em;
@@ -74,10 +73,7 @@
       }
 
       .data-amount {
-        color: $color-grey;
         font-family: $font-family-black;
-
-
         flex-basis: 82%;
         text-align: right;
 
@@ -86,6 +82,7 @@
           line-height: 1.2em;
           margin: 0;
           padding: 0;
+
           &.tpl-counter-small {
             font-size: 6.5em;
             line-height: 2em;
@@ -109,7 +106,6 @@
 
     p {
       font-family: $font-family-regular;
-      color: $color-grey;
       margin: 0 0 0.625em 0;
       font-size: 1.7em;
     }

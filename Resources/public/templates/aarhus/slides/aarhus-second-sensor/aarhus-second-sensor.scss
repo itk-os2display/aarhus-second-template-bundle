@@ -51,18 +51,13 @@
     z-index: 0;
     filter: blur(0px);
   }
+
   .textbox {
-    background: $color-light-grey;
     flex-basis: 48%;
-    background: #f5f5f5;
     box-shadow: $shadow-box;
     z-index: 1;
     margin: 1%;
     height: 50%;
-
-    h1 {
-      color: $color-grey;
-    }
 
     .item {
       padding: 4%;
@@ -76,25 +71,25 @@
       justify-content: flex-start;
       position: relative;
       margin-top: .8em;
+
       .data-type {
         color: $color-pink;
         font-family: $font-family-black;
         font-size: 2.188em;
         line-height: 1em;
         flex-basis: 25%;
+
         span {
           margin: 0;
           padding: 0;
         }
+
         .data-type-icon {
           margin-bottom: .35em;
         }
-        .data-type-unit {
-
-        }
       }
+
       .data-amount {
-        color: $color-grey;
         font-family: $font-family-black;
         font-size: 4.5em;
         height: 1.3em;
@@ -102,25 +97,27 @@
         position: absolute;
         right: 0;
         text-align: right;
+
         span {
           margin: 0;
           padding: 0;
         }
       }
+
       .data-location {
         width: 100%;
       }
     }
+
     p {
       font-family: $font-family-regular;
       font-size: $font-size-p;
-      color: $color-grey;
       margin: 0 0 0.625em 0;
     }
   }
+
   .facttext {
     margin: 2.5em 1.875em;
     text-align: center;
-    color: black;
   }
 }
