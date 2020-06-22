@@ -65,12 +65,12 @@ angular.module('aarhusSecondTemplates').directive('contactTool', [
         };
 
         /**
-         * Remove the media from the given index.
+         * Remove the media from the given contact.
          *
-         * @param pickedIndex The index to remove.
+         * @param contactId The index to remove.
          */
-        scope.removeMedia = function(pickedIndex) {
-          scope.slide.options[pickedIndex] = null;
+        scope.removeMedia = function(contactId) {
+          scope.slide.options.contacts[contactId].imageId = null;
 
           cleanupMediaList();
         };
@@ -120,26 +120,44 @@ angular.module('aarhusSecondTemplates').directive('contactTool', [
         function cleanupMediaList() {
           var mediaList = scope.slide.media;
 
-          // Map image ids to contact ids.
+          // Map contact ids to image ids.
           var imageIndexToContactId = Object.values(scope.slide.options.contacts).reduce(function (carry, el) {
-            if (el.imageId) {
-              carry[el.imageId] = el.id;
+            if (el.imageId !== null && el.imageId !== undefined) {
+              if (!carry[el.imageId]) {
+                carry[el.imageId] = [];
+              }
+              carry[el.imageId].push(el.id);
             }
             return carry;
           }, {});
 
-          // Create new mediaList.
+          // Reset imageIds for contacts.
+          for (var contactIndex in scope.slide.options.contacts) {
+            if (scope.slide.options.contacts.hasOwnProperty(contactIndex)) {
+              scope.slide.options.contacts[contactIndex].imageId = null;
+            }
+          }
+
+          // Create new mediaList and set imageIds for contacts.
           var newMediaList = [];
           for (var oldIndex in mediaList) {
             if (mediaList.hasOwnProperty(oldIndex)) {
+              var alreadyAdded = false;
               var el = mediaList[oldIndex];
+              var contactIds = imageIndexToContactId[oldIndex];
 
-              // Find element and update image id.
-              var contactId = imageIndexToContactId[oldIndex];
+              for (var contactId in contactIds) {
+                if (contactIds.hasOwnProperty(contactId)) {
+                  contactId = contactIds[contactId];
 
-              if (contactId) {
-                newMediaList.push(el);
-                scope.slide.options.contacts[contactId].imageId = newMediaList.indexOf(el);
+                  if (contactId) {
+                    if (!alreadyAdded) {
+                      newMediaList.push(el);
+                      alreadyAdded = true;
+                    }
+                    scope.slide.options.contacts[contactId].imageId = newMediaList.indexOf(el);
+                  }
+                }
               }
             }
           }

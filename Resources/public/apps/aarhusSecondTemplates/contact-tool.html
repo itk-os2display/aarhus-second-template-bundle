@@ -36,7 +36,7 @@
                       {{ slide.media[contact.imageId] ? 'Skift billede' :
                       'Tilføj billede' }}
                     </button>
-                    <button class="btn btn-outline-danger btn-sm itk-template-extension--button-remove m-1" data-ng-if="slide.media[contact.imageId]" data-ng-click="removeMedia(contact.imageId)">
+                    <button class="btn btn-outline-danger btn-sm itk-template-extension--button-remove m-1" data-ng-if="contact.imageId !== null" data-ng-click="removeMedia(contact.id)">
                       Fjern billede
                     </button>
                   </div>
