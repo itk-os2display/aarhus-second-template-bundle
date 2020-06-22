@@ -81,6 +81,14 @@
           </div>
         </div>
       </div>
+
+      <div class="col-12 mt-3 mb-3 text-left">
+        <label>Vælg tekststørrelse</label>
+        <div ng-repeat="fontsize in availableFontSizes">
+          <input type="radio" ng-model="slide.options.fontsize"
+                 value="{{fontsize.value}}"> <span>{{fontsize.name}}</span>
+        </div>
+      </div>
     </div>
     <div class="edit-menu--background-page" data-ng-if="step">
       <div class="edit-menu--background-image-back" data-ng-click="back()">

@@ -206,6 +206,25 @@ angular.module('aarhusSecondTemplates').directive('contactTool', [
             }
           );
         });
+
+        scope.availableFontSizes = [
+          {
+            name: "Lille",
+            value: 10
+          },
+          {
+            name: "Normal",
+            value: 12
+          },
+          {
+            name: "Stor",
+            value: 16
+          },
+          {
+            name: "Meget stor",
+            value: 20
+          }
+        ];
       },
       templateUrl: '/bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-tool.html'
     };

@@ -68,6 +68,14 @@
             <button class="btn btn-primary" ng-click="addRow()"><i class="fa fa-plus-circle d-inline mr-1"></i>Tilføj række</button>
           </div>
         </div>
+
+        <div class="col-12 mb-3">
+          <label>Vælg tekststørrelse</label>
+          <div ng-repeat="fontsize in availableFontSizes">
+            <input type="radio" ng-model="slide.options.fontsize"
+                   value="{{fontsize.value}}"> <span>{{fontsize.name}}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
