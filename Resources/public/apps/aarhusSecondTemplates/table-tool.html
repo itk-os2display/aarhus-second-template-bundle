@@ -46,7 +46,7 @@
                     <tr ng-repeat="(rowIndex, row) in slide.options.table.rows track by rowIndex">
                       <td ng-repeat="(cellIndex, cell) in row track by cellIndex">
                         <input type="text" placeholder="Tilføj tekst" ng-model="slide.options.table.rows[rowIndex][cellIndex].value" ng-if="cell.type === 'text'">
-                        <input type="text" placeholder="Tryk for at vælge dato" ng-model="slide.options.table.rows[rowIndex][cellIndex].value" datetime-picker="" ng-if="cell.type === 'date'">
+                        <input type="text" placeholder="Tryk for at vælge dato" ng-model="slide.options.table.rows[rowIndex][cellIndex].value" config="timepickerConfig" datetime-picker="" ng-if="cell.type === 'date'">
                       </td>
                       <td>
                         <button class="btn btn-danger btn-sm" ng-click="removeRow(rowIndex)"><i class="fa fa-trash-alt"></i><span class="sr-only">Fjern række</span></button>

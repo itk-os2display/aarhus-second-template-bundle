@@ -80,6 +80,14 @@ angular.module('aarhusSecondTemplates').directive('tableTool', [
             return elIndex !== index;
           });
         };
+
+        scope.timepickerConfig = {
+          lang: 'da',
+          format: 'd/m/Y',
+          timepicker: false,
+          scrollMonth: false,
+          scrollTime: false
+        };
       },
       templateUrl: '/bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/table-tool.html'
     };
