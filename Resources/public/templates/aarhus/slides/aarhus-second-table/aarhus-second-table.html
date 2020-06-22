@@ -12,7 +12,7 @@
             <tbody>
                 <tr ng-repeat="(rowIndex, row) in ikSlide.options.table.rows track by rowIndex">
                     <td ng-repeat="(cellIndex, cell) in row track by cellIndex">
-                        <span ng-if="cell.type === 'date'">
+                        <span ng-if="cell.type === 'date'" class="capitalize">
                             {{ cell.value * 1000 | date:'EEEE' }}
                             <span class="tpl-table-content--date">{{ cell.value * 1000 | date:'d.M' }}</span>
                         </span>

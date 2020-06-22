@@ -85,3 +85,6 @@
 .aarhus-second-table .tpl-table-content--date {
   color: var(--color-primary);
 }
+.aarhus-second-table .capitalize {
+  text-transform: capitalize;
+}
