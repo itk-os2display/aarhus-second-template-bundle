@@ -224,6 +224,17 @@ angular.module('aarhusSecondTemplates').directive('contactTool', [
             }
           );
         });
+
+        scope.availableSizes = [
+          {
+            name: "Normal",
+            value: 'normal'
+          },
+          {
+            name: "Stor",
+            value: 'large'
+          }
+        ];
       },
       templateUrl: '/bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-tool.html'
     };

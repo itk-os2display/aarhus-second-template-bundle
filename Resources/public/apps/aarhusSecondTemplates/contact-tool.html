@@ -81,6 +81,14 @@
           </div>
         </div>
       </div>
+
+      <div class="col-12 mt-3 mb-3 text-left">
+        <label>Vælg indholdsstørrelse</label>
+        <div ng-repeat="size in availableSizes">
+          <input type="radio" ng-model="slide.options.size"
+                 value="{{size.value}}"> <span>{{size.name}}</span>
+        </div>
+      </div>
     </div>
     <div class="edit-menu--background-page" data-ng-if="step">
       <div class="edit-menu--background-image-back" data-ng-click="back()">

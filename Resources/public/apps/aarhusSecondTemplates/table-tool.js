@@ -81,6 +81,17 @@ angular.module('aarhusSecondTemplates').directive('tableTool', [
           });
         };
 
+        scope.availableSizes = [
+          {
+            name: "Normal",
+            value: 'normal'
+          },
+          {
+            name: "Stor",
+            value: 'large'
+          }
+        ];
+
         scope.timepickerConfig = {
           lang: 'da',
           format: 'd/m/Y',

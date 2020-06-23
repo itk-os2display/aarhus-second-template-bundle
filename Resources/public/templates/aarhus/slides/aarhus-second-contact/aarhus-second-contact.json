@@ -20,7 +20,8 @@
   },
   "empty_options": {
     "fontsize": "12",
-    "bgcolor": "rgb(255, 255, 255)"
+    "bgcolor": "rgb(255, 255, 255)",
+    "size": "normal"
   },
   "tools": [
     {

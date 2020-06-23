@@ -1,4 +1,6 @@
-<div class="aarhus-second-contact" ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height, '--sizer': theStyle.fontsize }">
+<div class="aarhus-second-contact"
+     ng-class="{'size-large': ikSlide.options.size === 'large'}"
+     ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height, '--sizer': theStyle.fontsize }">
     <div class="tpl-content" ng-if="ikSlide.options.contacts && ikSlide.options.contacts.length !== 0">
       <div class="tpl-contact-title">
           <h1>Kontakter</h1>

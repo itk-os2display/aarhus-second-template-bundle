@@ -68,6 +68,14 @@
             <button class="btn btn-primary" ng-click="addRow()"><i class="fa fa-plus-circle d-inline mr-1"></i>Tilføj række</button>
           </div>
         </div>
+
+        <div class="col-12 mb-3">
+          <label>Vælg indholdsstørrelse</label>
+          <div ng-repeat="size in availableSizes">
+            <input type="radio" ng-model="slide.options.size"
+                   value="{{size.value}}"> <span>{{size.name}}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
