@@ -51,6 +51,10 @@
   margin-block-start: calc(var(--sizer) / 2);
   margin-block-end: var(--sizer);
 }
+.aarhus-second-table.size-large .tpl-table-title h1:after{
+  height: calc(var(--sizer) / 6);
+  margin-block-end: calc(var(--sizer) / 3);
+}
 .aarhus-second-table .tpl-table-content {
   grid-column: 1 / 1;
   grid-row: 2 / 2;
@@ -65,6 +69,9 @@
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+}
+.aarhus-second-table.size-large .tpl-table-content table{
+  font-size: calc(var(--sizer) * 3.5);
 }
 .aarhus-second-table .tpl-table-content table thead th {
   color: var(--color-primary);
