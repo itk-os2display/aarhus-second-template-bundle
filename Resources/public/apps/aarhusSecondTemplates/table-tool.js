@@ -81,22 +81,14 @@ angular.module('aarhusSecondTemplates').directive('tableTool', [
           });
         };
 
-        scope.availableFontSizes = [
-          {
-            name: "Lille",
-            value: 10
-          },
+        scope.availableSizes = [
           {
             name: "Normal",
-            value: 12
+            value: 'normal'
           },
           {
             name: "Stor",
-            value: 16
-          },
-          {
-            name: "Meget stor",
-            value: 20
+            value: 'large'
           }
         ];
       },

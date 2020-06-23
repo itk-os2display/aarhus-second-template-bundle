@@ -23,6 +23,9 @@
   word-break: break-word;
   word-wrap: break-word;
 }
+.aarhus-second-table.size-large {
+  --sizer: 1.5em;
+}
 .aarhus-second-table .tpl-table-title {
   grid-column: 1 / 1;
   grid-row: 1 / 1;

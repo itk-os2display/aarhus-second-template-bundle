@@ -19,6 +19,9 @@
   word-break: break-word;
   word-wrap: break-word;
 }
+.aarhus-second-contact.size-large {
+  --sizer: 1.5em;
+}
 .aarhus-second-contact .tpl-content {
   display: grid;
   grid-template-columns: 100%;
