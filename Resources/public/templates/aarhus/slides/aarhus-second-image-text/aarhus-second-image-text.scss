@@ -19,16 +19,11 @@
     right: 8%;
     width: 45%;
     padding: 5%;
-    background-color: #fff;
     box-shadow: $shadow-box;
     z-index: 4;
-    h1 {
-      color: $color-grey;
-    }
     p {
       font-family: $font-family-regular;
       font-size: $font-size-p;
-      color: $color-grey;
       margin: 0;
     }
     h2:after {

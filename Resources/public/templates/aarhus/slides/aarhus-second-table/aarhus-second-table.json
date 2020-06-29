@@ -1,0 +1,49 @@
+{
+  "id": "aarhus-second-table",
+  "type": "slide",
+  "name": "Aarhus: Tabel",
+  "icon": "aarhus-second-table.png",
+  "paths": {
+    "live": "aarhus-second-table.html",
+    "edit": "aarhus-second-table.html",
+    "preview": "aarhus-second-table.html",
+    "css": "aarhus-second-table.css",
+    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "table-base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "fontsize": "12",
+    "bgcolor": "rgb(255, 255, 255)",
+    "text": "",
+    "size": "normal"
+  },
+  "tools": [
+    {
+      "name": "Redigér tabel",
+      "id": "table-tool"
+    },
+    {
+      "name": "Redigér tekst",
+      "id": "itk-rich-text",
+      "config": {
+        "fontsize_enabled": false,
+        "tools": {
+          "italics": true,
+          "bold": true,
+          "h1": false,
+          "h2": false,
+          "list_bullet": true,
+          "list_ordered": true,
+          "clean": true
+        }
+      }
+    }
+  ]
+}

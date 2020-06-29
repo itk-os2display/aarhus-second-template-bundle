@@ -3,7 +3,17 @@ assets:
     - bundles/itkaarhussecondtemplate/templates/aarhus/assets/fontawesome.js
   js_prod_assets:
     - bundles/itkaarhussecondtemplate/templates/aarhus/assets/fontawesome.js
+  js_prod:
+    - bundles/itkaarhussecondtemplate/assets/build/itkaarhussecondtemplate.min.js
 
 modules:
+  aarhusSecondTemplates:
+    files:
+      - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/module.js
+      - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/contact-tool.js
+      - bundles/itkaarhussecondtemplate/apps/aarhusSecondTemplates/table-tool.js
 
 apps:
+  ikApp:
+    dependencies:
+      - aarhusSecondTemplates

@@ -1,17 +1,19 @@
 <div class="aarhus-second-data"
+     data-ng-class="{'darkmode': ikSlide.darkmodeEnabled}"
      data-ng-style="{
       'width': theStyle.width,
       'height': theStyle.height,
       'font-size': theStyle.fontsize,
+      'background-image': 'url(' + ikSlide.currentImage + ')',
       'background-color': ikSlide.options.bgcolor,
       'color': ikSlide.options.color}">
   <div class="tpl-container">
     <div class="tpl-headline" ng-bind-html="ikSlide.options.text"></div>
     <div class="tpl-data">
-      <table data-ng-if="ikSlide.external_data.length > 0">
+      <table data-ng-if="ikSlide.external_data.length > 0" data-ng-style="{'color': ikSlide.options.color}">
         <thead data-ng-if="ikSlide.external_data[0].type === 'header'">
         <tr class="tpl-header-tr">
-          <th data-ng-repeat="column in ikSlide.external_data[0].columns"><span class="tpl-column-title">{{column.title}}</th>
+          <th data-ng-repeat="column in ikSlide.external_data[0].columns"><span class="tpl-column-title">{{column.title}}</span></th>
         </tr>
         </thead>
         <tbody>
@@ -23,7 +25,6 @@
         </tr>
         </tbody>
       </table>
-      <div data-ng-if="ikSlide.external_data.length === 0"></div>
     </div>
   </div>
 </div>

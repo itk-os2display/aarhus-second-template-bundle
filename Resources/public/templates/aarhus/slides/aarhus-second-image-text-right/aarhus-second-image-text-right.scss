@@ -30,12 +30,8 @@
     left: 45%;
     width: 55%;
     height: 100%;
-    background: $color-light-grey;
     box-shadow: $shadow-box;
     z-index: 3;
-    h1 {
-      color: $color-grey;
-    }
 
     .textbox-content {
       padding: 4%;
@@ -49,7 +45,6 @@
       justify-content: flex-start;
       margin-bottom: 1.875em;
       .data-type {
-        color: $color-pink;
         font-family: $font-family-black;
         font-size: 2.813em;
         line-height: 1em;
@@ -60,7 +55,6 @@
         }
       }
       .data-amount {
-        color: $color-grey;
         font-family: $font-family-black;
         font-size: 12.5em;
         line-height: 1em;

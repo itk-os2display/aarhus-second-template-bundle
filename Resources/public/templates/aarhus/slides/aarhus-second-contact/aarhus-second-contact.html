@@ -1,0 +1,32 @@
+<div class="aarhus-second-contact"
+     ng-class="{'size-large': ikSlide.options.size === 'large'}"
+     ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height, '--sizer': theStyle.fontsize }">
+    <div class="tpl-content" ng-if="ikSlide.options.contacts && ikSlide.options.contacts.length !== 0">
+      <div class="tpl-contact-title">
+          <h1>Kontakter</h1>
+      </div>
+      <div class="tpl-contact-content">
+          <div class="tpl-contact-content--col" ng-repeat="contact in ikSlide.options.contacts">
+              <div class="tpl-contact-content--col-image">
+                  <img ng-src="{{ contact.imageId !== undefined && contact.imageId !== null && ikSlide.media[contact.imageId]
+                                  ? (ikSlide.media[contact.imageId].image ? ikSlide.media[contact.imageId].image :
+                                      (ikSlide.media[contact.imageId].urls.default_landscape ?
+                                        ikSlide.media[contact.imageId].urls.default_landscape
+                                        : ikSlide.path ? ikSlide.path + '/fallback.png' : '/bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-contact/fallback.png'
+                                      )
+                                 ) : ikSlide.path ? ikSlide.path + '/fallback.png' : '/bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-contact/fallback.png' }}"
+                      alt="Kontaktbillede">
+              </div>
+              <div class="tpl-contact-content--col-info">
+                  <h3>{{ contact.title }}</h3>
+                  <p><strong>{{ contact.name }}</strong></p>
+                  <p>{{ contact.phone }}</p>
+                  <p>{{ contact.email }}</p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="alert alert-info" ng-if="!ikSlide.options.contacts || ikSlide.options.contacts.length === 0">
+      <p>Der er endnu ikke valgt noget indhold.</p>
+    </div>
+</div>

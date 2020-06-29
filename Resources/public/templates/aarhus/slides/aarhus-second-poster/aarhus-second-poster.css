@@ -1,0 +1,140 @@
+.aarhus-second-poster {
+  --sizer: 1em;
+  --padding: calc(var(--sizer) * 3);
+  --color-primary: #ee0043;
+  --color-gray-100: #f6f6f6;
+  --color-gray-300: #cccccc;
+  --color-gray-900: #222222;
+  --font-family-primary: "Arial Black", Arial, sans-serif;
+  --font-family-secondary: Arial, sans-serif;
+  --shadow: 0 calc(var(--sizer) / 3) var(--sizer) rgba(0, 0, 0, 0.16);
+
+  font-family: var(--font-family-secondary);
+  font-size: var(--sizer);
+  color: var(--color-gray-900);
+  background-color: var(--color-gray-100);
+  line-height: 1.25;
+  text-align: left; /* Necessary to overwrite admin styles */
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  position: relative;
+}
+.aarhus-second-poster .tpl-content {
+  display: grid;
+  grid-template-columns: 10% 55% 35%;
+  grid-template-rows: 30% 40% 30%;
+  grid-gap: 0;
+  height: 100%;
+}
+
+.aarhus-second-poster .tpl-poster-date {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  z-index: 1;
+  background-color: white;
+  align-self: start;
+  box-shadow: var(--shadow);
+}
+.aarhus-second-poster .tpl-poster-date--month,
+.aarhus-second-poster .tpl-poster-date--day {
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+  text-align: center;
+}
+.aarhus-second-poster .tpl-poster-date--day {
+  color: var(--color-primary);
+  font-size: calc(var(--sizer) * 6);
+  padding-top: var(--sizer);
+}
+.aarhus-second-poster .tpl-poster-date--month {
+  font-size: calc(var(--sizer) * 3);
+  text-transform: uppercase;
+  padding-bottom: calc(var(--sizer) * 2);
+}
+.aarhus-second-poster .tpl-poster-image {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+}
+.aarhus-second-poster .tpl-poster-image img {
+  object-fit: cover;
+  object-position: center;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+.aarhus-second-poster .tpl-poster-title {
+  grid-column: 3 / 3;
+  grid-row: 1 / 1;
+  background-color: var(--color-gray-100);
+  padding: calc(var(--padding) * 1.75);
+  align-self: start;
+}
+.aarhus-second-poster .tpl-poster-title h1 {
+  font-family: var(--font-family-primary);
+  font-weight: 900;
+  font-size: calc(var(--sizer) * 5);
+  text-transform: uppercase;
+  word-wrap: break-word;
+  margin-top: 0;
+}
+.aarhus-second-poster .tpl-poster-title h1:after {
+  content: "";
+  height: calc(var(--sizer) / 4);
+  width: calc(var(--sizer) * 3);
+  background-color: var(--color-primary);
+  display: block;
+  margin-block-start: calc(var(--sizer) / 2);
+  margin-block-end: var(--sizer);
+}
+.aarhus-second-poster .tpl-poster-title p {
+  font-size: calc(var(--sizer) * 2.5);
+  line-height: 1.5;
+}
+.aarhus-second-poster .tpl-poster-eventinfo {
+  grid-column: 3 / 3;
+  grid-row: 3 / 3;
+  background-color: var(--color-gray-100);
+  align-self: end;
+  padding: var(--padding);
+  font-size: calc(var(--sizer) * 1.75);
+}
+.aarhus-second-poster .tpl-poster-eventinfo:before {
+  content: "";
+  height: calc(var(--sizer) / 16);
+  width: 100%;
+  background-color: var(--color-gray-300);
+  display: block;
+  margin-bottom: var(--sizer);
+}
+.aarhus-second-poster .fadeout {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s ease-in;
+}
+.aarhus-second-poster .fadein {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.aarhus-second-poster .alert {
+  --alert-width: calc(var(--sizer) * 30);
+  --alert-height: calc(var(--sizer) * 5);
+  width: var(--alert-width);
+  height: var(--alert-height);
+  position: absolute;
+  left: calc(50% - calc(var(--alert-width) / 2));
+  top: calc(50% - calc(var(--alert-height) / 2));
+  z-index: 99;
+  padding: var(--sizer);
+  box-shadow: var(--shadow);
+}
+.aarhus-second-poster .alert.alert-info {
+  background-color: #cce9ff;
+  color: #00467b;
+  border: 1px solid #b1ddff;
+  border-radius: 2px;
+  font-size: calc(var(--sizer) * 2.5);
+}

@@ -25,14 +25,17 @@
   "empty_options": {
     "fontsize": 16,
     "text": "<h1>Eksempel overskrift</h1><p>Eksempel tekst</p>",
-    "bgcolor": "#fff",
-    "themecolor": "#EE0043"
+    "bgcolor": null,
+    "themecolor": "#EE0043",
+    "darkmode": false,
+    "darkmode_from": 19,
+    "darkmode_to": 6
   },
   "tools": [
     {
       "name": "Billede",
       "id": "background-editor",
-      "template": "bundles/itktemplateextension/apps/templateExtensionModule/itk-background-editor.html"
+      "template": "bundles/os2displaytemplateextension/apps/templateExtensionModule/itk-background-editor.html"
     },
     {
       "name": "Tekster",
@@ -55,6 +58,10 @@
           }
         ]
       }
+    },
+    {
+      "name": "Darkmode",
+      "id": "darkmode"
     }
   ]
 }

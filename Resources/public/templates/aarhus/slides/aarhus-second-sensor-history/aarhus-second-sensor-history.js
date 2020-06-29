@@ -49,6 +49,31 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-history']) {
         run: function runBaseSlide (slide, region) {
             region.itkLog.info('Running itk-aarhus-second-sensor-history facts slide: ' + slide.title);
 
+            // Darkmode.
+            if (slide.options.darkmode) {
+                slide.darkmodeEnabled = false;
+
+                var darkmodeFrom = slide.options.darkmode_from;
+                var darkmodeTo = slide.options.darkmode_to;
+
+                var hourNow = (new Date()).getHours();
+
+                // Darkmode starts one day and ends the next.
+                if (darkmodeFrom > darkmodeTo) {
+                    if (hourNow > darkmodeFrom) {
+                        slide.darkmodeEnabled = true;
+                    }
+                    else if (hourNow < darkmodeTo) {
+                        slide.darkmodeEnabled = true;
+                    }
+                }
+                else {
+                    if (hourNow >= darkmodeFrom && hourNow < darkmodeTo) {
+                        slide.darkmodeEnabled = true;
+                    }
+                }
+            }
+
             var runningFactTimeout = null;
 
             /**
