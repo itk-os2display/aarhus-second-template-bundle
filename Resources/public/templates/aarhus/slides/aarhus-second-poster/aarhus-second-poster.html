@@ -1,0 +1,40 @@
+<div class="aarhus-second-poster" ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height }">
+    <div class="tpl-content" ng-if="ikSlide.options.data.name">
+      <div class="tpl-poster-date">
+          <div class="tpl-poster-date--day">{{ikSlide.options.data.startDate | date:'d'}}</div>
+          <div class="tpl-poster-date--month">{{ikSlide.options.data.startDate | date:'MMM'}}</div>
+      </div>
+      <div class="tpl-poster-image ng-animate-disabled" ng-class="{'fadeout': ikSlide.fadeout, 'fadein': ikSlide.fadeout === false}">
+          <img ng-src="{{ ikSlide.options.data.image }}" alt="Placehold image">
+      </div>
+      <div class="tpl-poster-title" ng-if="ikSlide.options.data.name">
+          <h1>{{ikSlide.options.overrides.name ? ikSlide.options.overrides.name : ikSlide.options.data.name}}</h1>
+          <p>{{ikSlide.options.overrides.excerpt ? ikSlide.options.overrides.excerpt : ikSlide.options.data.excerpt}}</p>
+      </div>
+      <div class="tpl-poster-eventinfo">
+          <div class="tpl-poster-eventinfo--place" ng-if="ikSlide.options.data.place">
+              <h2>{{ikSlide.options.data.place.name}}</h2>
+          </div>
+          <div class="tpl-poster-eventinfo--date" ng-if="ikSlide.options.data.startDate && ikSlide.options.data.endDate">
+              <span ng-if="(ikSlide.options.data.startDate | date) == (ikSlide.options.data.endDate | date)">
+                  <p class="tpl-info-area-date">{{ikSlide.options.data.startDate | date:'d. MMMM yyyy'}} {{ikSlide.options.data.startDate | date:'HH:mm'}} - {{ikSlide.options.data.endDate | date:'HH:mm'}}</p>
+              </span>
+              <span ng-if="(ikSlide.options.data.startDate | date) != (ikSlide.options.data.endDate | date)">
+                  <p class="tpl-info-area-date">{{ikSlide.options.data.startDate | date:'d. MMMM yyyy'}} - {{ikSlide.options.data.endDate | date:'d. MMMM yyyy'}} {{ikSlide.options.data.startDate | date:'HH:mm'}}</p>
+              </span>
+          </div>
+          <div class="tpl-poster-eventinfo--price">
+              <p ng-if="!ikSlide.options.overrides.ticketPriceRange && (!ikSlide.options.data.ticketPriceRange || ikSlide.options.data.ticketPriceRange == 0)">Gratis</p>
+              <p ng-if="!ikSlide.options.overrides.ticketPriceRange && ikSlide.options.data.ticketPriceRange > 0">{{ikSlide.options.data.ticketPriceRange}}  kr.</p>
+              <p ng-if="ikSlide.options.overrides.ticketPriceRange">{{ikSlide.options.overrides.ticketPriceRange}}</p>
+          </div>
+          <div class="tpl-poster-eventinfo--readmore">
+              <p class="tpl-info-area-moreinfo" ng-if="!ikSlide.options.overrides.readMoreText && (ikSlide.options.data.baseUrl || ikSlide.options.data.url)">Læs mere på {{ikSlide.options.data.baseUrl ? ikSlide.options.data.baseUrl : ikSlide.options.data.url }}</p>
+              <p class="tpl-info-area-moreinfo" ng-if="ikSlide.options.overrides.readMoreText">{{ikSlide.options.overrides.readMoreText}}</p>
+          </div>
+      </div>
+    </div>
+    <div class="alert alert-info" ng-if="!ikSlide.options.data.name">
+      <p>Der er endnu ikke valgt noget indhold.</p>
+    </div>
+</div>
