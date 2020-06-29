@@ -1,5 +1,10 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## in develop
+
+* Fixed data template.
+* Added documentation for data.
+
 ## 1.4.0
 
 * Added contact, table and poster templates.
