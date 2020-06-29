@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.4.0
+
+* Added contact, table and poster templates.
+
 ## 1.3.0
 
 * Added darkmode.
