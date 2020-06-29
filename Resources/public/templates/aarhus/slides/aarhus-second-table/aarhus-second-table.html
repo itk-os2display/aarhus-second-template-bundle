@@ -1,0 +1,31 @@
+<div class="aarhus-second-table"
+     ng-class="{'size-large': ikSlide.options.size === 'large'}"
+     ng-style="{'font-size': theStyle.fontsize, 'width': theStyle.width, 'height': theStyle.height }">
+    <div class="tpl-table-title">
+        <h1>{{ ikSlide.options.table.title }}</h1>
+    </div>
+    <div class="tpl-table-content">
+        <table class="tpl-table-content--table">
+            <thead>
+                <tr>
+                    <th ng-repeat="header in ikSlide.options.table.headers track by $index">{{ header.value }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(rowIndex, row) in ikSlide.options.table.rows track by rowIndex">
+                    <td ng-repeat="(cellIndex, cell) in row track by cellIndex">
+                        <span ng-if="cell.type === 'date'" class="capitalize">
+                            {{ cell.value * 1000 | date:'EEEE' }}
+                            <span class="tpl-table-content--date">{{ cell.value * 1000 | date:'d.M' }}</span>
+                        </span>
+                        <span ng-if="cell.type === 'text'">
+                            {{ cell.value }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="tpl-table-moreinfo" ng-bind-html="ikSlide.options.text">
+        </div>
+    </div>
+</div>

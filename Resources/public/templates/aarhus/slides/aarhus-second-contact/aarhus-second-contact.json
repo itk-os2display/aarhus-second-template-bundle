@@ -1,0 +1,32 @@
+{
+  "id": "aarhus-second-contact",
+  "type": "slide",
+  "name": "Aarhus: Kontakter",
+  "icon": "aarhus-second-contact.png",
+  "paths": {
+    "live": "aarhus-second-contact.html",
+    "edit": "aarhus-second-contact.html",
+    "preview": "aarhus-second-contact.html",
+    "css": "aarhus-second-contact.css",
+    "js": "bundles/os2displaydefaulttemplate/templates/js/baseSlide.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "contact-base",
+  "media_type": "image",
+  "script_id": "base",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "fontsize": "12",
+    "bgcolor": "rgb(255, 255, 255)",
+    "size": "normal"
+  },
+  "tools": [
+    {
+      "name": "Vælg kontakter",
+      "id": "contact-tool"
+    }
+  ]
+}
