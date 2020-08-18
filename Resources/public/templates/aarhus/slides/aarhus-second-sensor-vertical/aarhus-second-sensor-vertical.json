@@ -1,0 +1,73 @@
+{
+  "id": "aarhus-second-sensor-vertical",
+  "theme": "aarhus-second",
+  "tags": [
+    "Aarhus"
+  ],
+  "type": "slide",
+  "name": "Aarhus: Sensorer vertical",
+  "icon": "aarhus-second-sensor-vertical.png",
+  "paths": {
+    "live": "aarhus-second-sensor-vertical.html",
+    "edit": "aarhus-second-sensor-vertical-edit.html",
+    "preview": "aarhus-second-sensor-vertical-edit.html",
+    "css": "aarhus-second-sensor-vertical.css",
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor-vertical.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "itk-aarhus-data",
+  "media_type": "image",
+  "script_id": "itk-aarhus-second-sensor-vertical",
+  "ideal_dimensions": {
+    "width": "900",
+    "height": "540",
+    "data_function": ""
+  },
+  "empty_options": {
+    "fontsize": 16,
+    "text": "<p>Beskrivelse</p>",
+    "darkmode": false,
+    "darkmode_from": 19,
+    "darkmode_to": 6
+  },
+  "tools": [
+    {
+      "name": "Billede",
+      "id": "background-editor",
+      "template": "bundles/os2displaytemplateextension/apps/templateExtensionModule/itk-background-editor.html"
+    },
+    {
+      "name": "Tekster",
+      "id": "itk-rich-text",
+      "config": {
+        "fontsize_enabled": false
+      }
+    },
+    {
+      "name": "Datakilde",
+      "id": "itk-data-source-picker"
+    },
+    {
+      "name": "Farver",
+      "id": "itk-color-picker",
+      "config": {
+        "fields": [
+          {
+            "name": "Baggrundsfarve",
+            "field": "bgcolor",
+            "theme": "main"
+          },
+          {
+            "name": "Temafarve",
+            "field": "themecolor",
+            "theme": "main"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Darkmode",
+      "id": "darkmode"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+@import "../../sass/aarhus-second";
+
+.aarhus-second-sensor-vertical {
+  font-size: 16px;
+  @media (orientation: portrait) {
+    font-size: 32px;
+  }
+  position: relative;
+
+  .aarhus-second--container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    gap: 1em 0;
+    grid-template-areas: "header" "content" "footer";
+
+    .image {
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      height: 110%;
+      width: 110%;
+      background-size: cover;
+      background-position-y: bottom;
+      opacity: 0;
+      animation-name: box-reveal;
+      animation-duration: 0.7s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      z-index: 1;
+      filter: blur(0px);
+    }
+    .title {
+      grid-area: header;
+      z-index: 2;
+      margin: 1em 1em 0 1em;
+      h1 {
+        font-size: 2.188em;
+        text-shadow: $shadow-text;
+        margin: 0;
+      }
+    }
+
+    .textboxes {
+      grid-area: content;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      @media (orientation: portrait) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+      gap: 1em 1em;
+      grid-template-areas: "col1 col2 col3" "col4 col5 col6";
+      @media (orientation: portrait) {
+        grid-template-areas: "col1 col2" "col3 col4" "col5 col6";
+      }
+      grid-auto-flow: column;
+      z-index: 2;
+      margin: 0 1em;
+    }
+
+    .textbox {
+      box-shadow: $shadow-box;
+      z-index: 3;
+      opacity: 0;
+      animation-name: box-reveal;
+      animation-duration: 0.7s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      padding: 1em;
+      margin: 0;
+
+      .item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      &.box2 {
+
+        animation-delay: .2s;
+      }
+
+      &.box3 {
+        animation-delay: .4s;
+      }
+
+      .data {
+        position: relative;
+        width: 100%;
+
+        .data-type {
+          float: left;
+          margin-top: .5em;
+
+          .data-type-icon {
+              font-size: 2.2em;
+              line-height: 1em;
+              margin-bottom: .25em;
+              display: inline-block;
+              }
+
+              .data-type-unit {
+                  font-family: $font-family-black;
+                  font-size: 1.5em;
+                  line-height: 1em;
+                  margin: 0;
+                  padding: 0;
+              }
+        }
+        .data-amount {
+          font-family: $font-family-black;
+          font-size: 4.5em;
+          line-height: 1;
+          flex-basis: 70%;
+          text-align: left;
+          clear: both;
+
+          span {
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        .data-location {
+          width: 100%;
+        }
+      }
+
+      p {
+        font-family: $font-family-regular;
+        font-size: $font-size-p;
+        margin: 0 0 0.625em 0;
+      }
+    }
+
+    .facttext {
+      margin: 2.5em 1.875em;
+      text-align: left;
+      position: absolute;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+
+      $text-animation-duration: .7s;
+      $text-visible-duration: 9.3s;
+
+      &.ng-animate {
+        transition: all ease $text-animation-duration;
+        position: absolute;
+      }
+
+      &.ng-enter {
+        transition: all ease $text-animation-duration $text-animation-duration;
+        top: 20px;
+        opacity: 0;
+      }
+
+      &.ng-leave,
+      &.ng-enter.ng-enter-active {
+        top: 0;
+        opacity: 1;
+      }
+
+      &.ng-leave.ng-leave-active {
+        top: 20px;
+        opacity: 0;
+      }
+
+      .def {
+        font-family: $font-family-black;
+        color: $color-pink;
+      }
+      &.two, &.tree {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      &.one {
+        animation: text-hide $text-animation-duration $text-visible-duration 1 ease-out forwards;
+      }
+      &.two {
+        animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration 1 ease-out forwards, text-hide $text-animation-duration $text-visible-duration * 2 1 ease-out forwards;
+      }
+      &.tree {
+        animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration * 2 1 ease-out forwards;
+      }
+    }
+
+    .footer {
+      grid-area: footer;
+      z-index: 2;
+      height: auto;
+      position: static;
+      @media (orientation: landscape) {
+        .facttext {
+          left: 20%;
+          margin-top: 2.2em;
+        }
+      }
+    }
+  }
+}
