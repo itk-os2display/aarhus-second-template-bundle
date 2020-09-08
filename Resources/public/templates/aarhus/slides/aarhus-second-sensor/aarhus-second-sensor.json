@@ -20,15 +20,15 @@
   "script_id": "itk-aarhus-second-sensor",
   "ideal_dimensions": {
     "width": "900",
-    "height": "540",
-    "data_function": ""
+    "height": "540"
   },
   "empty_options": {
     "fontsize": 16,
     "text": "<p>Aktuelt på havnepladsen - Målinger leveret af Smart Aarhus</p>",
     "darkmode": false,
     "darkmode_from": 19,
-    "darkmode_to": 6
+    "darkmode_to": 6,
+    "data_function": ""
   },
   "tools": [
     {

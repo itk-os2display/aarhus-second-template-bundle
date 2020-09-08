@@ -5,30 +5,30 @@
     "Aarhus"
   ],
   "type": "slide",
-  "name": "Aarhus: Sensorer vertical",
+  "name": "Aarhus: Sensorer vertikal",
   "icon": "aarhus-second-sensor-vertical.png",
   "paths": {
     "live": "aarhus-second-sensor-vertical.html",
     "edit": "aarhus-second-sensor-vertical-edit.html",
     "preview": "aarhus-second-sensor-vertical-edit.html",
     "css": "aarhus-second-sensor-vertical.css",
-    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor-vertical.js"
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor.js"
   },
-  "orientation": "landscape",
+  "orientation": "portrait",
   "slide_type": "itk-aarhus-data",
   "media_type": "image",
-  "script_id": "itk-aarhus-second-sensor-vertical",
+  "script_id": "itk-aarhus-second-sensor",
   "ideal_dimensions": {
-    "width": "900",
-    "height": "540",
-    "data_function": ""
+    "width": "1080",
+    "height": "1920"
   },
   "empty_options": {
     "fontsize": 16,
     "text": "<p>Beskrivelse</p>",
     "darkmode": false,
     "darkmode_from": 19,
-    "darkmode_to": 6
+    "darkmode_to": 6,
+    "data_function": ""
   },
   "tools": [
     {
