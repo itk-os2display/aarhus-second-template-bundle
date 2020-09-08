@@ -6,7 +6,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-vertical']) {
      * @param scope
      *   The slide scope.
      */
-    setup: function setupCalendarSlide(scope) {
+    setup: function setupSlide(scope) {
       var slide = scope.ikSlide;
 
       // Load font-awesome icons.
@@ -36,7 +36,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor-vertical']) {
      * @param region
      *   The region object.
      */
-    run: function runCalendarSlide(slide, region) {
+    run: function runSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-sensor-vertical slide: " + slide.title);
 
       // Darkmode.
