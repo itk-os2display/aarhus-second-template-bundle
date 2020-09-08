@@ -8,7 +8,6 @@
     }
   </style>
   <div class="aarhus-second--container live">
-
     <div class="image" data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
       <div class="item fade"></div>
     </div>
@@ -36,10 +35,9 @@
       </div>
     </div>
     <div class="item footer medium">
-      <p class="facttext"
-         data-ng-if="ikSlide.factIndex === $index"
-         data-ng-repeat="fact in ikSlide.options.texts track by $index"><span
-          class="def" data-ng-style="{'color': ikSlide.options.factcolor}">Fakta: </span><strong>{{ fact.text }}</strong>
+      <p class="facttext" ng-if="ikSlide.external_data.length > 0">
+        <!-- @TODO: What if the latest update is not from today? -->
+        Senest opdateret kl. {{ ikSlide.external_data[0].timestamp | date:'HH:mm' }}
       </p>
     </div>
     <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"

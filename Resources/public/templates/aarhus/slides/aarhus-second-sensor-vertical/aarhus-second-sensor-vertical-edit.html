@@ -10,7 +10,6 @@
   </style>
   <div class="aarhus-second--container live">
 
-    <!-- TODO: Change path to image. Load image from admin -->
     <div class="image" data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
       <div class="item fade"></div>
     </div>
@@ -38,11 +37,13 @@
         </div>
       </div>
     </div>
+
     <div class="item footer medium">
       <p class="facttext">
         Seneste opdateret kl. 00.00
       </p>
     </div>
+
     <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
          src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_negative.svg"
          alt="Aarhus kommune">
