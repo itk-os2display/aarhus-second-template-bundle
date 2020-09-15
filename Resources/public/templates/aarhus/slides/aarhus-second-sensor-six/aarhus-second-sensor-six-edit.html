@@ -20,15 +20,10 @@
         <div class="item">
           <h2>Eksempel {{ $index + 1}}</h2>
           <div class="data">
-            <div class="data-type" data-ng-style="{'color': ikSlide.options.themecolor}">
-              <div class="data-type-icon" data-ng-style="{'color': ikSlide.options.themecolor}">
-                <i class="{{production.icon_classes}}" data-fa-transform="rotate-{{ production.icon_rotate }}"></i>
-              </div>
-              <span class="data-type-unit" data-ng-bind-html="production.unit">°</span>
-            </div>
             <div class="data-amount">
               <span class="counter js-counter" data-count="21" data-ng-if="production.count_up">0</span>
               <span class="counter" data-ng-if="!production.count_up">21°</span>
+              <span class="data-type-unit" data-ng-bind-html="production.unit">°</span>
             </div>
           </div>
         </div>
@@ -39,13 +34,13 @@
       <p class="facttext">
         Seneste opdateret kl. 00.00
       </p>
+      <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+      src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_negative.svg"
+      alt="Aarhus kommune">
+      <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+      src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_sh.svg"
+      alt="Aarhus kommune">
     </div>
 
-    <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
-         src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_negative.svg"
-         alt="Aarhus kommune">
-    <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
-         src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_sh.svg"
-         alt="Aarhus kommune">
   </div>
 </div>

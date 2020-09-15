@@ -1,18 +1,17 @@
 @import "../../sass/aarhus-second";
 
+$sizer: 1em;
+
 .aarhus-second-sensor-six {
   font-size: 16px;
-  @media (orientation: portrait) {
-    font-size: 32px;
-  }
   position: relative;
 
   .aarhus-second--container {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr 1fr;
-    gap: 1em 0;
+    grid-template-rows: .5fr 3fr 1fr;
+    gap: $sizer 0;
     grid-template-areas: "header" "content" "footer";
 
     .image {
@@ -35,12 +34,12 @@
     .title {
       grid-area: header;
       z-index: 2;
-      margin: 1em 1em 0 1em;
-      h1 {
-        font-size: 2.188em;
-        text-shadow: $shadow-text;
-        margin: 0;
+      margin: $sizer $sizer 0 $sizer/2;
+      text-shadow: $shadow-text;
+      &::after {
+        display: none;
       }
+      padding-bottom: 0;
     }
 
     .textboxes {
@@ -48,18 +47,11 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      @media (orientation: portrait) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-      }
-      gap: 1em 1em;
+      gap: $sizer $sizer;
       grid-template-areas: "col1 col2 col3" "col4 col5 col6";
-      @media (orientation: portrait) {
-        grid-template-areas: "col1 col2" "col3 col4" "col5 col6";
-      }
       grid-auto-flow: column;
       z-index: 2;
-      margin: 0 1em;
+      margin: 0 $sizer;
     }
 
     .textbox {
@@ -71,7 +63,7 @@
       animation-iteration-count: 1;
       animation-timing-function: ease-out;
       animation-fill-mode: forwards;
-      padding: 1em;
+      padding: $sizer;
       margin: 0;
 
       .item {
@@ -95,28 +87,9 @@
         position: relative;
         width: 100%;
 
-        .data-type {
-          float: left;
-          margin-top: .5em;
-
-          .data-type-icon {
-              font-size: 2.2em;
-              line-height: 1em;
-              margin-bottom: .25em;
-              display: inline-block;
-              }
-
-              .data-type-unit {
-                  font-family: $font-family-black;
-                  font-size: 1.5em;
-                  line-height: 1em;
-                  margin: 0;
-                  padding: 0;
-              }
-        }
         .data-amount {
           font-family: $font-family-black;
-          font-size: 4.5em;
+          font-size: $sizer * 2;
           line-height: 1;
           flex-basis: 70%;
           text-align: left;
@@ -126,7 +99,20 @@
             margin: 0;
             padding: 0;
           }
+
+          .counter {
+            font-size: $sizer*2;
+          }
+
+          .data-type-unit {
+            font-family: $font-family-black;
+            font-size: $sizer * 1;
+            line-height:$sizer;
+            margin: 0;
+            padding: 0;
+          }
         }
+
 
         .data-location {
           width: 100%;
@@ -136,15 +122,25 @@
       p {
         font-family: $font-family-regular;
         font-size: $font-size-p;
-        margin: 0 0 0.625em 0;
+        margin: 0 0 $sizer*.625 0;
+      }
+    }
+    .footer {
+      grid-area: footer;
+      z-index: 2;
+      height: auto;
+      position: static;
+      padding: 0 $sizer;
+
+      .aarhus-second--logo {
+        position: static;
+        height: 25%;
       }
     }
 
     .facttext {
-      margin: 2.5em 1.875em;
+      margin: $sizer 0;
       text-align: left;
-      position: absolute;
-      overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
@@ -193,18 +189,61 @@
         animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration * 2 1 ease-out forwards;
       }
     }
+  }
+
+  // Styling for portrait mode
+  &.portrait {
+    .aarhus-second--container {
+      grid-template-rows: .5fr 3.5fr 1fr;
+      gap: $sizer*4 0;
+    }
+
+    .title {
+      font-size: $sizer*4;
+
+    }
+
+    .textboxes {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "col1 col2" "col3 col4" "col5 col6";
+      margin: 0 $sizer*2;
+      gap: $sizer*2 $sizer*2;
+
+      h2 {
+        font-size: $sizer*2;
+      }
+
+      .textbox {
+        padding: $sizer*2;
+      }
+
+      .data{
+        .data-amount{
+          .counter {
+            font-size: $sizer*4;
+          }
+          .data-type-unit {
+            font-size: $sizer*2;
+          }
+        }
+      }
+    }
 
     .footer {
-      grid-area: footer;
-      z-index: 2;
-      height: auto;
-      position: static;
-      @media (orientation: landscape) {
-        .facttext {
-          left: 20%;
-          margin-top: 2.2em;
-        }
+      padding: 0 $sizer*2;
+
+      .facttext {
+        font-size: $sizer*2;
+        margin: $sizer*2 0;
+      }
+
+      .aarhus-second--logo {
+        position: static;
+        height: 25%;
       }
     }
   }
 }
+
+
