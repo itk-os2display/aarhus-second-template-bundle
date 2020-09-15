@@ -20,6 +20,9 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
         slide.currentImage = slide.media[0].image;
       }
 
+      // Set default orientation:
+      slide.orientaion = 'landscape';
+
       // Setup the inline styling
       scope.theStyle = {
         width: "100%",
