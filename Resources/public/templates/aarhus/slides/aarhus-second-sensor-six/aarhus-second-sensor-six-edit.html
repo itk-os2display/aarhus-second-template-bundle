@@ -1,0 +1,51 @@
+<div class="aarhus-second aarhus-second-sensor-six slide-{{ikSlide.id}}"
+     data-ng-class="{'darkmode': ikSlide.darkmodeEnabled}"
+     data-ng-style="{'width': theStyle.width, 'height': theStyle.height, 'font-size': theStyle.fontsize}">
+  <!-- Hack to alter ::after -->
+  <style type="text/css" data-ng-if="ikSlide.options.themecolor">
+    .slide-{{ikSlide.id}}.aarhus-second-sensor-six h2:after,
+    .slide-{{ikSlide.id}}.aarhus-second-sensor-six h1:after {
+      background-color: {{ ikSlide.options.themecolor }}
+    }
+  </style>
+  <div class="aarhus-second--container live">
+    <div class="image" data-ng-style="{'background-image': 'url(' + ikSlide.currentImage + ')', 'background-color': ikSlide.options.bgcolor}">
+      <div class="item fade"></div>
+    </div>
+
+    <h1 class="item title" data-ng-bind-html="ikSlide.options.headline" data-ng-style="{'color': ikSlide.options.headingcolor}"></h1>
+
+    <div class="textboxes">
+      <div class="textbox box{{ $index + 1 }}" data-ng-repeat="x in [1, 2, 3, 4, 5, 6]">
+        <div class="item">
+          <h2>Eksempel {{ $index + 1}}</h2>
+          <div class="data">
+            <div class="data-type" data-ng-style="{'color': ikSlide.options.themecolor}">
+              <div class="data-type-icon" data-ng-style="{'color': ikSlide.options.themecolor}">
+                <i class="{{production.icon_classes}}" data-fa-transform="rotate-{{ production.icon_rotate }}"></i>
+              </div>
+              <span class="data-type-unit" data-ng-bind-html="production.unit">°</span>
+            </div>
+            <div class="data-amount">
+              <span class="counter js-counter" data-count="21" data-ng-if="production.count_up">0</span>
+              <span class="counter" data-ng-if="!production.count_up">21°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item footer medium">
+      <p class="facttext">
+        Seneste opdateret kl. 00.00
+      </p>
+    </div>
+
+    <img ng-if="ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_negative.svg"
+         alt="Aarhus kommune">
+    <img ng-if="!ikSlide.darkmodeEnabled" class="aarhus-second--logo"
+         src="bundles/itkaarhussecondtemplate/templates/aarhus/assets/AAK_01_venstrejusteret_sh.svg"
+         alt="Aarhus kommune">
+  </div>
+</div>

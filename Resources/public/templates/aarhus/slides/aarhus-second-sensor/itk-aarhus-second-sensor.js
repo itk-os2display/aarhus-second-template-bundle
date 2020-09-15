@@ -6,7 +6,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
      * @param scope
      *   The slide scope.
      */
-    setup: function setupCalendarSlide(scope) {
+    setup: function setupSlide(scope) {
       var slide = scope.ikSlide;
 
       // Load font-awesome icons.
@@ -19,6 +19,9 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
       if (slide.media_type === 'image' && slide.media.length > 0) {
         slide.currentImage = slide.media[0].image;
       }
+
+      // Set default orientation:
+      slide.orientaion = 'landscape';
 
       // Setup the inline styling
       scope.theStyle = {
@@ -36,7 +39,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
      * @param region
      *   The region object.
      */
-    run: function runCalendarSlide(slide, region) {
+    run: function runSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-sensor slide: " + slide.title);
 
       // Darkmode.
@@ -67,6 +70,9 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
       var slideElement = angular.element('.slide-' + slide.uniqueId);
       var duration = slide.duration !== null ? slide.duration : 15;
       var maxDuration = Math.min(2500, duration / 2 * 1000);
+
+      // Set orientation.
+      slide.orientaion = slideElement[0].offsetWidth >= slideElement[0].offsetHeight ? 'landscape' : 'portrait';
 
       slide.counters = $(slideElement).find('.js-counter');
       slide.counters.text('0');

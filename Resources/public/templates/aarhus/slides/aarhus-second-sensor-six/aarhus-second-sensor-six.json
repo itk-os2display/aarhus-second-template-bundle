@@ -1,34 +1,34 @@
 {
-  "id": "aarhus-second-sensor-vertical",
+  "id": "aarhus-second-sensor-six",
   "theme": "aarhus-second",
   "tags": [
     "Aarhus"
   ],
   "type": "slide",
-  "name": "Aarhus: Sensorer vertical",
-  "icon": "aarhus-second-sensor-vertical.png",
+  "name": "Aarhus: 6 sensorer",
+  "icon": "aarhus-second-sensor-six.png",
   "paths": {
-    "live": "aarhus-second-sensor-vertical.html",
-    "edit": "aarhus-second-sensor-vertical-edit.html",
-    "preview": "aarhus-second-sensor-vertical-edit.html",
-    "css": "aarhus-second-sensor-vertical.css",
-    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor-vertical.js"
+    "live": "aarhus-second-sensor-six.html",
+    "edit": "aarhus-second-sensor-six-edit.html",
+    "preview": "aarhus-second-sensor-six-edit.html",
+    "css": "aarhus-second-sensor-six.css",
+    "js": "bundles/itkaarhussecondtemplate/templates/aarhus/slides/aarhus-second-sensor/itk-aarhus-second-sensor.js"
   },
   "orientation": "landscape",
   "slide_type": "itk-aarhus-data",
   "media_type": "image",
-  "script_id": "itk-aarhus-second-sensor-vertical",
+  "script_id": "itk-aarhus-second-sensor",
   "ideal_dimensions": {
-    "width": "1080",
-    "height": "1920",
-    "data_function": ""
+    "width": "900",
+    "height": "540"
   },
   "empty_options": {
     "fontsize": 16,
-    "text": "<p>Beskrivelse</p>",
+    "headline": "Overskrift",
     "darkmode": false,
     "darkmode_from": 19,
-    "darkmode_to": 6
+    "darkmode_to": 6,
+    "data_function": ""
   },
   "tools": [
     {
@@ -37,11 +37,8 @@
       "template": "bundles/os2displaytemplateextension/apps/templateExtensionModule/itk-background-editor.html"
     },
     {
-      "name": "Tekster",
-      "id": "itk-rich-text",
-      "config": {
-        "fontsize_enabled": false
-      }
+      "name": "Tekst",
+      "template": "bundles/itkaarhussecondtemplate/apps/toolsModule/itk-aarhus-second-headline.html"
     },
     {
       "name": "Datakilde",
