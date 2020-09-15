@@ -6,7 +6,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
      * @param scope
      *   The slide scope.
      */
-    setup: function setupCalendarSlide(scope) {
+    setup: function setupSlide(scope) {
       var slide = scope.ikSlide;
 
       // Load font-awesome icons.
@@ -36,7 +36,7 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
      * @param region
      *   The region object.
      */
-    run: function runCalendarSlide(slide, region) {
+    run: function runSlide(slide, region) {
       region.itkLog.info("Running itk-aarhus-second-sensor slide: " + slide.title);
 
       // Darkmode.
@@ -64,41 +64,46 @@ if (!window.slideFunctions['itk-aarhus-second-sensor']) {
         }
       }
 
-      var slideElement = angular.element('.slide-' + slide.uniqueId);
-      var duration = slide.duration !== null ? slide.duration : 15;
-      var maxDuration = Math.min(2500, duration / 2 * 1000);
+      region.$timeout(function() {
+        // Set orientation.
+        var slideElement = angular.element('.slide-' + slide.uniqueId);
+        slide.calcutedOrientation = slideElement[0].offsetWidth >= slideElement[0].offsetHeight ? 'landscape' : 'portrait';
 
-      slide.counters = $(slideElement).find('.js-counter');
-      slide.counters.text('0');
+        var duration = slide.duration !== null ? slide.duration : 15;
+        var maxDuration = Math.min(2500, duration / 2 * 1000);
 
-      // Wait fadeTime before start to account for fade in.
-      region.$timeout(function () {
-        angular.forEach(slide.counters, function(element) {
-          element = $(element);
-          var countTo = element.attr('data-count');
+        slide.counters = $(slideElement).find('.js-counter');
+        slide.counters.text('0');
 
-          $({ countNum: element.text()}).animate({
-              countNum: countTo
-            },
-            {
-              duration: Math.min((countTo * 10) + 250, maxDuration),
-              easing: 'linear',
-              step: function() {
-                // Replace dash with minus character.
-                  element.text(Math.ceil(this.countNum).toString().replace(/^-/, '−'));
-              }
-            });
-        }, region.fadeTime);
-
-        // Set the progress bar animation.
-        region.progressBar.start(duration);
-
-        // Wait for slide duration, then show next slide.
-        // + fadeTime to account for fade out.
+        // Wait fadeTime before start to account for fade in.
         region.$timeout(function () {
-          region.nextSlide();
-        }, duration * 1000 + region.fadeTime);
-      }, region.fadeTime);
+          angular.forEach(slide.counters, function(element) {
+            element = $(element);
+            var countTo = element.attr('data-count');
+
+            $({ countNum: element.text()}).animate({
+                  countNum: countTo
+                },
+                {
+                  duration: Math.min((countTo * 10) + 250, maxDuration),
+                  easing: 'linear',
+                  step: function() {
+                    // Replace dash with minus character.
+                    element.text(Math.ceil(this.countNum).toString().replace(/^-/, '−'));
+                  }
+                });
+          }, region.fadeTime);
+
+          // Set the progress bar animation.
+          region.progressBar.start(duration);
+
+          // Wait for slide duration, then show next slide.
+          // + fadeTime to account for fade out.
+          region.$timeout(function () {
+            region.nextSlide();
+          }, duration * 1000 + region.fadeTime);
+        }, region.fadeTime);
+      });
     }
   };
 }

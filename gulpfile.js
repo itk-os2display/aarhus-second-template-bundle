@@ -36,7 +36,7 @@ var templates = {
       'aarhus-second-image-text',
       'aarhus-second-image-text-right',
       'aarhus-second-sensor',
-      'aarhus-second-sensor-vertical',
+      'aarhus-second-sensor-six',
       'aarhus-second-sensor-single',
       'aarhus-second-countdown',
       'aarhus-second-data',
