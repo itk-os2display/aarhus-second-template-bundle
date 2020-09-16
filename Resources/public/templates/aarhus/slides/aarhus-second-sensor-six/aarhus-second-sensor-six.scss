@@ -134,7 +134,7 @@ $sizer: 1em;
 
       .aarhus-second--logo {
         position: static;
-        height: 25%;
+        height: $sizer*2;
       }
     }
 
@@ -240,7 +240,7 @@ $sizer: 1em;
 
       .aarhus-second--logo {
         position: static;
-        height: 25%;
+        height: $sizer*6;
       }
     }
   }
