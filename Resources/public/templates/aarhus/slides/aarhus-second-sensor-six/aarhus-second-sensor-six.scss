@@ -102,11 +102,12 @@ $sizer: 1em;
 
           .counter {
             font-size: $sizer*2;
+            line-height: .75;
           }
 
           .data-type-unit {
             font-family: $font-family-black;
-            font-size: $sizer * 1;
+            font-size: $sizer*.75;
             line-height:$sizer;
             margin: 0;
             padding: 0;
