@@ -1,0 +1,250 @@
+@import "../../sass/aarhus-second";
+
+$sizer: 1em;
+
+.aarhus-second-sensor-six {
+  font-size: 16px;
+  position: relative;
+
+  .aarhus-second--container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr 3fr 1fr;
+    gap: $sizer 0;
+    grid-template-areas: "header" "content" "footer";
+
+    .image {
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      height: 110%;
+      width: 110%;
+      background-size: cover;
+      background-position-y: bottom;
+      opacity: 0;
+      animation-name: box-reveal;
+      animation-duration: 0.7s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      z-index: 1;
+      filter: blur(0px);
+    }
+    .title {
+      grid-area: header;
+      z-index: 2;
+      margin: $sizer $sizer 0 $sizer/2;
+      text-shadow: $shadow-text;
+      &::after {
+        display: none;
+      }
+      padding-bottom: 0;
+    }
+
+    .textboxes {
+      grid-area: content;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: $sizer $sizer;
+      grid-template-areas: "col1 col2 col3" "col4 col5 col6";
+      grid-auto-flow: column;
+      z-index: 2;
+      margin: 0 $sizer;
+    }
+
+    .textbox {
+      box-shadow: $shadow-box;
+      z-index: 3;
+      opacity: 0;
+      animation-name: box-reveal;
+      animation-duration: 0.7s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      padding: $sizer;
+      margin: 0;
+
+      .item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      &.box2 {
+
+        animation-delay: .2s;
+      }
+
+      &.box3 {
+        animation-delay: .4s;
+      }
+
+      .data {
+        position: relative;
+        width: 100%;
+
+        .data-amount {
+          font-family: $font-family-black;
+          font-size: $sizer * 2;
+          line-height: 1;
+          flex-basis: 70%;
+          text-align: left;
+          clear: both;
+
+          span {
+            margin: 0;
+            padding: 0;
+          }
+
+          .counter {
+            font-size: $sizer*2;
+            line-height: .75;
+          }
+
+          .data-type-unit {
+            font-family: $font-family-black;
+            font-size: $sizer*.75;
+            line-height:$sizer;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+
+        .data-location {
+          width: 100%;
+        }
+      }
+
+      p {
+        font-family: $font-family-regular;
+        font-size: $font-size-p;
+        margin: 0 0 $sizer*.625 0;
+      }
+    }
+    .footer {
+      grid-area: footer;
+      z-index: 2;
+      height: auto;
+      position: static;
+      padding: 0 $sizer;
+
+      .aarhus-second--logo {
+        position: static;
+        height: $sizer*2;
+      }
+    }
+
+    .facttext {
+      margin: $sizer 0;
+      text-align: left;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+
+      $text-animation-duration: .7s;
+      $text-visible-duration: 9.3s;
+
+      &.ng-animate {
+        transition: all ease $text-animation-duration;
+        position: absolute;
+      }
+
+      &.ng-enter {
+        transition: all ease $text-animation-duration $text-animation-duration;
+        top: 20px;
+        opacity: 0;
+      }
+
+      &.ng-leave,
+      &.ng-enter.ng-enter-active {
+        top: 0;
+        opacity: 1;
+      }
+
+      &.ng-leave.ng-leave-active {
+        top: 20px;
+        opacity: 0;
+      }
+
+      .def {
+        font-family: $font-family-black;
+        color: $color-pink;
+      }
+      &.two, &.tree {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      &.one {
+        animation: text-hide $text-animation-duration $text-visible-duration 1 ease-out forwards;
+      }
+      &.two {
+        animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration 1 ease-out forwards, text-hide $text-animation-duration $text-visible-duration * 2 1 ease-out forwards;
+      }
+      &.tree {
+        animation: text-reveal $text-animation-duration $text-animation-duration + $text-visible-duration * 2 1 ease-out forwards;
+      }
+    }
+  }
+
+  // Styling for portrait mode
+  &.portrait {
+    .aarhus-second--container {
+      grid-template-rows: .5fr 3.5fr 1fr;
+      gap: $sizer*4 0;
+    }
+
+    .title {
+      font-size: $sizer*4;
+
+    }
+
+    .textboxes {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "col1 col2" "col3 col4" "col5 col6";
+      margin: 0 $sizer*2;
+      gap: $sizer*2 $sizer*2;
+
+      h2 {
+        font-size: $sizer*2;
+      }
+
+      .textbox {
+        padding: $sizer*2;
+      }
+
+      .data{
+        .data-amount{
+          .counter {
+            font-size: $sizer*4;
+          }
+          .data-type-unit {
+            font-size: $sizer*2;
+          }
+        }
+      }
+    }
+
+    .footer {
+      padding: 0 $sizer*2;
+
+      .facttext {
+        font-size: $sizer*2;
+        margin: $sizer*2 0;
+      }
+
+      .aarhus-second--logo {
+        position: static;
+        height: $sizer*6;
+      }
+    }
+  }
+}
+
+
