@@ -1,5 +1,9 @@
 # itk-os2display/aarhus-second-template-bundle
 
+## 1.5.0
+
+* Added template: aarhus-second-sensor-six.
+
 ## 1.4.1
 
 * Added documentation for data.
